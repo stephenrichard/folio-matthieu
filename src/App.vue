@@ -9,11 +9,20 @@
 
 <script>
   import Header from './components/HeaderComponent'
+  import dataJson from './assets/datas.json'
 
   export default {
     name: 'app',
     components: {
       headerComponent: Header
+    },
+    data () {
+      return {
+        projectsDatas: dataJson.projects
+      }
+    },
+    mounted () {
+      this.$store.commit('STORE_PROJECTS', this.projectsDatas)
     }
   }
 </script>

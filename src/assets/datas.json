@@ -1,0 +1,14 @@
+{
+	"projects": [
+		{
+			"name": "Domingo voices",
+			"slug": "domingo-voices",
+			"url": "http://www.test.fr"
+		},
+		{
+			"name": "Geek art",
+			"slug": "geek-art",
+			"url": "http://www.test.fr"
+		}
+	]
+}

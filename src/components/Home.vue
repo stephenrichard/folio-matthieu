@@ -1,10 +1,15 @@
 <template>
   <div class="page page-home">
     <h1>{{ msg }}</h1>
+
+    <h2>Here you can see all the projects from the Vuex store</h2>
+    <router-link v-for="(project, index) in getProjects" :to="project.slug">{{ project.name }}</router-link>
   </div>
 </template>
 
 <script>
+  import { mapGetters } from 'vuex'
+
   export default {
     name: 'home',
     data () {
@@ -12,8 +17,12 @@
         msg: 'Welcome Home'
       }
     },
+    computed: {
+      ...mapGetters([
+        'getProjects'
+      ])
+    },
     mounted () {
-      console.log('cc')
       this.$store.commit('SET_PAGE', 'home')
     }
   }
