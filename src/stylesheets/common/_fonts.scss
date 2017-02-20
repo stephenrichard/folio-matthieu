@@ -1,26 +1,26 @@
-/*  FONT IMPORT EXAMPLE */
-
-/*@font-face {
-  font-family: 'antonregular';
-  src: url('./assets/fonts/anton-webfont.woff2') format('woff2'),
-		   url('./assets/fonts/anton-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+/*  FONT IMPORT */
 
 @font-face {
-    font-family: 'mohavebold';
-    src: url('./assets/fonts/mohave-bold-webfont.woff2') format('woff2'),
-         url('./assets/fonts/mohave-bold-webfont.woff') format('woff');
+    font-family: 'simplon_bpbold';
+    src: url('./assets/fonts/simplonbp-bold-webfont.woff2') format('woff2'),
+         url('./assets/fonts/simplonbp-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
 }
 
 @font-face {
-    font-family: 'plantagenet';
-    src: url('./assets/fonts/plantagenetcherokee-webfont.woff2') format('woff2'),
-         url('./assets/fonts/plantagenetcherokee-webfont.woff') format('woff');
+    font-family: 'simplon_bpmedium';
+    src: url('./assets/fonts/simplonbp-medium-webfont.woff2') format('woff2'),
+         url('./assets/fonts/simplonbp-medium-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}*/
+}
+
+@font-face {
+    font-family: 'simplon_bpregular';
+    src: url('./assets/fonts/simplonbpregular-webfont.woff2') format('woff2'),
+         url('./assets/fonts/simplonbpregular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
