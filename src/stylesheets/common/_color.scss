@@ -1,0 +1,62 @@
+$rose: #FC389A;
+$green: #21D878;
+$yellow: #FFCF59;
+$blue: #639CFF;
+$violet: #BF63FF;
+$grey-light: #E9E9E9;
+$dark : #3C3C3C;
+
+
+.rose {
+	.color-colored {
+		color : $rose;
+	}
+
+	.background-colored {
+		background: $rose;
+	}
+}
+
+.green {
+	.color-colored {
+		color : $green;
+	}
+
+	.background-colored {
+		background: $green;
+	}
+}
+
+.yellow {
+	.color-colored {
+		color : $yellow;
+	}
+
+	.background-colored {
+		background: $yellow;
+	}
+}
+
+.blue {
+	.color-colored {
+		color : $blue;
+	}
+
+	.background-colored {
+		background: $blue;
+	}
+}
+
+.violet {
+	.color-colored {
+		color : $violet;
+	}
+
+	.background-colored {
+		background: $violet;
+	}
+}
+
+.color-gray {
+	color : $grey-light;
+}

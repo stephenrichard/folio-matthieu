@@ -1,0 +1,66 @@
+// COMMON
+
+.small-text,
+.text,
+.text-ancors,
+.slider-title,
+.slider-subtitle,
+.project-title,
+.project-subtitle,
+.project-title__part {
+	font-family: $font;
+}
+
+.small-text {
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.text {
+	font-size: 14px;
+	color: $dark;
+}
+
+.text-ancors {
+	font-size: 12px;
+	text-decoration : underline;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing : 1.51px;
+}
+
+// SLIDER
+
+.slider-title {
+	font-size : 34px;
+	font-weight: bold;
+	text-transform : uppercase;
+}
+
+
+.slider-subtitle {
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color : white;
+}
+
+// PROJECT CASE STUDY
+
+.project-title {
+	font-size: 64px;
+	text-transform: uppercase;
+	font-weight: bold;
+
+}
+
+.project-subtitle {
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.project-title__part {
+	font-size: 36px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
