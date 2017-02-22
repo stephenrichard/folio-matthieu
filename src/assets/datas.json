@@ -9,6 +9,11 @@
 			"name": "Geek art",
 			"slug": "geek-art",
 			"url": "http://www.test.fr"
+		},
+		{
+			"name": "An other projects",
+			"slug": "other",
+			"url": "http://www.test.fr"
 		}
 	]
 }

@@ -1,0 +1,42 @@
+.project-part {
+	.project-part__header {
+		padding-bottom: 50px;
+
+		.project-part__title {
+			margin-bottom: 20px;
+		}
+		.project-part__intro {
+			max-width: 645px;
+		}
+	}
+
+	&.moodboard {
+		display: flex;
+		align-items: center;
+		padding-bottom: 50px;
+
+
+		.project-part__header {
+
+			padding-right : 50px;
+			padding-bottom: 0px;
+
+
+			.project-part__title {
+
+			}
+			.project-part__intro {
+				max-width: 380px;
+			}
+		}
+
+		.project-part__picture{
+			max-width: 100%;
+			margin : 0 auto;
+
+			img {
+				max-width: 100%;
+			}
+		}
+	}
+}
