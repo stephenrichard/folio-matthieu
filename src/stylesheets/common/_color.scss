@@ -1,4 +1,4 @@
-$rose: #FC389A;
+$pink: #FC389A;
 $green: #21D878;
 $yellow: #FFCF59;
 $blue: #639CFF;
@@ -6,18 +6,18 @@ $violet: #BF63FF;
 $grey-light: #E9E9E9;
 $dark : #3C3C3C;
 
-.rose {
+.pink {
 	.color-colored {
-		color : $rose;
+		color : $pink;
 	}
 
 	.background-colored {
-		background: $rose;
+		background: $pink;
 	}
 
 	.before-colored{
 		&:before {
-			background: $rose;
+			background: $pink;
 		}
 	}
 }

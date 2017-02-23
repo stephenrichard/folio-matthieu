@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
 
     <h2>Here you can see all the projects from the Vuex store</h2>
-    <router-link v-for="(project, index) in getProjects" :to="project.slug">{{ project.name }}</router-link>
+    <router-link v-for="(project, index) in getProjects" :to="{ name: 'project', params: { project_name: project.slug } }">{{ project.name }}</router-link>
   </div>
 </template>
 

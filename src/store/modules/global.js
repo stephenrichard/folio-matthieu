@@ -2,7 +2,8 @@ import * as types from '../mutations-types'
 
 const state = {
   page: null,
-  projects: null
+  projects: null,
+  currentProject: null
 }
 
 const getters = {
@@ -11,6 +12,9 @@ const getters = {
   },
   getProjects: state => {
     return state.projects
+  },
+  getCurrentProject: state => {
+    return state.currentProject
   }
 }
 
@@ -20,6 +24,9 @@ const mutations = {
   },
   [types.STORE_PROJECTS] (state, projectsState) {
     state.projects = projectsState
+  },
+  [types.SET_CURRENT_PROJECT] (state, currentProjectState) {
+    state.currentProject = currentProjectState
   }
 }
 

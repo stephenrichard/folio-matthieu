@@ -1,2 +1,3 @@
 export const SET_PAGE = 'SET_PAGE'
 export const STORE_PROJECTS = 'STORE_PROJECTS'
+export const SET_CURRENT_PROJECT = 'SET_CURRENT_PROJECT'

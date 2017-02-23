@@ -34,9 +34,9 @@
       <br><br>
     </div>
 
-    <div class="rose">
+    <div class="pink">
 
-      <section class=" wrapper project-header rose">
+      <section class=" wrapper project-header pink">
         <h1 class="project-title color-gray">VOICES OF LEGENDS</h1>
         <p class="project-subtitle color-colored">ART DIRECTION - STORYBOARDS - MOTION DESIGN - SOUND DESIGN</p>
         <div class="project-header__content">
@@ -53,7 +53,7 @@
       </section>
 
       <section class="project-part__bannerBG">
-        <div class="project-part__bannerBackground" style="background-image: url('static/img/baniere.png');"></div>
+        <div class="project-part__bannerBackground" style="background-image: url('static/img/voices/banner.png');"></div>
       </section>
 
       <section class="wrapper project-part moodboard ">
@@ -62,7 +62,7 @@
               <p class="text project-part__intro">At the time I was quite interested in retro effects and old 8 bit videogames so I built a moodboard based on this. My main references were <strong>FITC // Toronto 2016 Teaser</strong> by Giant Ant, <strong>DDD + OFFF Italy 2016 Main Titles</strong>  by Nerdo and <strong>Adobe Make It Titles</strong> by Never Sit Still. I also did a wink to league of legends adding Poros, sweet little creatures.</p>
           </div>
           <div class="project-part__picture">
-            <img src="../assets/img/moodboard.png" alt="">
+            <img src="static/img/voices/moodboard.png" alt="">
           </div>
 
       </section>
@@ -74,7 +74,7 @@
           </div>
 
           <div class="project-part__bannerIMG ">
-            <img src="static/img/designboard.png" alt="">
+            <img src="static/img/voices/designboard.png" alt="">
           </div>
       </section>
 
