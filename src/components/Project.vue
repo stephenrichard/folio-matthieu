@@ -12,8 +12,10 @@
         <p class="text-ancors color-colored before-colored">Watch ancors</p>
       </section>
 
-      <section class="project-part">
-        <img :src="getCurrentProject.first_decoration.url" alt="">
+      <section class="project-part decoration" :data-disposition="getCurrentProject.decoration.disposition">
+        <div class="decoration-container">
+          <img v-for="image in getCurrentProject.decoration.images" :src="image" alt="">
+        </div>
       </section>
 
       <section class="wrapper project-part moodboard ">
@@ -24,21 +26,31 @@
           <div class="project-part__picture">
             <img :src="getCurrentProject.project_first_part.picture" alt="">
           </div>
-
       </section>
 
       <section class="project-part__bannerBG">
         <div class="project-part__bannerBackground" :style="{ 'background-image': 'url(' + getCurrentProject.banner + ')' }"></div>
       </section>
 
+      <section class="wrapper project-part">
+        <img class="project-part__decoration" :src="getCurrentProject.project_preparation_part.decoration" alt="">
+        <div class="project-part__header">
+          <h2 class="project-part__title color-gray">{{ getCurrentProject.project_preparation_part.title }}</h2>
+          <p class="text project-part__intro">{{ getCurrentProject.project_preparation_part.intro }}</p>
+        </div>
+        <div class="project-part__preparation">
+          <img class="project-preparation" :src="getCurrentProject.project_preparation_part.picture" alt="">
+        </div>
+      </section>
+
       <section class=" wrapper project-part">
           <div class="project-part__header">
-              <h2 class="project-part__title color-gray">{{ getCurrentProject.project_parts[1].title }}</h2>
-              <p class="text project-part__intro">{{ getCurrentProject.project_parts[1].intro }}</p>
+              <h2 class="project-part__title color-gray">{{ getCurrentProject.project_screen_part.title }}</h2>
+              <p class="text project-part__intro">{{ getCurrentProject.project_screen_part.intro }}</p>
           </div>
 
           <div class="project-part__bannerIMG ">
-            <img :src="getCurrentProject.project_parts[1].picture" alt="">
+            <img :src="getCurrentProject.project_screen_part.picture" alt="">
           </div>
       </section>
 
@@ -49,7 +61,7 @@
           </div>
 
           <div class="project-part__vimeo">
-            <iframe :src="getCurrentProject.project_vimeo.url" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <!-- <iframe :src="getCurrentProject.project_vimeo.url" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
           </div>
       </section>
     </div>
@@ -84,6 +96,7 @@
           }
         }
         // Redirect home if page does not exist
+        console.log('page found ' + pageFound)
         if (pageFound === true) {
           this.$store.commit('SET_CURRENT_PROJECT', projects[index])
         } else {

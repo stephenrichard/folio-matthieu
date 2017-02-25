@@ -7,9 +7,11 @@
 			"color-code": "#FC389A",
 			"skills": ["Art direction", "Storyboards", "motion design", "sound design"],
 			"header_content": "Voices of legends is a mini-game based on the famous video-game League of Legends and developped by a french streamer Domingo. The goal is to find 20 champions’s voices in the shortest amount of time. The players are rewarded thanks to xp and chest with bonus on the domingo.tv website. My job was to create the teaser.",
-			"first_decoration": {
-				"display": "contain",
-				"url": "image1url"
+			"decoration": {
+				"disposition": "fullsize",
+				"images": [
+					"./static/img/voices/first-part-img-1.png"
+				]
 			},
 			"project_first_part": {
 				"title": "The moodboard",
@@ -17,19 +19,17 @@
 				"picture": "./static/img/voices/moodboard.png"
 			},
 			"banner": "./static/img/voices/banner.png",
-			"project_parts": [
-				{
-					"title": "Storyboard and modeling",
-					"intro": "The next step was to create the scenario and a draft storyboard. After I jumped into Cinema 4D to build the models needed and challenge the storyboard. It also allows me to try severals looks and point of view locking cameras for later when something looked nice.",
-					"picture": "image",
-					"decoration": "image_decoration"
-				},
-				{
-					"title": "Designboard",
-					"intro": "Simultaneously with the modeling part, I started my designboard and compositing. I wanted to create a mysterious atmosphere and build tension until the drop where the 8-bit menu shows up. I imagined 3 phases: [1] Screen saver, [2] Terminal and [3] 8-bit menu in game.",
-					"picture": "static/img/voices/designboard.png"
-				}
-			],
+			"project_preparation_part": {
+				"title": "Storyboard and modeling",
+				"intro": "The next step was to create the scenario and a draft storyboard. After I jumped into Cinema 4D to build the models needed and challenge the storyboard. It also allows me to try severals looks and point of view locking cameras for later when something looked nice.",
+				"picture": "./static/img/voices/preparation.png",
+				"decoration": "./static/img/voices/decoration.png"
+			},
+			"project_screen_part": {
+				"title": "Designboard",
+				"intro": "Simultaneously with the modeling part, I started my designboard and compositing. I wanted to create a mysterious atmosphere and build tension until the drop where the 8-bit menu shows up. I imagined 3 phases: [1] Screen saver, [2] Terminal and [3] 8-bit menu in game.",
+				"picture": "static/img/voices/designboard.png"
+			},
 			"project_vimeo": {
 				"title": "Animation & sound design",
 				"intro": "Once the styleframes felt good, I prepared my assets inside Photoshop and started rendering in Cinema 4D. Animate the titles was quite time-consuming but I have been rewarded by the results and kept going. The audio was the trickiest… To bring life to my animation, the audio was essential but it was hard to find the exact sound which fit both movements and atmosphere.",
@@ -43,9 +43,12 @@
 			"color": "green",
 			"color-code": "#21D878",
 			"header_content": "This past summer a friend working for Domingo, a famous french streamer, reached me to create the new introduction animation that goes in front of every video from the channels Youtube and Twitch. It was for me a great opportunity to go back on what got me into motion design: youtube introduction videos ! I also worked on severals video layouts.",
-			"first_decoration": {
-				"display": "fullscreen",
-				"url": "image1url"
+			"decoration": {
+				"disposition": "fullsize",
+				"images": [
+					"./static/img/domingo/first-part-img-1.png",
+					"./static/img/domingo/first-part-img-2.png"
+				]
 			},
 			"project_first_part": {
 				"title": "The moodboard",
@@ -53,19 +56,17 @@
 				"picture": "./static/img/domingo/moodboard.png"
 			},
 			"banner": "./static/img/domingo/banner.png",
-			"project_parts": [
-				{
-					"title": "Base animations",
-					"intro": "After few sketches of my ideas, I have started my base animations: [1] the square and the [2] title appearance. I wanted my square to feel heavy to bring impact when it hits the floor and something very simple to make the logo shows up. So I did a cell filling [Now that I’m looking back at it, an animation a bit longer wouldn’t have hurt]. As usual, it took me some times to tweak my curves until the animation feels right.After few sketches of my ideas, I have started my base animations: [1] the square and the [2] title appearance. I wanted my square to feel heavy to bring impact when it hits the floor and something very simple to make the logo shows up. So I did a cell filling [Now that I’m looking back at it, an animation a bit longer wouldn’t have hurt]. As usual, it took me some times to tweak my curves until the animation feels right.",
-					"picture": "image",
-					"decoration": "image_decoration"
-				},
-				{
-					"title": "Elaborating animations & comping",
-					"intro": "The next step was to create the secondary animations to fill the blanks to give more life and personnality to the overall look. So I added strokes to accentuate the title appearance, particles to add depth and lights to help the eyes to focus. ",
-					"picture": "static/img/domingo/designboard.png"
-				}
-			],
+			"project_preparation_part": {
+				"title": "Base animations",
+				"intro": "After few sketches of my ideas, I have started my base animations: [1] the square and the [2] title appearance. I wanted my square to feel heavy to bring impact when it hits the floor and something very simple to make the logo shows up. So I did a cell filling [Now that I’m looking back at it, an animation a bit longer wouldn’t have hurt]. As usual, it took me some times to tweak my curves until the animation feels right.After few sketches of my ideas, I have started my base animations: [1] the square and the [2] title appearance. I wanted my square to feel heavy to bring impact when it hits the floor and something very simple to make the logo shows up. So I did a cell filling [Now that I’m looking back at it, an animation a bit longer wouldn’t have hurt]. As usual, it took me some times to tweak my curves until the animation feels right.",
+				"picture": "./static/img/domingo/preparation.png",
+				"decoration": "./static/img/domingo/decoration.png"
+			},
+			"project_screen_part": {
+				"title": "Elaborating animations & comping",
+				"intro": "The next step was to create the secondary animations to fill the blanks to give more life and personnality to the overall look. So I added strokes to accentuate the title appearance, particles to add depth and lights to help the eyes to focus. ",
+				"picture": "static/img/domingo/designboard.png"
+			},
 			"project_vimeo": {
 				"title": "Final video",
 				"intro": "Domingo already knew the music he wanted, so I added it and did some adjusments to finally export the final version.",
@@ -79,9 +80,11 @@
 			"color": "yellow",
 			"color_code": "#FFCF59",
 			"header_content": "The 4L TROPHY is a charity race car organized to bring school supplies to kids in the Maroc’s desert and my school was sponsoring a crew with one HETIC’s student. The school asked us to imagine a concept to help the crew during his travel and to increase donations for the charitable organization. My team created a website where people could create a sticker for the car and I did a motion to explain our plan and the project.",
-			"first_decoration": {
-				"display": "contain",
-				"url": "image1url"
+			"decoration": {
+				"disposition": "contain",
+				"images": [
+					"./static/img/4ltrophy/first-part-img-1.png"
+				]
 			},
 			"project_first_part": {
 				"title": "The moodboard",
@@ -89,19 +92,17 @@
 				"picture": "./static/img/4ltrophy/moodboard.png"
 			},
 			"banner": "./static/img/4ltrophy/banner.png",
-			"project_parts": [
-				{
-					"title": "Modeling and animation",
-					"intro": "With only five days left, I made a draft storyboard and began shortly after to model. It was an hard work and at the end I was running out of time to add details to each island’s ecosystem. To animate the scene I used one camera and played with deformers, scale, position and rotation properties. I also had a lot of fun with dynamics tags.",
-					"picture": "image",
-					"decoration": "image_decoration"
-				},
-				{
-					"title": "Tracking and colors",
-					"intro": "Once the render finished, I realized that I forgot to export 3D datas to track easely the screens on After Effects to add the tutorial video. So I used Mocha with a result I had to be satisfied with. I worked as well on the colorimetry adding more saturation.",
-					"picture": "static/img/4ltrophy/designboard.png"
-				}
-			],
+			"project_preparation_part": {
+				"title": "Modeling and animation",
+				"intro": "With only five days left, I made a draft storyboard and began shortly after to model. It was an hard work and at the end I was running out of time to add details to each island’s ecosystem. To animate the scene I used one camera and played with deformers, scale, position and rotation properties. I also had a lot of fun with dynamics tags.",
+				"picture": "./static/img/4ltrophy/preparation.png",
+				"decoration": "./static/img/4ltrophy/decoration.png"
+			},
+			"project_screen_part": {
+				"title": "Tracking and colors",
+				"intro": "Once the render finished, I realized that I forgot to export 3D datas to track easely the screens on After Effects to add the tutorial video. So I used Mocha with a result I had to be satisfied with. I worked as well on the colorimetry adding more saturation.",
+				"picture": "static/img/4ltrophy/designboard.png"
+			},
 			"project_vimeo": {
 				"title": "Voice over",
 				"intro": "For the first time, I used a voice over on a video. I used my own voice and it was more tricky than I thought to have the right intonation, articulate and not ran out of breath. ",
