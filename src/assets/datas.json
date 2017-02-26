@@ -44,7 +44,7 @@
 			"slug": "intro-domingo",
 			"skills": ["Art direction", "Motion design", "Trapcode particular"],
 			"color": "green",
-			"color-code": "#21D878",
+			"color_code": "#21D878",
 			"main_image": "./static/img/domingo/main-image.png",
 			"header_content": "This past summer a friend working for Domingo, a famous french streamer, reached me to create the new introduction animation that goes in front of every video from the channels Youtube and Twitch. It was for me a great opportunity to go back on what got me into motion design: youtube introduction videos ! I also worked on severals video layouts.",
 			"decoration": {

@@ -12,6 +12,9 @@ export default {
     return {
       pageName: 'About'
     }
+  },
+  beforeMount () {
+    this.$store.commit('SET_PAGE', 'about')
   }
 }
 </script>

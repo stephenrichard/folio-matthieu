@@ -6,7 +6,7 @@ $purple: #BF63FF;
 $grey-light: #E9E9E9;
 $dark : #3C3C3C;
 
-.pink {
+.pink, [data-color="pink"] {
 	.color-colored {
 		color : $pink;
 	}
@@ -26,7 +26,7 @@ $dark : #3C3C3C;
 	}
 }
 
-.green {
+.green, [data-color="green"] {
 	.color-colored {
 		color : $green;
 	}
@@ -46,7 +46,7 @@ $dark : #3C3C3C;
 	}
 }
 
-.yellow {
+.yellow, [data-color="yellow"] {
 	.color-colored {
 		color : $yellow;
 	}
@@ -66,7 +66,7 @@ $dark : #3C3C3C;
 	}
 }
 
-.blue {
+.blue, [data-color="blue"] {
 	.color-colored {
 		color : $blue;
 	}
@@ -86,7 +86,7 @@ $dark : #3C3C3C;
 	}
 }
 
-.purple {
+.purple, [data-color="purple"] {
 	.color-colored {
 		color : $purple;
 	}

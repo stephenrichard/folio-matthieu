@@ -87,6 +87,7 @@
       projectSwitcher: ProjectSwitcher
     },
     mounted () {
+      this.$store.commit('SET_PAGE', 'project')
     },
     beforeMount () {
       var pageFound = false
