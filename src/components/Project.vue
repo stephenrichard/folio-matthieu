@@ -19,13 +19,13 @@
       </section>
 
       <section class="wrapper project-part moodboard ">
-          <div class="project-part__header">
-            <h2 class="project-part__title color-gray">{{ getCurrentProject.project_first_part.title }}</h2>
-              <p class="text project-part__intro">{{ getCurrentProject.project_first_part.intro }}</p>
-          </div>
-          <div class="project-part__picture">
-            <img :src="getCurrentProject.project_first_part.picture" alt="">
-          </div>
+        <div class="project-part__header">
+          <h2 class="project-part__title color-gray">{{ getCurrentProject.project_first_part.title }}</h2>
+            <p class="text project-part__intro">{{ getCurrentProject.project_first_part.intro }}</p>
+        </div>
+        <div class="project-part__picture">
+          <img :src="getCurrentProject.project_first_part.picture" alt="">
+        </div>
       </section>
 
       <section class="project-part__bannerBG">
@@ -44,26 +44,28 @@
       </section>
 
       <section class=" wrapper project-part">
-          <div class="project-part__header">
-              <h2 class="project-part__title color-gray">{{ getCurrentProject.project_screen_part.title }}</h2>
-              <p class="text project-part__intro">{{ getCurrentProject.project_screen_part.intro }}</p>
-          </div>
+        <div class="project-part__header">
+            <h2 class="project-part__title color-gray">{{ getCurrentProject.project_screen_part.title }}</h2>
+            <p class="text project-part__intro">{{ getCurrentProject.project_screen_part.intro }}</p>
+        </div>
 
-          <div class="project-part__bannerIMG ">
-            <img :src="getCurrentProject.project_screen_part.picture" alt="">
-          </div>
+        <div class="project-part__bannerIMG ">
+          <img :src="getCurrentProject.project_screen_part.picture" alt="">
+        </div>
       </section>
 
       <section class=" wrapper project-part">
-          <div class="project-part__header">
-              <h2 class="project-part__title color-gray">{{ getCurrentProject.project_vimeo.title }}</h2>
-              <p class="text project-part__intro">{{ getCurrentProject.project_vimeo.intro }}</p>
-          </div>
+        <div class="project-part__header">
+            <h2 class="project-part__title color-gray">{{ getCurrentProject.project_vimeo.title }}</h2>
+            <p class="text project-part__intro">{{ getCurrentProject.project_vimeo.intro }}</p>
+        </div>
 
-          <div class="project-part__vimeo">
-            <!-- <iframe :src="getCurrentProject.project_vimeo.url" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
-          </div>
+        <div class="project-part__vimeo">
+          <iframe :src="getCurrentProject.project_vimeo.url" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
       </section>
+
+      <!-- <projectSwitcher></projectSwitcher> -->
     </div>
 	</div>
 </template>
@@ -71,6 +73,7 @@
 <script>
   import { mapGetters } from 'vuex'
   import dataJson from '../assets/datas.json'
+  import ProjectSwitcher from './ProjectSwitcher.vue'
 
   export default {
     name: 'project',
@@ -79,6 +82,9 @@
         'getProjects',
         'getCurrentProject'
       ])
+    },
+    components: {
+      projectSwitcher: ProjectSwitcher
     },
     mounted () {
     },
