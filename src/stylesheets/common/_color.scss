@@ -2,7 +2,7 @@ $pink: #FC389A;
 $green: #21D878;
 $yellow: #FFCF59;
 $blue: #639CFF;
-$violet: #BF63FF;
+$purple: #BF63FF;
 $grey-light: #E9E9E9;
 $dark : #3C3C3C;
 
@@ -20,6 +20,10 @@ $dark : #3C3C3C;
 			background: $pink;
 		}
 	}
+
+	&.project-link {
+		background-color: $pink;
+	}
 }
 
 .green {
@@ -35,6 +39,10 @@ $dark : #3C3C3C;
 		&:before {
 			background: $green;
 		}
+	}
+
+	&.project-link {
+		background-color: $green;
 	}
 }
 
@@ -52,6 +60,10 @@ $dark : #3C3C3C;
 			background: $yellow;
 		}
 	}
+
+	&.project-link {
+		background-color: $yellow;
+	}
 }
 
 .blue {
@@ -68,21 +80,29 @@ $dark : #3C3C3C;
 			background: $blue;
 		}
 	}
+
+	&.project-link {
+		background-color: $blue;
+	}
 }
 
-.violet {
+.purple {
 	.color-colored {
-		color : $violet;
+		color : $purple;
 	}
 
 	.background-colored {
-		background: $violet;
+		background: $purple;
 	}
 
 	.before-colored{
 		&:before {
-			background: $violet;
+			background: $purple;
 		}
+	}
+
+	&.project-link {
+		background-color: $purple;
 	}
 }
 
