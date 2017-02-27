@@ -95,7 +95,6 @@
       projectSwitcher: ProjectSwitcher
     },
     mounted () {
-      this.$store.commit('SET_PAGE', 'project')
     },
     beforeMount () {
       var pageFound = false
@@ -121,8 +120,8 @@
       var nextProject = null
       var prevProject = null
 
-      if (currentIndex < projects.length) {
-        nextProject = parseInt(this.getCurrentProject.id) + 1
+      if (currentIndex < projects.length - 1) {
+        nextProject = parseInt(this.getCurrentProject.id)
       } else {
         nextProject = 0
       }
@@ -138,6 +137,18 @@
       // this.$store.commit('SET_PREV_PROJECT', projects[prevProject])
       this.nextProject = projects[nextProject]
       this.prevProject = projects[prevProject]
+
+      // Set page name
+      this.$store.commit('SET_PAGE', 'project')
+    },
+    watch: {
+      '$route' (to, from) {
+        for (var i = 0; i < this.getProjects.length; i++) {
+          if (this.getProjects[i].slug === to.path.replace('/', '')) {
+            this.$store.commit('SET_CURRENT_PROJECT', this.getProjects[i])
+          }
+        }
+      }
     }
   }
 </script>

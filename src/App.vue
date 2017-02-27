@@ -22,6 +22,8 @@
     beforeMount () {
       this.$store.commit('STORE_PROJECTS', this.projectsDatas)
       this.$store.commit('SET_CURRENT_PROJECT', this.projectsDatas[0])
+      this.$store.commit('SET_NEXT_PROJECT', this.projectsDatas[1])
+      this.$store.commit('SET_PREV_PROJECT', this.projectsDatas[this.projectsDatas.length - 1])
     }
   }
 </script>

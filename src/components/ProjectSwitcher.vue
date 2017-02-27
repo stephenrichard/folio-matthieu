@@ -21,6 +21,7 @@
       <span class="project-link__rect" :style="{ 'background-color': nextProject.color_code }"></span>
 
 		</router-link>
+    
 	</div>
 </template>
 
