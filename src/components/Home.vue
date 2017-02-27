@@ -1,5 +1,5 @@
 <template>
-  <div class="page page-home" :style="{ 'background-image': 'url(./static/img/patterns/pattern-'+ currentWork +'.png)' }" ref="homePage">
+  <div class="page page-home" :style="{ 'background-color': getProjects[currentWork].color_bg }" ref="homePage">
 
       <!-- <router-link v-for="(project, index) in getProjects" :to="{ name: 'project', params: { project_name: project.slug } }">{{ project.name }}</router-link> -->
 
@@ -72,7 +72,9 @@
         var target = e.currentTarget
         var clickedIndex = target.getAttribute('data-index')
         var oldProject = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"]')
+        var oldProjectSquare = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] span')
         var matchingProject = this.$el.querySelectorAll('.project[data-index="' + clickedIndex + '"]')
+        var matchingProjectSquare = this.$el.querySelectorAll('.project[data-index="' + clickedIndex + '"] span')
         var navItems = this.$el.querySelectorAll('.nav-item')
 
         if (clickedIndex !== this.currentWork) {
@@ -81,30 +83,58 @@
             tl.set(matchingProject, {
               x: '-100%'
             })
+            tl.set(matchingProjectSquare, {
+              x: '-150%'
+            })
             tl.add('switch')
+            tl.to(oldProjectSquare, 0.6, {
+              x: '150%',
+              ease: Power2.easeOut
+            }, 'switch')
             tl.to(oldProject, 0.6, {
               x: '100%',
               opacity: 0,
+              delay: 0,
               ease: Power2.easeOut
             }, 'switch')
             tl.to(matchingProject, 0.8, {
               x: '0%',
               opacity: 1,
+              delay: 0.3,
+              ease: Power2.easeOut
+            }, 'switch')
+            tl.to(matchingProjectSquare, 0.8, {
+              x: '0%',
+              delay: 0.4,
               ease: Power2.easeOut
             }, 'switch')
           } else {
             tl.set(matchingProject, {
               x: '100%'
             })
+            tl.set(matchingProjectSquare, {
+              x: '150%'
+            })
             tl.add('switch')
+            tl.to(oldProjectSquare, 0.6, {
+              x: '-150%',
+              ease: Power2.easeOut
+            }, 'switch')
             tl.to(oldProject, 0.6, {
               x: '-100%',
               opacity: 0,
+              delay: 0.2,
               ease: Power2.easeOut
             }, 'switch')
             tl.to(matchingProject, 0.8, {
               x: '0%',
               opacity: 1,
+              delay: 0.3,
+              ease: Power2.easeOut
+            }, 'switch')
+            tl.to(matchingProjectSquare, 0.8, {
+              x: '0%',
+              delay: 0.4,
               ease: Power2.easeOut
             }, 'switch')
           }
@@ -113,7 +143,7 @@
         this.currentWork = clickedIndex
 
         // Change background
-        this.$refs.homePage.style.background = 'url(./static/img/patterns/pattern-' + clickedIndex + '.png)'
+        // this.$refs.homePage.style.background = 'url(./static/img/patterns/pattern-' + clickedIndex + '.png)'
         // Reset nav items class active
         navItems.forEach(function (item) {
           item.className = 'nav-item'
@@ -129,6 +159,8 @@
 
   .page-home
     overflow: hidden
+    background-image: url('../../static/img/patterns/pattern.png')
+    transition: background-color 0.5s linear
 
     #works
       position: relative
