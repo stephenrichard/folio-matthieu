@@ -5,7 +5,7 @@
 
 		&[data-disposition="fullsize"] {
 			.decoration-container {
-				max-width: 1080px;
+				//max-width: 1080px;
 				/*margin: 0 auto;*/
 			}
 		}
@@ -24,14 +24,15 @@
 
 			img {
 				position: absolute;
-				
+
 				&:first-child {
 					left: 0;
 				}
 
 				&:nth-child(2) {
-					right: 40px;
+					right: 0px;
 					top: -100%;
+					max-width: 500px;
 				}
 			}
 		}
