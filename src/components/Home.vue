@@ -1,11 +1,11 @@
 <template>
-  <div class="page page-home" :style="{ 'background-image': 'url(./static/img/patterns/pattern-'+ getCurrentProject.slug +'.png)' }">
+  <div class="page page-home" :style="{ 'background-image': 'url(./static/img/patterns/pattern-'+ currentWork +'.png)' }" ref="homePage">
 
       <!-- <router-link v-for="(project, index) in getProjects" :to="{ name: 'project', params: { project_name: project.slug } }">{{ project.name }}</router-link> -->
 
       <div id="works">
 
-        <div class="project" v-for="work in getProjects" :data-color="work.color">
+        <div class="project" v-for="(work, index) in getProjects" :data-color="work.color" :data-index="index">
           <div class="project-wrapper">
             <router-link :to="work.slug" class="project__cover">
               <img :src="work.main_image" alt="work.name">
@@ -22,7 +22,7 @@
       </div>
 
       <ul id="works-nav">
-        <li class="nav-item" v-for="work in getProjects">
+        <li class="nav-item" v-for="(work, index) in getProjects" v-on:click="goTo" :data-color="work.color" :data-index="index">
           <span class="inner"></span>
           <span class="work-name slider-subtitle ">{{ work.name }}</span>
         </li>
@@ -33,12 +33,14 @@
 
 <script>
   import { mapGetters } from 'vuex'
+  import { TimelineLite, TweenLite, Power2 } from 'gsap'
 
   export default {
     name: 'home',
     data () {
       return {
-        msg: 'Welcome Home'
+        msg: 'Welcome Home',
+        currentWork: '0'
       }
     },
     computed: {
@@ -48,12 +50,82 @@
       ])
     },
     mounted () {
+      var that = this
       this.$store.commit('SET_PAGE', 'home')
+
+      this.$el.querySelectorAll('.project:first-child')[0].style.transform = 'translateX(0)'
+      this.$el.querySelectorAll('.nav-item[data-index="0"]')[0].className += ' active'
+
+      // Handle arrow navigation
+      // document.addEventListener('keyup', function (e) {
+      //   if (e.keyCode === 37) {
+      //     that.goPrev()
+      //   }
+
+      //   if (e.keyCode === 39) {
+      //     that.goNext()
+      //   }
+      // }, false)
+    },
+    methods: {
+      goTo (e) {
+        var target = e.currentTarget
+        var clickedIndex = target.getAttribute('data-index')
+        var oldProject = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"]')
+        var matchingProject = this.$el.querySelectorAll('.project[data-index="' + clickedIndex + '"]')
+        var navItems = this.$el.querySelectorAll('.nav-item')
+
+        if (clickedIndex !== this.currentWork) {
+          var tl = new TimelineLite()
+          if (clickedIndex < this.currentWork) {
+            tl.set(matchingProject, {
+              x: '-100%'
+            })
+            tl.add('switch')
+            tl.to(oldProject, 0.6, {
+              x: '100%',
+              opacity: 0,
+              ease: Power2.easeOut
+            }, 'switch')
+            tl.to(matchingProject, 0.8, {
+              x: '0%',
+              opacity: 1,
+              ease: Power2.easeOut
+            }, 'switch')
+          } else {
+            tl.set(matchingProject, {
+              x: '100%'
+            })
+            tl.add('switch')
+            tl.to(oldProject, 0.6, {
+              x: '-100%',
+              opacity: 0,
+              ease: Power2.easeOut
+            }, 'switch')
+            tl.to(matchingProject, 0.8, {
+              x: '0%',
+              opacity: 1,
+              ease: Power2.easeOut
+            }, 'switch')
+          }
+        }
+
+        this.currentWork = clickedIndex
+
+        // Change background
+        this.$refs.homePage.style.background = 'url(./static/img/patterns/pattern-' + clickedIndex + '.png)'
+        // Reset nav items class active
+        navItems.forEach(function (item) {
+          item.className = 'nav-item'
+        })
+        this.$el.querySelectorAll('.nav-item[data-index="' + clickedIndex + '"]')[0].className += ' active'
+      }
     }
   }
 </script>
 
 <style scoped lang="sass">
+  @import '../stylesheets/common/_color'
 
   .page-home
     overflow: hidden
@@ -66,9 +138,10 @@
       white-space: nowrap
 
       .project
-        display: inline-block
+        position: absolute
         width: 100%
         height: 100%;
+        transform: translateX(100%)
 
         .project-wrapper
           display: flex
@@ -120,6 +193,14 @@
         text-align: center
         margin-right: 10px
 
+        &:hover,
+        &.active
+          cursor: pointer
+
+          .inner
+            &:before
+              width: 100%
+
         &:last-child
           margin-right: 0
 
@@ -129,6 +210,14 @@
           width: 150px
           height: 6px
           background-color: white
+
+          &:before
+            position: absolute
+            content: ''
+            left: 0
+            width: 0
+            height: 100%
+            transition: .3s ease
 
         .work-name
           display: block

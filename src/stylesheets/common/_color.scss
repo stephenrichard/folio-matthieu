@@ -24,6 +24,13 @@ $dark : #3C3C3C;
 	&.project-link {
 		background-color: $pink;
 	}
+
+	.inner {
+		&:before {
+	    	background-color: $pink
+		}
+	}
+
 }
 
 .green, [data-color="green"] {
@@ -43,6 +50,12 @@ $dark : #3C3C3C;
 
 	&.project-link {
 		background-color: $green;
+	}
+
+	.inner {
+		&:before {
+	    	background-color: $green
+		}
 	}
 }
 
@@ -64,6 +77,12 @@ $dark : #3C3C3C;
 	&.project-link {
 		background-color: $yellow;
 	}
+
+	.inner {
+		&:before {
+	    	background-color: $yellow
+		}
+	}
 }
 
 .blue, [data-color="blue"] {
@@ -84,6 +103,12 @@ $dark : #3C3C3C;
 	&.project-link {
 		background-color: $blue;
 	}
+
+	.inner {
+		&:before {
+	    	background-color: $blue
+		}
+	}
 }
 
 .purple, [data-color="purple"] {
@@ -103,6 +128,12 @@ $dark : #3C3C3C;
 
 	&.project-link {
 		background-color: $purple;
+	}
+
+	.inner {
+		&:before {
+	    	background-color: $purple
+		}
 	}
 }
 
