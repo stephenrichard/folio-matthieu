@@ -3,10 +3,10 @@
     <header>
       <router-link to="/" class="logo">
       	<img src="../assets/logo@2x.png" alt="Matthieu Tourdes motion designer">
-      	<h1 class="color-gray">Matthieu Tourdes</h1>
+      	<h1 class="color-gray small-text">Matthieu Tourdes</h1>
       </router-link>
       <div class="more-back-links">
-        <router-link v-if="getPage === 'home'" to="/about">More about me</router-link>
+        <router-link v-if="getPage === 'home'" to="/about" class="small-text">More about me</router-link>
         <router-link v-show="getPage != 'home'" to="/" class="back-link">Back to menu</router-link>
       </div>
     </header>
@@ -27,7 +27,7 @@
 </script>
 
 <style lang="sass">
-	
+
   .header
     position: absolute
     top: 35px
@@ -36,7 +36,7 @@
     z-index: 2
 
     header
-      
+
       a
         display: inline-block
         text-decoration: none
@@ -57,7 +57,8 @@
           height: auto
 
         h1
-          font-weight: 600
+          font-weight: normal
+          margin-top: 2px;
           font-size: 12px
           letter-spacing: 1.7px
           line-height: 16px
@@ -65,9 +66,10 @@
 
       .more-back-links
         float: right
+        font-weight: 600
 
         .back-link
           font-weight: 800
 
-			
+
 </style>
