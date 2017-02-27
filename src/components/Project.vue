@@ -145,7 +145,9 @@
     },
     watch: {
       '$route' (to, from) {
-        window.scrollTo(0, 0)
+        if (to.path.split('#')[0] !== from.path) { // l'ancre vers le bas etait watch comme un changement d'url x)
+          window.scrollTo(0, 0)
+        }
         for (var i = 0; i < this.getProjects.length; i++) {
           if (this.getProjects[i].slug === to.path.replace('/', '')) {
             this.$store.commit('SET_CURRENT_PROJECT', this.getProjects[i])
