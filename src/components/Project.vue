@@ -1,6 +1,6 @@
 <template>
 	<div class="page page-project">
-		
+
     <div :class="getCurrentProject.color">
 
       <section class=" wrapper project-header pink">
@@ -9,7 +9,7 @@
         <div class="project-header__content">
           <p class="text">{{ getCurrentProject.header_content }}</p>
           </div>
-        <p class="text-ancors color-colored before-colored">Watch ancors</p>
+        <a class="text-ancors color-colored before-colored" href="#vimeo" v-smooth-scroll>Watch vidéo</p>
       </section>
 
       <section class="project-part decoration" :data-disposition="getCurrentProject.decoration.disposition">
@@ -54,18 +54,18 @@
         </div>
       </section>
 
-      <section class=" wrapper project-part">
+      <section class="wrapper project-part" id="vimeo">
         <div class="project-part__header">
             <h2 class="project-part__title color-gray">{{ getCurrentProject.project_vimeo.title }}</h2>
             <p class="text project-part__intro">{{ getCurrentProject.project_vimeo.intro }}</p>
         </div>
 
-        <div class="project-part__vimeo">
+        <div class="project-part__vimeo" >
           <iframe :src="getCurrentProject.project_vimeo.url" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
       </section>
 
-      <projectSwitcher 
+      <projectSwitcher
         v-bind:prevProject="prevProject"
         v-bind:nextProject="nextProject"></projectSwitcher>
     </div>
@@ -76,6 +76,8 @@
   import { mapGetters } from 'vuex'
   import dataJson from '../assets/datas.json'
   import ProjectSwitcher from './ProjectSwitcher.vue'
+
+  import vueSmoothScroll from 'vue-smooth-scroll'
 
   export default {
     name: 'project',
@@ -143,6 +145,7 @@
     },
     watch: {
       '$route' (to, from) {
+        window.scrollTo(0, 0)
         for (var i = 0; i < this.getProjects.length; i++) {
           if (this.getProjects[i].slug === to.path.replace('/', '')) {
             this.$store.commit('SET_CURRENT_PROJECT', this.getProjects[i])

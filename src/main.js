@@ -5,6 +5,9 @@ import App from './App'
 import router from './router'
 import store from './store'
 
+import vueSmoothScroll from 'vue-smooth-scroll'
+Vue.use(vueSmoothScroll)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
