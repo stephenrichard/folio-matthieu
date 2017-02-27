@@ -1,7 +1,7 @@
 <template>
 	<div class="project-switcher wrapper">
 		
-		<router-link to="" class="project-link previous-project-link purple">
+		<router-link :to="getPreviousProject.slug" class="project-link previous-project-link purple">
 
 			<span class="project-part__title">{{ getPreviousProject.name }}</span>
       <div class="project-link__skills">
@@ -12,7 +12,7 @@
 		</router-link>
 
 
-		<router-link to="" class="project-link next-project-link green">
+		<router-link :to="getNextProject.slug" class="project-link next-project-link green">
 
       <span class="project-part__title">{{ getNextProject.name }}</span>
 			<div class="project-link__skills">
