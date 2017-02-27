@@ -65,7 +65,9 @@
         </div>
       </section>
 
-      <!-- <projectSwitcher></projectSwitcher> -->
+      <projectSwitcher 
+        v-bind:prevProject="prevProject"
+        v-bind:nextProject="nextProject"></projectSwitcher>
     </div>
 	</div>
 </template>
@@ -83,6 +85,12 @@
         'getCurrentProject'
       ])
     },
+    data () {
+      return {
+        nextProject: null,
+        prevProject: null
+      }
+    },
     components: {
       projectSwitcher: ProjectSwitcher
     },
@@ -91,7 +99,7 @@
     },
     beforeMount () {
       var pageFound = false
-      var index = 0
+      var currentIndex = 0
       var projects = (this.getProjects === null) ? dataJson.projects : this.getProjects
       var param = this.$route.params.project_name || null
 
@@ -99,17 +107,37 @@
         for (var i = 0; i < projects.length; i++) {
           if (projects[i].slug === param) {
             pageFound = true
-            index = i
+            currentIndex = i
           }
         }
         // Redirect home if page does not exist
-        console.log('page found ' + pageFound)
         if (pageFound === true) {
-          this.$store.commit('SET_CURRENT_PROJECT', projects[index])
+          this.$store.commit('SET_CURRENT_PROJECT', projects[currentIndex])
         } else {
           this.$router.push('/')
         }
       }
+
+      var nextProject = null
+      var prevProject = null
+
+      if (currentIndex < projects.length) {
+        nextProject = parseInt(this.getCurrentProject.id) + 1
+      } else {
+        nextProject = 0
+      }
+
+      if (currentIndex > 0) {
+        prevProject = currentIndex - 1
+      } else {
+        prevProject = projects.length - 1
+      }
+
+      // Store the next and previous projects datas (will be easy to fetch them then)
+      // this.$store.commit('SET_NEXT_PROJECT', projects[nextProject])
+      // this.$store.commit('SET_PREV_PROJECT', projects[prevProject])
+      this.nextProject = projects[nextProject]
+      this.prevProject = projects[prevProject]
     }
   }
 </script>
