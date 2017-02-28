@@ -92,7 +92,7 @@
 			"decoration": {
 				"disposition": "contain",
 				"images": [
-					"./static/img/4ltrophy/Domingo","first-part-img-1.png"
+					"./static/img/4ltrophy/first-part-img-1.png"
 				]
 			},
 			"project_first_part": {
@@ -110,7 +110,7 @@
 			"project_screen_part": {
 				"title": "Tracking and colors",
 				"intro": "Once the render finished, I realized that I forgot to export 3D datas to track easely the screens on After Effects to add the tutorial video. So I used Mocha with a result I had to be satisfied with. I worked as well on the colorimetry adding more saturation.",
-				"picture": "static/img/4ltrophy/designboard.png"
+				"picture": "./static/img/4ltrophy/designboard.png"
 			},
 			"project_vimeo": {
 				"title": "Voice over",

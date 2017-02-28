@@ -31,6 +31,10 @@ $dark : #3C3C3C;
 		}
 	}
 
+	.back-link {
+		color: $pink;
+	}
+
 }
 
 .green, [data-color="green"] {
@@ -56,6 +60,10 @@ $dark : #3C3C3C;
 		&:before {
 	    	background-color: $green
 		}
+	}
+
+	.back-link {
+		color: $green;
 	}
 }
 
@@ -83,6 +91,10 @@ $dark : #3C3C3C;
 	    	background-color: $yellow
 		}
 	}
+
+	.back-link {
+		color: $yellow;
+	}
 }
 
 .blue, [data-color="blue"] {
@@ -109,6 +121,10 @@ $dark : #3C3C3C;
 	    	background-color: $blue
 		}
 	}
+
+	.back-link {
+		color: $blue;
+	}
 }
 
 .purple, [data-color="purple"] {
@@ -134,6 +150,10 @@ $dark : #3C3C3C;
 		&:before {
 	    	background-color: $purple
 		}
+	}
+
+	.back-link {
+		color: $purple;
 	}
 }
 
