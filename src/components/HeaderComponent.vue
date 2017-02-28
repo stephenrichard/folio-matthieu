@@ -79,19 +79,19 @@
           transition: color ease .2s
 
           &:hover
-            color: white
-
             &:before
-              height: 35px
+              // width: 100%
+              width: 6px
+              transform: translateX(130px)
 
           &:before
             position: absolute
             content: ''
-            top: 0
+            top: 17px
             left: 0
-            right: 0
-            height: 6px
+            height: 3px
+            width: 20px
             z-index: -1
-            transition: height .3s ease
+            transition: transform .3s ease, width .2s ease
 
 </style>
