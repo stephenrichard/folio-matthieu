@@ -32,7 +32,7 @@
   @import './stylesheets/main'
 
   #app
-    font-family: 'Avenir', Helvetica, Arial, sans-serif
+    font-family: $font
     -webkit-font-smoothing: antialiased
     -moz-osx-font-smoothing: grayscale
     color: #2c3e50

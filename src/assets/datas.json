@@ -6,7 +6,7 @@
 			"slug": "voices-of-legends",
 			"color": "pink",
 			"color_code": "#FC389A",
-			"color_bg": "#212639",
+			"color_bg": "#121639",
 			"main_image": "./static/img/voices/main-image.png",
 			"skills": ["Art direction", "Storyboards", "motion design", "sound design"],
 			"header_content": "Voices of legends is a mini-game based on the famous video-game League of Legends and developped by a french streamer Domingo. The goal is to find 20 champions’s voices in the shortest amount of time. The players are rewarded thanks to xp and chest with bonus on the domingo.tv website. My job was to create the teaser.",
