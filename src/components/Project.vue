@@ -5,7 +5,7 @@
 
       <section class=" wrapper project-header pink">
         <h1 class="project-title color-gray">{{ getCurrentProject.name }}</h1>
-        <p class="project-subtitle color-colored"><span v-for="skill in getCurrentProject.skills">{{ skill }} </span></p>
+        <p class="project-subtitle color-colored"><span v-for="(skill, index) in getCurrentProject.skills" :class="{ last: index === (getCurrentProject.skills.length - 1) }">{{ skill }} <span class="line">- </span></span></p>
         <div class="project-header__content">
           <p class="text">{{ getCurrentProject.header_content }}</p>
           </div>

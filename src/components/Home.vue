@@ -12,8 +12,8 @@
               <span class="rectangle color-colored"></span>
             </router-link>
             <div class="project__datas">
-              <h2 class="slider-title color-colored">Voices of legends</h2>
-              <div class="slider-subtitle skills color-gray"><span>Art direction</span> - <span>Motion design</span> - <span>Sound design</span></div>
+              <h2 class="slider-title color-colored">{{ work.name }}</h2>
+              <div class="slider-subtitle skills color-gray"><span v-for="(skill, index) in work.skills" :class="{ last: index === (work.skills.length - 1) }">{{ skill }} <span class="line">- </span></span></div>
             </div>
           </div>
 
@@ -59,12 +59,14 @@
       // Handle arrow navigation
       document.addEventListener('keyup', function (e) {
         if (e.keyCode === 37) {
+          // You can't go back if you're on the first project
           if (that.currentWork > 0) {
             that.goPrev(that.currentWork - 1)
           }
         }
 
         if (e.keyCode === 39) {
+          // You can't continue if you've reached the last project
           if (that.currentWork < that.getProjects.length - 1) {
             that.goNext(that.currentWork + 1)
           }
@@ -127,6 +129,7 @@
         tl.add('switch')
         tl.to(oldProjectSquare, 0.6, {
           x: '-150%',
+          delay: 0.2,
           ease: Power2.easeOut
         }, 'switch')
         tl.to(oldProject, 0.6, {

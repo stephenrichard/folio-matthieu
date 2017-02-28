@@ -4,8 +4,8 @@
 		<router-link :to="prevProject.slug" class="project-link previous-project-link">
 
 			<span class="project-part__title">{{ prevProject.name }}</span>
-      <div class="project-link__skills">
-        <span v-for="skill in prevProject.skills">{{ skill }} - </span>
+      <div class="project-link__skills project-subtitle">
+        <span v-for="(skill, index) in prevProject.skills" :class="{ last: index === (prevProject.skills.length - 1) }">{{ skill }} </span>
       </div>
       <span class="project-link__rect" :style="{ 'background-color': prevProject.color_code }"></span>
 
@@ -15,8 +15,8 @@
 		<router-link :to="nextProject.slug" class="project-link next-project-link">
 
       <span class="project-part__title">{{ nextProject.name }}</span>
-			<div class="project-link__skills">
-        <span v-for="skill in nextProject.skills">{{ skill }} - </span>
+			<div class="project-link__skills project-subtitle">
+        <span v-for="(skill, index) in nextProject.skills" :class="{ last: index === (nextProject.skills.length - 1) }">{{ skill }} <span class="line">- </span></span>
       </div>
       <span class="project-link__rect" :style="{ 'background-color': nextProject.color_code }"></span>
 

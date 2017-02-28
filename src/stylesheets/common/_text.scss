@@ -63,6 +63,12 @@
 	font-weight: bold;
 	letter-spacing: 0.9px;
 	color : white;
+
+	span.last {
+		.line {
+			display: none;
+		}
+	}
 }
 
 // PROJECT CASE STUDY
@@ -79,6 +85,12 @@
 	font-size: 12px;
 	text-transform: uppercase;
 	letter-spacing: 0.86px;
+
+	span.last {
+		.line {
+			display: none;
+		}
+	}
 }
 
 .project-part__title {
