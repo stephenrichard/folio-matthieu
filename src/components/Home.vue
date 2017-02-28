@@ -22,7 +22,7 @@
       </div>
 
       <ul id="works-nav">
-        <li class="nav-item" v-for="(work, index) in getProjects" v-on:click="goTo" :data-color="work.color" :data-index="index">
+        <li class="nav-item" v-for="(work, index) in getProjects" v-on:click="goTo(index)" :data-color="work.color" :data-index="index">
           <span class="inner"></span>
           <span class="work-name slider-subtitle ">{{ work.name }}</span>
         </li>
@@ -40,7 +40,7 @@
     data () {
       return {
         msg: 'Welcome Home',
-        currentWork: '0'
+        currentWork: 0
       }
     },
     computed: {
@@ -57,98 +57,109 @@
       this.$el.querySelectorAll('.nav-item[data-index="0"]')[0].className += ' active'
 
       // Handle arrow navigation
-      // document.addEventListener('keyup', function (e) {
-      //   if (e.keyCode === 37) {
-      //     that.goPrev()
-      //   }
-
-      //   if (e.keyCode === 39) {
-      //     that.goNext()
-      //   }
-      // }, false)
-    },
-    methods: {
-      goTo (e) {
-        var target = e.currentTarget
-        var clickedIndex = target.getAttribute('data-index')
-        var oldProject = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"]')
-        var oldProjectSquare = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] span')
-        var matchingProject = this.$el.querySelectorAll('.project[data-index="' + clickedIndex + '"]')
-        var matchingProjectSquare = this.$el.querySelectorAll('.project[data-index="' + clickedIndex + '"] span')
-        var navItems = this.$el.querySelectorAll('.nav-item')
-
-        if (clickedIndex !== this.currentWork) {
-          var tl = new TimelineLite()
-          if (clickedIndex < this.currentWork) {
-            tl.set(matchingProject, {
-              x: '-100%'
-            })
-            tl.set(matchingProjectSquare, {
-              x: '-150%'
-            })
-            tl.add('switch')
-            tl.to(oldProjectSquare, 0.6, {
-              x: '150%',
-              ease: Power2.easeOut
-            }, 'switch')
-            tl.to(oldProject, 0.6, {
-              x: '100%',
-              opacity: 0,
-              delay: 0,
-              ease: Power2.easeOut
-            }, 'switch')
-            tl.to(matchingProject, 0.8, {
-              x: '0%',
-              opacity: 1,
-              delay: 0.3,
-              ease: Power2.easeOut
-            }, 'switch')
-            tl.to(matchingProjectSquare, 0.8, {
-              x: '0%',
-              delay: 0.4,
-              ease: Power2.easeOut
-            }, 'switch')
-          } else {
-            tl.set(matchingProject, {
-              x: '100%'
-            })
-            tl.set(matchingProjectSquare, {
-              x: '150%'
-            })
-            tl.add('switch')
-            tl.to(oldProjectSquare, 0.6, {
-              x: '-150%',
-              ease: Power2.easeOut
-            }, 'switch')
-            tl.to(oldProject, 0.6, {
-              x: '-100%',
-              opacity: 0,
-              delay: 0.2,
-              ease: Power2.easeOut
-            }, 'switch')
-            tl.to(matchingProject, 0.8, {
-              x: '0%',
-              opacity: 1,
-              delay: 0.3,
-              ease: Power2.easeOut
-            }, 'switch')
-            tl.to(matchingProjectSquare, 0.8, {
-              x: '0%',
-              delay: 0.4,
-              ease: Power2.easeOut
-            }, 'switch')
+      document.addEventListener('keyup', function (e) {
+        if (e.keyCode === 37) {
+          if (that.currentWork > 0) {
+            that.goPrev(that.currentWork - 1)
           }
         }
 
-        this.currentWork = clickedIndex
+        if (e.keyCode === 39) {
+          if (that.currentWork < that.getProjects.length - 1) {
+            that.goNext(that.currentWork + 1)
+          }
+        }
+      }, false)
+    },
+    methods: {
+      goTo (index) {
+        if (index !== this.currentWork) {
+          if (index < this.currentWork) {
+            this.goPrev(index)
+          } else {
+            this.goNext(index)
+          }
+        }
+      },
+      goPrev (index) {
+        var oldProject = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"]')
+        var oldProjectSquare = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] span')
+        var matchingProject = this.$el.querySelectorAll('.project[data-index="' + index + '"]')
+        var matchingProjectSquare = this.$el.querySelectorAll('.project[data-index="' + index + '"] span')
 
-        // Change background
-        // this.$refs.homePage.style.background = 'url(./static/img/patterns/pattern-' + clickedIndex + '.png)'
+        var tl = new TimelineLite()
+        tl.set(matchingProject, { x: '-100%' })
+        tl.set(matchingProjectSquare, { x: '-150%' })
+        tl.add('switch')
+        tl.to(oldProjectSquare, 0.6, {
+          x: '150%',
+          ease: Power2.easeOut
+        }, 'switch')
+        tl.to(oldProject, 0.6, {
+          x: '100%',
+          opacity: 0,
+          delay: 0,
+          ease: Power2.easeOut
+        }, 'switch')
+        tl.to(matchingProject, 0.8, {
+          x: '0%',
+          opacity: 1,
+          delay: 0.3,
+          ease: Power2.easeOut
+        }, 'switch')
+        tl.to(matchingProjectSquare, 0.8, {
+          x: '0%',
+          delay: 0.4,
+          ease: Power2.easeOut
+        }, 'switch')
+
+        this.projectHasChanged(index)
+      },
+      goNext (index) {
+        var oldProject = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"]')
+        var oldProjectSquare = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] span')
+        var matchingProject = this.$el.querySelectorAll('.project[data-index="' + index + '"]')
+        var matchingProjectSquare = this.$el.querySelectorAll('.project[data-index="' + index + '"] span')
+
+        var tl = new TimelineLite()
+        tl.set(matchingProject, { x: '100%' })
+        tl.set(matchingProjectSquare, { x: '150%' })
+        tl.add('switch')
+        tl.to(oldProjectSquare, 0.6, {
+          x: '-150%',
+          ease: Power2.easeOut
+        }, 'switch')
+        tl.to(oldProject, 0.6, {
+          x: '-100%',
+          opacity: 0,
+          delay: 0.2,
+          ease: Power2.easeOut
+        }, 'switch')
+        tl.to(matchingProject, 0.8, {
+          x: '0%',
+          opacity: 1,
+          delay: 0.3,
+          ease: Power2.easeOut
+        }, 'switch')
+        tl.to(matchingProjectSquare, 0.8, {
+          x: '0%',
+          delay: 0.4,
+          ease: Power2.easeOut
+        }, 'switch')
+
+        this.projectHasChanged(index)
+      },
+      projectHasChanged (index) {
+        // Update the current work index
+        this.currentWork = index
+
+        var navItems = this.$el.querySelectorAll('.nav-item')
         // Reset nav items class active
         navItems.forEach(function (item) {
           item.className = 'nav-item'
         })
-        this.$el.querySelectorAll('.nav-item[data-index="' + clickedIndex + '"]')[0].className += ' active'
+        // Set the new nav item as active
+        this.$el.querySelectorAll('.nav-item[data-index="' + index + '"]')[0].className += ' active'
       }
     }
   }
