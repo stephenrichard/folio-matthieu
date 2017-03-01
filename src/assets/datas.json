@@ -155,7 +155,8 @@
 			"project_vimeo": {
 				"title": "Prototype",
 				"intro": "You can watch a prototype developped by Martin Ziserman, Stephen Richard and Boris Laporte at geek-art.borislaporte.com.",
-				"url": "./static/img/geek-art/vimeo.png"
+				"url": "",
+				"poster": "./static/img/geek-art/vimeo.png"
 			}
 		},
 		{
@@ -181,21 +182,10 @@
 				"picture": "./static/img/lost-edge/moodboard.png"
 			},
 			"banner": "./static/img/lost-edge/banner.png",
-			"project_preparation_part": {
-				"title": "",
-				"intro": "",
-				"picture": "",
-				"decoration": ""
-			},
 			"project_screen_part": {
 				"title": "First storyboard draft",
 				"intro": "",
 				"picture": "./static/img/lost-edge/designboard.png"
-			},
-			"project_vimeo": {
-				"title": "",
-				"intro": "",
-				"url": ""
 			}
 		}
 	]

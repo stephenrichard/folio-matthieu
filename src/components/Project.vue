@@ -32,7 +32,9 @@
         <div class="project-part__bannerBackground" :style="{ 'background-image': 'url(' + getCurrentProject.banner + ')' }"></div>
       </section>
 
-      <section class="wrapper project-part">
+      <section 
+        v-if='getCurrentProject.project_preparation_part'
+        class="wrapper project-part">
         <img class="project-part__decoration" :src="getCurrentProject.project_preparation_part.decoration" alt="">
         <div class="project-part__header">
           <h2 class="project-part__title color-gray">{{ getCurrentProject.project_preparation_part.title }}</h2>
@@ -43,7 +45,9 @@
         </div>
       </section>
 
-      <section class=" wrapper project-part">
+      <section 
+        v-if="getCurrentProject.project_screen_part"
+        class=" wrapper project-part">
         <div class="project-part__header">
             <h2 class="project-part__title color-gray">{{ getCurrentProject.project_screen_part.title }}</h2>
             <p class="text project-part__intro">{{ getCurrentProject.project_screen_part.intro }}</p>
@@ -54,14 +58,28 @@
         </div>
       </section>
 
-      <section class="wrapper project-part" id="vimeo">
+      <section 
+        v-if="getCurrentProject.project_vimeo"
+        class="wrapper project-part" 
+        id="vimeo">
         <div class="project-part__header">
             <h2 class="project-part__title color-gray">{{ getCurrentProject.project_vimeo.title }}</h2>
             <p class="text project-part__intro">{{ getCurrentProject.project_vimeo.intro }}</p>
         </div>
 
-        <div class="project-part__vimeo" >
-          <iframe :src="getCurrentProject.project_vimeo.url" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <div class="project-part__vimeo">
+          <iframe 
+            v-if="getCurrentProject.project_vimeo.url != ''"
+            :src="getCurrentProject.project_vimeo.url" 
+            frameborder="0" 
+            webkitallowfullscreen 
+            mozallowfullscreen 
+            allowfullscreen></iframe>
+          <img  
+            v-else
+            class="poster"
+            :src="getCurrentProject.project_vimeo.poster"
+            :alt="getCurrentProject.name">
         </div>
       </section>
 
