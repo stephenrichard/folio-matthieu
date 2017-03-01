@@ -77,6 +77,11 @@
       text-align: center
       background-color: #EAEAEA
 
+      .project-part__title,
+      .project-link__skills
+        transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1)
+
+
       .project-link__rect
         display: flex
         flex-direction: column
@@ -91,11 +96,6 @@
           position: relative;
           opacity: 0;
           width: auto
-
-
-
-
-
 
       &.previous-project-link
         float: left
@@ -115,13 +115,13 @@
         &:hover
           .project-link__rect
             transform: translateX(0%) !important
-            width: 190% !important;
-            z-index: 3;
+            width: 200% !important;
+            z-index: 30;
 
 
           .project-part__title,
           .project-link__skills
-            z-index: 4;
+            z-index: 100000;
 
           .project-link__info
             opacity: 1;
@@ -151,8 +151,8 @@
         &:hover
           .project-link__rect
             transform: translateX(0%) !important
-            width: 190% !important;
-            z-index: 2;
+            width: 200% !important;
+            z-index: 3;
 
             .project-link__info
               opacity: 1;
@@ -160,7 +160,7 @@
 
           .project-part__title,
           .project-link__skills
-            z-index: 4;
+            z-index: 20;
 
 
         .project-link__rect
@@ -173,6 +173,8 @@
         color: white
         line-height: 45px
         z-index: 2
+
+
 
       &__skills
         color: $dark
