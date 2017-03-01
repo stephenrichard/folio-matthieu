@@ -8,7 +8,7 @@
         <div class="project" v-for="(work, index) in getProjects" :data-color="work.color" :data-index="index">
           <div class="project-wrapper">
             <router-link :to="work.slug" class="project__cover">
-              <img :src="work.main_image" alt="work.name">
+              <img class="project-image" :src="work.main_image">
               <span class="rectangle color-colored"></span>
             </router-link>
             <div class="project__datas">
@@ -207,12 +207,11 @@
 
           margin: 0 auto
 
-          img
+          .project-image
             position: relative
-            // width: 730px
-            // height: auto
-            width: 100%;
-            height: auto;
+            width: 98%;
+            height: 100%;
+            max-height: 600px
             z-index: 2
 
           .rectangle
@@ -233,6 +232,7 @@
       bottom: 50px
       left: 50%
       transform: translateX(-50%)
+      white-space: nowrap
       z-index: 3
 
       .nav-item
