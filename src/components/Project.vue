@@ -117,46 +117,31 @@
     mounted () {
     },
     beforeMount () {
+      var that = this
       var pageFound = false
       var currentIndex = 0
-      var projects = (this.getProjects === null) ? dataJson.projects : this.getProjects
+      // After a refresh on this page, the vuex store will be empty
+      if (this.getProjects === null) {
+        this.getProjects = dataJson.projects
+      }
       var param = this.$route.params.project_name || null
 
       if (param != null) {
-        for (var i = 0; i < projects.length; i++) {
-          if (projects[i].slug === param) {
+        for (var i = 0; i < this.getProjects.length; i++) {
+          if (that.getProjects[i].slug === param) {
             pageFound = true
             currentIndex = i
           }
         }
         // Redirect home if page does not exist
         if (pageFound === true) {
-          this.$store.commit('SET_CURRENT_PROJECT', projects[currentIndex])
+          this.$store.commit('SET_CURRENT_PROJECT', this.getProjects[currentIndex])
         } else {
           this.$router.push('/')
         }
       }
 
-      var nextProject = null
-      var prevProject = null
-
-      if (currentIndex < projects.length - 1) {
-        nextProject = parseInt(this.getCurrentProject.id)
-      } else {
-        nextProject = 0
-      }
-
-      if (currentIndex > 0) {
-        prevProject = currentIndex - 1
-      } else {
-        prevProject = projects.length - 1
-      }
-
-      // Store the next and previous projects datas (will be easy to fetch them then)
-      // this.$store.commit('SET_NEXT_PROJECT', projects[nextProject])
-      // this.$store.commit('SET_PREV_PROJECT', projects[prevProject])
-      this.nextProject = projects[nextProject]
-      this.prevProject = projects[prevProject]
+      this.setSwitcherPages(currentIndex, this.getProjects)
 
       // Set page name
       this.$store.commit('SET_PAGE', 'project')
@@ -168,9 +153,36 @@
         }
         for (var i = 0; i < this.getProjects.length; i++) {
           if (this.getProjects[i].slug === to.path.replace('/', '')) {
+            // Update the current project datas
             this.$store.commit('SET_CURRENT_PROJECT', this.getProjects[i])
+            // Update the page switcher
+            this.setSwitcherPages(i)
           }
         }
+      }
+    },
+    methods: {
+      setSwitcherPages (currentIndex) {
+        var nextProject = null
+        var prevProject = null
+
+        if (currentIndex < this.getProjects.length - 1) {
+          nextProject = parseInt(this.getCurrentProject.id) + 1
+        } else {
+          nextProject = 0
+        }
+
+        if (currentIndex > 0) {
+          prevProject = currentIndex - 1
+        } else {
+          prevProject = this.getProjects.length - 1
+        }
+
+        // Store the next and previous projects datas (will be easy to fetch them then)
+        // this.$store.commit('SET_NEXT_PROJECT', projects[nextProject])
+        // this.$store.commit('SET_PREV_PROJECT', projects[prevProject])
+        this.nextProject = this.getProjects[nextProject]
+        this.prevProject = this.getProjects[prevProject]
       }
     }
   }
