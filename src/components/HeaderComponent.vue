@@ -6,8 +6,15 @@
       	<h1 class="color-gray small-text">Matthieu Tourdes</h1>
       </router-link>
       <div class="more-back-links">
-        <router-link v-if="getPage === 'home'" to="/about" class="small-text">More about me</router-link>
-        <router-link v-show="getPage != 'home'" to="/" class="back-link small-text before-colored project-bar">Back to menu</router-link>
+        <router-link 
+          v-if="getPage === 'home'" 
+          to="/about" 
+          class="small-text">More about me</router-link>
+        <router-link 
+          v-show="getPage != 'home'"
+          to="/" 
+          v-bind:class="{ about: this.getPage === 'about' }"
+          class="back-link small-text before-colored project-bar">Back to menu</router-link>
       </div>
     </header>
   </div>
@@ -71,23 +78,26 @@
 
         .back-link
           position: relative
-          padding-top: 10px
           font-weight: 800
           font-size: 11px
+          line-height: 14px
           color: $dark
           text-align: center
           transition: color ease .2s
 
+          &.about
+            &:before
+              background-color: $red
+
           &:hover
             &:before
-              // width: 100%
               width: 6px
               transform: translateX(130px)
 
           &:before
             position: absolute
             content: ''
-            top: 17px
+            top: 5px
             left: 0
             height: 3px
             width: 20px
