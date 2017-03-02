@@ -112,7 +112,7 @@ export default {
       .page-about-rec
         position: absolute
         right: 100px
-        bottom: 30px
+        bottom: 20px
 
         span
           position: relative

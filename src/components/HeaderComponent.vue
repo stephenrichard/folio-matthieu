@@ -86,15 +86,36 @@
           transition: color ease .2s
 
           &.about
-            &:before
-              background-color: $red
+            color: white
+            transition: transform .3s
 
-          &:hover
-            &:before
-              width: 6px
+            &:after
+              position: absolute
+              content: ''
+              right: 0px
+              top: auto
+              left: auto
+              bottom: -23px
+              width: 29px;
+              height: 102px;
+              background-image: url(../assets/menu-animation.png)
+              background-color: transparent !important
+              background-position: 0 0
+              opacity: 0
+              transform: scale(0.7)
+              transition: opacity .4s
+
+            &:hover
+              &:after
+                opacity: 1
+                animation: bounce 1.2s steps(39) reverse
+
+          &:not(.about):hover
+            &:after
               transform: translateX(130px)
+              width: 10px
 
-          &:before
+          &:after
             position: absolute
             content: ''
             top: 5px
@@ -103,5 +124,9 @@
             width: 20px
             z-index: -1
             transition: transform .3s ease, width .2s ease
+
+  @keyframes bounce
+    100%
+      background-position: -1131px 0
 
 </style>
