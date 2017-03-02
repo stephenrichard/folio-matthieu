@@ -27,17 +27,25 @@
         done()
       },
       leave: function (el, done) {
+        var robot = el.querySelectorAll('img')
+
         var tl = new TimelineLite()
         .add('goOut')
         tl.to(this.$refs.wrapper, 0.7, {
-          y: '-100%',
+          y: '0%',
           ease: Power3.easeIn,
           delay: 1
         }, 'goOut')
-        tl.to(el, 1, {
-          y: '-100%',
-          ease: Power3.easeInOut,
-          delay: 1.4
+        tl.to(robot, 0.7, {
+          y: '-300%',
+          scale: 2,
+          ease: Power3.easeIn,
+          delay: 1
+        }, 'goOut')
+        tl.to(el, 0.5, {
+          opacity: 0,
+          ease: Power3.linear,
+          delay: 2
         }, 'goOut')
         tl.set(el, {
           opacity: 0,
