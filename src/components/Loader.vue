@@ -4,7 +4,7 @@
     v-on:leave="leave">
     <div id="loader" v-show="!isLoaded">
       <div class="wrapper" ref="wrapper">
-         <p class="text">Loading...</p>
+         <img class="robot" src="/static/img/robot.png" alt="">
        </div>
     </div> 
   </transition>
@@ -60,6 +60,7 @@
     background-color: #121639
     text-align: center
     z-index: 6
+    overflow: hidden
 
     .wrapper
       display: flex
@@ -67,14 +68,7 @@
       align-items: center
       height: 100%
 
-    .text
-      color: white
-      text-transform: uppercase
-      opacity: 0.2
-      animation: load 0.7s ease infinite alternate
-
-  @keyframes load
-    100%
-      opacity: 1
+    .robot
+      height: 200px
 
 </style>

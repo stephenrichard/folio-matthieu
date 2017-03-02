@@ -55,7 +55,45 @@
           'static/img/menu-animation/yellow.png',
           'static/img/menu-animation/blue.png',
           'static/img/menu-animation/purple.png',
-          'static/img/menu-animation/red.png'
+          'static/img/menu-animation/red.png',
+          // Voices
+          'static/img/voices/banner.png',
+          'static/img/voices/decoration.png',
+          'static/img/voices/designboard.png',
+          'static/img/voices/first-part-img-1.png',
+          'static/img/voices/moodboard.png',
+          'static/img/voices/preparation.png',
+          // Domingo
+          'static/img/domingo/banner.png',
+          'static/img/domingo/decoration.png',
+          'static/img/domingo/designboard.png',
+          'static/img/domingo/first-part-img-1.png',
+          'static/img/domingo/first-part-img-2.png',
+          'static/img/domingo/moodboard.png',
+          'static/img/domingo/preparation.png',
+          // 4l trophy
+          'static/img/4ltrophy/banner.png',
+          'static/img/4ltrophy/decoration.png',
+          'static/img/4ltrophy/designboard.png',
+          'static/img/4ltrophy/first-part-img-1.png',
+          'static/img/4ltrophy/moodboard.png',
+          'static/img/4ltrophy/preparation.png',
+          // Geek art
+          'static/img/geek-art/banner.png',
+          'static/img/geek-art/preparation.png',
+          'static/img/geek-art/designboard.png',
+          'static/img/geek-art/first-part-img-1.png',
+          'static/img/geek-art/first-part-img-2.png',
+          'static/img/geek-art/moodboard.png',
+          'static/img/geek-art/preparation.png',
+          'static/img/geek-art/vimeo.png',
+          // Lost edge
+          'static/img/lost-edge/banner.png',
+          'static/img/lost-edge/decoration.png',
+          'static/img/lost-edge/designboard.png',
+          'static/img/lost-edge/first-part-img-1.png',
+          'static/img/lost-edge/first-part-img-2.png',
+          'static/img/lost-edge/moodboard.png'
         ]
       })
       .on('error', function (error) {
