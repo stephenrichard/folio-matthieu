@@ -38,6 +38,7 @@
         }, 'goOut')
         tl.to(robot, 0.7, {
           y: '-300%',
+          scale: 2,
           ease: Power3.easeIn,
           delay: 1
         }, 'goOut')
