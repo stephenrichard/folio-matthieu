@@ -71,7 +71,7 @@
           // You can't continue if you've reached the last project
           if (that.currentWork < that.getProjects.length - 1) {
             this.isAnimated = true
-            that.goNext(that.currentWork + 1)
+            that.goNext(parseInt(that.currentWork + 1))
           }
         }
       }, false)
