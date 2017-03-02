@@ -45,6 +45,26 @@
     z-index: 2
 
     header
+      &.pink
+        .back-link
+          &:after
+            background-image: url(../assets/menu-animation/pink.png)
+      &.blue
+        .back-link
+          &:after
+            background-image: url(../assets/menu-animation/blue.png)
+      &.green
+        .back-link
+          &:after
+            background-image: url(../assets/menu-animation/green.png)
+      &.yellow
+        .back-link
+          &:after
+            background-image: url(../assets/menu-animation/yellow.png)
+      &.purple
+        .back-link
+          &:after
+            background-image: url(../assets/menu-animation/purple.png)
 
       a
         display: inline-block
@@ -85,44 +105,31 @@
           text-align: center
           transition: color ease .2s
 
+          &:hover
+            &:after
+              opacity: 1
+              animation: bounce 1.2s steps(39) reverse
+
           &.about
             color: white
             transition: transform .3s
 
             &:after
-              position: absolute
-              content: ''
-              right: 0px
-              top: auto
-              left: auto
-              bottom: -12px
-              width: 29px;
-              height: 102px;
-              background-image: url(../assets/menu-animation.png)
-              background-color: transparent !important
-              background-position: 0 0
-              opacity: 0
-              transition: opacity .4s
-
-            &:hover
-              &:after
-                opacity: 1
-                animation: bounce 1.2s steps(39) reverse
-
-          &:not(.about):hover
-            &:after
-              transform: translateX(130px)
-              width: 10px
+              background-image: url(../assets/menu-animation/red.png)
 
           &:after
             position: absolute
             content: ''
-            top: 5px
-            left: 0
-            height: 3px
-            width: 20px
-            z-index: -1
-            transition: transform .3s ease, width .2s ease
+            right: 0px
+            top: auto
+            left: auto
+            bottom: -12px
+            width: 29px;
+            height: 102px;
+            background-color: transparent !important
+            background-position: 0 0
+            opacity: 0
+            transition: opacity .4s
 
   @keyframes bounce
     100%
