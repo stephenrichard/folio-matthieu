@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <loader v-show="!isLoaded" v-bind:progress="progress"></loader>
+    <loader></loader>
     <headerComponent></headerComponent>
     <router-view></router-view>
   </div>

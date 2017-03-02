@@ -260,6 +260,9 @@
         &.active
           cursor: pointer
 
+          .work-name
+            opacity: 1
+
           .inner
             &:before
               width: 100%
@@ -288,6 +291,8 @@
           font-size: 11px
           letter-spacing: 1.6px
           line-height: 14px
+          opacity: 0
+          transition: opacity .3s
 
 
 </style>
