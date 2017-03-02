@@ -6,7 +6,7 @@
       <div class="wrapper" ref="wrapper">
          <img class="robot" src="/static/img/robot.png" alt="">
        </div>
-    </div> 
+    </div>
   </transition>
 </template>
 
@@ -58,6 +58,7 @@
     width: 100%
     height: 100%
     background-color: #121639
+    background-image: url('../../static/img/patterns/pattern.png');
     text-align: center
     z-index: 6
     overflow: hidden
