@@ -11,7 +11,7 @@
         <div class="social-links">
           <a :href="'mailto:' + contact" class="social-link">Contact</a>
           <a :href="twitter" class="social-link first" target="_blank">Twitter</a>
-          <a :href="pinterest" class="social-link">Pinterest</a>
+          <a :href="pinterest" class="social-link" target="_blank">Pinterest</a>
           <a :href="linkedin" class="social-link" target="_blank">Linkedin</a>
         </div>
 

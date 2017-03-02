@@ -95,14 +95,13 @@
               right: 0px
               top: auto
               left: auto
-              bottom: -23px
+              bottom: -12px
               width: 29px;
               height: 102px;
               background-image: url(../assets/menu-animation.png)
               background-color: transparent !important
               background-position: 0 0
               opacity: 0
-              transform: scale(0.7)
               transition: opacity .4s
 
             &:hover
