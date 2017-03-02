@@ -6,13 +6,13 @@
       	<h1 class="color-gray small-text">Matthieu Tourdes</h1>
       </router-link>
       <div class="more-back-links">
-        <router-link 
-          v-if="getPage === 'home'" 
-          to="/about" 
+        <router-link
+          v-if="getPage === 'home'"
+          to="/about"
           class="small-text">More about me</router-link>
-        <router-link 
+        <router-link
           v-show="getPage != 'home'"
-          to="/" 
+          to="/"
           v-bind:class="{ about: this.getPage === 'about' }"
           class="back-link small-text before-colored project-bar">Back to menu</router-link>
       </div>

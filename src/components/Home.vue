@@ -22,7 +22,7 @@
       </div>
 
       <ul id="works-nav">
-        <li class="nav-item" v-for="(work, index) in getProjects" v-on:click="goTo(index)" :data-color="work.color" :data-index="index">
+        <li class="nav-item" v-for="(work, index) in getProjects" v-on:click="goToClick(index)" :data-color="work.color" :data-index="index">
           <span class="inner"></span>
           <span class="work-name slider-subtitle ">{{ work.name }}</span>
         </li>
@@ -40,7 +40,8 @@
     data () {
       return {
         msg: 'Welcome Home',
-        currentWork: 0
+        currentWork: 0,
+        isAnimated: false
       }
     },
     computed: {
@@ -52,9 +53,8 @@
     mounted () {
       var that = this
       this.$store.commit('SET_PAGE', 'home')
+      this.goTo(this.getCurrentProject.id)
 
-      this.$el.querySelectorAll('.project:first-child')[0].style.transform = 'translateX(0)'
-      this.$el.querySelectorAll('.nav-item[data-index="0"]')[0].className += ' active'
 
       // Handle arrow navigation
       document.addEventListener('keyup', function (e) {
@@ -74,6 +74,10 @@
       }, false)
     },
     methods: {
+      goToClick (index) {
+        this.isAnimated = true
+        this.goTo(index)
+      },
       goTo (index) {
         if (index !== this.currentWork) {
           if (index < this.currentWork) {
@@ -89,31 +93,37 @@
         var matchingProject = this.$el.querySelectorAll('.project[data-index="' + index + '"]')
         var matchingProjectSquare = this.$el.querySelectorAll('.project[data-index="' + index + '"] span')
 
-        var tl = new TimelineLite()
-        tl.set(matchingProject, { x: '-100%' })
-        tl.set(matchingProjectSquare, { x: '-150%' })
-        tl.add('switch')
-        tl.to(oldProjectSquare, 0.6, {
-          x: '150%',
-          ease: Power2.easeOut
-        }, 'switch')
-        tl.to(oldProject, 0.6, {
-          x: '100%',
-          opacity: 0,
-          delay: 0,
-          ease: Power2.easeOut
-        }, 'switch')
-        tl.to(matchingProject, 0.8, {
-          x: '0%',
-          opacity: 1,
-          delay: 0.3,
-          ease: Power2.easeOut
-        }, 'switch')
-        tl.to(matchingProjectSquare, 0.8, {
-          x: '0%',
-          delay: 0.4,
-          ease: Power2.easeOut
-        }, 'switch')
+        if (this.isAnimated) {
+          var tl = new TimelineLite()
+          tl.set(matchingProject, { x: '-100%' })
+          tl.set(matchingProjectSquare, { x: '-150%' })
+          tl.add('switch')
+          tl.to(oldProjectSquare, 0.6, {
+            x: '150%',
+            ease: Power2.easeOut
+          }, 'switch')
+          tl.to(oldProject, 0.6, {
+            x: '100%',
+            opacity: 0,
+            delay: 0,
+            ease: Power2.easeOut
+          }, 'switch')
+          tl.to(matchingProject, 0.8, {
+            x: '0%',
+            opacity: 1,
+            delay: 0.3,
+            ease: Power2.easeOut
+          }, 'switch')
+          tl.to(matchingProjectSquare, 0.8, {
+            x: '0%',
+            delay: 0.4,
+            ease: Power2.easeOut
+          }, 'switch')
+        } else {
+          var project = parseInt(this.getCurrentProject.id)
+          this.$el.querySelectorAll('.project:nth-child(' + project + ')')[0].style.transform = 'translateX(0)'
+          this.$el.querySelectorAll('.nav-item[data-index="0"]')[0].className += ' active'
+        }
 
         this.projectHasChanged(index)
       },
@@ -123,38 +133,46 @@
         var matchingProject = this.$el.querySelectorAll('.project[data-index="' + index + '"]')
         var matchingProjectSquare = this.$el.querySelectorAll('.project[data-index="' + index + '"] span')
 
-        var tl = new TimelineLite()
-        tl.set(matchingProject, { x: '100%' })
-        tl.set(matchingProjectSquare, { x: '150%' })
-        tl.add('switch')
-        tl.to(oldProjectSquare, 0.6, {
-          x: '-150%',
-          delay: 0.2,
-          ease: Power2.easeOut
-        }, 'switch')
-        tl.to(oldProject, 0.6, {
-          x: '-100%',
-          opacity: 0,
-          delay: 0.2,
-          ease: Power2.easeOut
-        }, 'switch')
-        tl.to(matchingProject, 0.8, {
-          x: '0%',
-          opacity: 1,
-          delay: 0.3,
-          ease: Power2.easeOut
-        }, 'switch')
-        tl.to(matchingProjectSquare, 0.8, {
-          x: '0%',
-          delay: 0.4,
-          ease: Power2.easeOut
-        }, 'switch')
+        if (this.isAnimated) {
+          var tl = new TimelineLite()
+          tl.set(matchingProject, { x: '100%' })
+          tl.set(matchingProjectSquare, { x: '150%' })
+          tl.add('switch')
+          tl.to(oldProjectSquare, 0.6, {
+            x: '-150%',
+            delay: 0.2,
+            ease: Power2.easeOut
+          }, 'switch')
+          tl.to(oldProject, 0.6, {
+            x: '-100%',
+            opacity: 0,
+            delay: 0.2,
+            ease: Power2.easeOut
+          }, 'switch')
+          tl.to(matchingProject, 0.8, {
+            x: '0%',
+            opacity: 1,
+            delay: 0.3,
+            ease: Power2.easeOut
+          }, 'switch')
+          tl.to(matchingProjectSquare, 0.8, {
+            x: '0%',
+            delay: 0.4,
+            ease: Power2.easeOut
+          }, 'switch')
+        } else {
+          var project = parseInt(this.getCurrentProject.id) + 1
+          this.$el.querySelectorAll('.project:nth-child(' + project + ')')[0].style.transform = 'translateX(0)'
+          this.$el.querySelectorAll('.nav-item[data-index="0"]')[0].className += ' active'
+        }
 
         this.projectHasChanged(index)
       },
       projectHasChanged (index) {
         // Update the current work index
         this.currentWork = index
+        this.$store.commit('SET_CURRENT_PROJECT', this.getProjects[index])
+        console.log(this.getCurrentProject.id)
 
         var navItems = this.$el.querySelectorAll('.nav-item')
         // Reset nav items class active
