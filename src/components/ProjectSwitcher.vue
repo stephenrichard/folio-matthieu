@@ -129,7 +129,7 @@
 
           .project-link__info
             opacity: 1;
-            transition: all 0.2s linear 0.2s
+            transition: all 0.2s linear 0.3s
 
         .project-link__rect
           left: 0
