@@ -55,7 +55,6 @@
       this.$store.commit('SET_PAGE', 'home')
       this.goTo(this.getCurrentProject.id)
 
-
       // Handle arrow navigation
       document.addEventListener('keyup', function (e) {
         if (e.keyCode === 37) {
