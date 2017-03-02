@@ -87,6 +87,10 @@
         flex-direction: column
         justify-content: center
         height: 100%;
+        position: absolute
+        width: 100%
+        transition: all .6s cubic-bezier(0.77, 0, 0.175, 1)
+        z-index: 1
 
         .project-link__info
           font-size: 12px;
@@ -182,11 +186,6 @@
         font-weight: 800
         z-index: 2
 
-      &__rect
-        position: absolute
-        width: 100%
-        height: 100%
-        transition: all .6s cubic-bezier(0.77, 0, 0.175, 1)
-        z-index: 1
+
 
 </style>
