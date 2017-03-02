@@ -5,7 +5,8 @@ const state = {
   projects: null,
   currentProject: null,
   prevProject: null,
-  nextProject: null
+  nextProject: null,
+  loaded: false
 }
 
 const getters = {
@@ -23,6 +24,9 @@ const getters = {
   },
   getNextProject: state => {
     return state.nextProject
+  },
+  isLoaded: state => {
+    return state.loaded
   }
 }
 
@@ -41,6 +45,9 @@ const mutations = {
   },
   [types.SET_NEXT_PROJECT] (state, nextProjectState) {
     state.nextProject = nextProjectState
+  },
+  [types.SET_LOADING] (state, loadedState) {
+    state.loaded = loadedState
   }
 }
 

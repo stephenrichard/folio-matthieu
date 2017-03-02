@@ -92,7 +92,7 @@
 
 <script>
   import { mapGetters } from 'vuex'
-  import dataJson from '../assets/datas.json'
+  import dataJson from '../../static/datas.json'
   import ProjectSwitcher from './ProjectSwitcher.vue'
 
   import vueSmoothScroll from 'vue-smooth-scroll'

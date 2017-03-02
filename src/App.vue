@@ -1,15 +1,17 @@
 <template>
   <div id="app">
-    <!-- <loader></loader> -->
+    <loader v-show="!isLoaded" v-bind:progress="progress"></loader>
     <headerComponent></headerComponent>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+  import assetsLoader from 'assets-loader'
   import Loader from './components/Loader'
   import Header from './components/HeaderComponent'
-  import dataJson from './assets/datas.json'
+  import dataJson from '../static/datas.json'
+  import { mapGetters } from 'vuex'
 
   export default {
     name: 'app',
@@ -19,14 +21,54 @@
     },
     data () {
       return {
-        projectsDatas: dataJson.projects
+        projectsDatas: dataJson.projects,
+        progress: null
       }
     },
+    computed: {
+      ...mapGetters([
+        'isLoaded'
+      ])
+    },
     beforeMount () {
+      var that = this
       this.$store.commit('STORE_PROJECTS', this.projectsDatas)
       this.$store.commit('SET_CURRENT_PROJECT', this.projectsDatas[0])
       // this.$store.commit('SET_NEXT_PROJECT', this.projectsDatas[1])
       // this.$store.commit('SET_PREV_PROJECT', this.projectsDatas[this.projectsDatas.length - 1])
+      var loader = assetsLoader({
+        assets: [
+          'static/datas.json',
+          'static/img/patterns/pattern.png',
+          // Main images
+          'static/img/voices/main-image.png',
+          'static/img/domingo/main-image.png',
+          'static/img/4ltrophy/main-image.png',
+          'static/img/geek-art/main-image.png',
+          'static/img/lost-edge/main-image.png',
+          // About page background
+          'static/img/bg-about-1x.png',
+          'static/img/bg-about-2x.png',
+          // Back link animations
+          'static/img/menu-animation/pink.png',
+          'static/img/menu-animation/green.png',
+          'static/img/menu-animation/yellow.png',
+          'static/img/menu-animation/blue.png',
+          'static/img/menu-animation/purple.png',
+          'static/img/menu-animation/red.png'
+        ]
+      })
+      .on('error', function (error) {
+        console.log(error)
+      })
+      .on('progress', function (progress) {
+        console.log((progress * 100).toFixed() + '%')
+      })
+      .on('complete', function (assets) {
+        console.log('Loading complete')
+        that.$store.commit('SET_LOADING', true)
+      })
+      .start()
     }
   }
 </script>

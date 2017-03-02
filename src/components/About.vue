@@ -50,13 +50,13 @@ export default {
   .page-about
     display: flex
     align-items: center
-    background-image: url(../assets/bg-about-2x.png)
+    background-image: url(../../static/img/bg-about-2x.png)
     -webkit-background-size: cover
     background-size: cover
     background-repeat: no-repeat
 
     @media (max-width: 1280px)
-      background-image: url(../assets/bg-about-1x.png)
+      background-image: url(../../static/img/bg-about-1x.png)
 
     .wrapper
       position: relative

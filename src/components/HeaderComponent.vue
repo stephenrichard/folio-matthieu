@@ -48,23 +48,23 @@
       &.pink
         .back-link
           &:after
-            background-image: url(../assets/menu-animation/pink.png)
+            background-image: url(/static/img/menu-animation/pink.png)
       &.blue
         .back-link
           &:after
-            background-image: url(../assets/menu-animation/blue.png)
+            background-image: url(/static/img/menu-animation/blue.png)
       &.green
         .back-link
           &:after
-            background-image: url(../assets/menu-animation/green.png)
+            background-image: url(/static/img/menu-animation/green.png)
       &.yellow
         .back-link
           &:after
-            background-image: url(../assets/menu-animation/yellow.png)
+            background-image: url(/static/img/menu-animation/yellow.png)
       &.purple
         .back-link
           &:after
-            background-image: url(../assets/menu-animation/purple.png)
+            background-image: url(/static/img/menu-animation/purple.png)
 
       a
         display: inline-block
@@ -115,7 +115,7 @@
             transition: transform .3s
 
             &:after
-              background-image: url(../assets/menu-animation/red.png)
+              background-image: url(/static/img/menu-animation/red.png)
 
           &:after
             position: absolute
