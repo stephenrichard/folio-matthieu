@@ -8,7 +8,10 @@
         <div class="project" v-for="(work, index) in getProjects" :data-color="work.color" :data-index="index">
           <div class="project-wrapper">
             <router-link :to="work.slug" class="project__cover">
-              <img class="project-image" :src="work.main_image">
+              <div class="image-container">
+                <img class="project-image" :src="work.main_image">
+                <span class="store color-colored"></span>
+              </div>
               <span class="rectangle color-colored"></span>
             </router-link>
             <div class="project__datas">
@@ -92,9 +95,9 @@
       },
       goPrev (index) {
         var oldProject = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"]')
-        var oldProjectSquare = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] span')
+        var oldProjectSquare = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] .rectangle')
         var matchingProject = this.$el.querySelectorAll('.project[data-index="' + index + '"]')
-        var matchingProjectSquare = this.$el.querySelectorAll('.project[data-index="' + index + '"] span')
+        var matchingProjectSquare = this.$el.querySelectorAll('.project[data-index="' + index + '"] .rectangle')
 
         if (this.isAnimated) {
           var tl = new TimelineLite()
@@ -132,9 +135,9 @@
       },
       goNext (index) {
         var oldProject = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"]')
-        var oldProjectSquare = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] span')
+        var oldProjectSquare = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] .rectangle')
         var matchingProject = this.$el.querySelectorAll('.project[data-index="' + index + '"]')
-        var matchingProjectSquare = this.$el.querySelectorAll('.project[data-index="' + index + '"] span')
+        var matchingProjectSquare = this.$el.querySelectorAll('.project[data-index="' + index + '"] .rectangle')
 
         if (this.isAnimated) {
           var tl = new TimelineLite()
@@ -225,14 +228,19 @@
           width: 55%;
           max-width: calc(70vw - 200px);
           max-height: calc(100vh - 250px);
-
           margin: 0 auto
+
+          .image-container
+            position: relative
+            height: 100%
+            width: 100%
+            max-height: 600px
+            overflow: hidden
 
           .project-image
             position: relative
-            width: 98%;
-            height: 100%;
-            max-height: 600px
+            width: 100%;
+            height: 100%
             z-index: 2
 
           .rectangle
@@ -244,6 +252,16 @@
             height: 160px
             background-color: currentColor
             z-index: 1
+
+          .store
+            position: absolute
+            content: ''
+            top: 0
+            height: 100%
+            max-height: 600px
+            width: 98%
+            background-color: currentColor
+            z-index: 3
 
         &__datas
           text-transform: uppercase
