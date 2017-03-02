@@ -58,15 +58,19 @@
       // Handle arrow navigation
       document.addEventListener('keyup', function (e) {
         if (e.keyCode === 37) {
+          that.isAnimated = true
           // You can't go back if you're on the first project
           if (that.currentWork > 0) {
+            this.isAnimated = true
             that.goPrev(that.currentWork - 1)
           }
         }
 
         if (e.keyCode === 39) {
+          that.isAnimated = true
           // You can't continue if you've reached the last project
           if (that.currentWork < that.getProjects.length - 1) {
+            this.isAnimated = true
             that.goNext(that.currentWork + 1)
           }
         }
@@ -169,9 +173,9 @@
       },
       projectHasChanged (index) {
         // Update the current work index
+        index = parseInt(index)
         this.currentWork = index
         this.$store.commit('SET_CURRENT_PROJECT', this.getProjects[index])
-        console.log(this.getCurrentProject.id)
 
         var navItems = this.$el.querySelectorAll('.nav-item')
         // Reset nav items class active
