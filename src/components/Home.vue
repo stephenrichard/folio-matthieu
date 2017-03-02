@@ -194,7 +194,7 @@
 
   .page-home
     overflow: hidden
-    background-image: url('../../static/img/patterns/pattern.png')
+    background-image: url('../../static/img/patterns/pattern.png');
     transition: background-color 0.5s linear
 
     #works
