@@ -14,9 +14,10 @@
               </div>
               <span class="rectangle color-colored"></span>
             </router-link>
-            <div class="project__datas">
+            <div class="project__datas color-colored">
               <h2 class="slider-title color-colored">{{ work.name }}</h2>
               <div class="slider-subtitle skills color-gray"><span v-for="(skill, index) in work.skills" :class="{ last: index === (work.skills.length - 1) }">{{ skill }} <span class="line">- </span></span></div>
+              <span class="store"></span>
             </div>
           </div>
 
@@ -117,31 +118,16 @@
       this.goTo(this.getCurrentProject.id)
 
       // Handle arrow navigation
-      document.addEventListener('keyup', function (e) {
-        if (e.keyCode === 37) {
-          that.isAnimated = true
-          // You can't go back if you're on the first project
-          if (that.currentWork > 0) {
-            this.isAnimated = true
-            that.goPrev(that.currentWork - 1)
-          }
-        }
-
-        if (e.keyCode === 39) {
-          that.isAnimated = true
-          // You can't continue if you've reached the last project
-          if (that.currentWork < that.getProjects.length - 1) {
-            this.isAnimated = true
-            that.goNext(parseInt(that.currentWork + 1))
-          }
-        }
-      }, false)
+      document.addEventListener('keyup', this.handleKeyNav, false)
     },
     beforeRouteLeave (to, from, next) {
       var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] img')
       var sliderPictureSquare = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] span')
       var sliderPictureData = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] .project__datas')
       var sliderNav = this.$el.querySelectorAll('#works-nav')
+
+      // Remove arrow navigation listener
+      document.removeEventListener('keyup', this.handleKeyNav, false)
 
       var tl = new TimelineLite()
 
@@ -221,7 +207,7 @@
           }, 'switch')
           tl.to(matchingProjectSquare, 0.8, {
             x: '0%',
-            delay: 0.4,
+            delay: 0.6,
             ease: Power2.easeOut
           }, 'switch')
           tl.to(matchingProjectStore, 1.9, {
@@ -269,12 +255,12 @@
           }, 'switch')
           tl.to(matchingProjectSquare, 0.8, {
             x: '0%',
-            delay: 0.4,
+            delay: 0.7,
             ease: Power2.easeOut
           }, 'switch')
-          tl.to(matchingProjectStore, 0.9, {
+          tl.to(matchingProjectStore, 1, {
             x: '-200%',
-            delay: 0.6,
+            delay: 0.7,
             ease: Power2.easeOut
           }, 'switch')
         } else {
@@ -298,6 +284,25 @@
         })
         // Set the new nav item as active
         this.$el.querySelectorAll('.nav-item[data-index="' + index + '"]')[0].className += ' active'
+      },
+      handleKeyNav (e) {
+        if (e.keyCode === 37) {
+          this.isAnimated = true
+          // You can't go back if you're on the first project
+          if (this.currentWork > 0) {
+            this.isAnimated = true
+            this.goPrev(this.currentWork - 1)
+          }
+        }
+
+        if (e.keyCode === 39) {
+          this.isAnimated = true
+          // You can't continue if you've reached the last project
+          if (this.currentWork < this.getProjects.length - 1) {
+            this.isAnimated = true
+            this.goNext(parseInt(this.currentWork + 1))
+          }
+        }
       }
     }
   }
@@ -375,7 +380,24 @@
             z-index: 3
 
         &__datas
+          position: relative
+          display: inline-block
+          margin: 30px auto 0
           text-transform: uppercase
+          overflow: hidden
+
+          h2
+            display: inline-block
+
+          .store
+            position: absolute
+            content: ''
+            top: 0
+            height: 100%
+            max-height: 600px
+            width: 100%
+            background-color: currentColor
+            z-index: 3
 
     #works-nav
       position: absolute

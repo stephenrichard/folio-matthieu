@@ -89,7 +89,6 @@
           'static/img/geek-art/vimeo.png',
           // Lost edge
           'static/img/lost-edge/banner.png',
-          'static/img/lost-edge/decoration.png',
           'static/img/lost-edge/designboard.png',
           'static/img/lost-edge/first-part-img-1.png',
           'static/img/lost-edge/first-part-img-2.png',
@@ -100,10 +99,9 @@
         console.log(error)
       })
       .on('progress', function (progress) {
-        console.log((progress * 100).toFixed() + '%')
+        // console.log((progress * 100).toFixed() + '%')
       })
       .on('complete', function (assets) {
-        console.log('Loading complete')
         that.$store.commit('SET_LOADING', true)
       })
       .start()
