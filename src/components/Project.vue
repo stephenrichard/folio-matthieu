@@ -119,11 +119,11 @@
       var tl = new TimelineLite()
       tl.set(this.$el, {
         opacity: 0,
-        y: '-50px'
+        y: '100px'
       })
       tl.to(this.$el, 1, {
         opacity: 1,
-        y: 0,
+        y: '0%',
         delay: 0.2,
         ease: Power2.easeOut
       }, 'switch')
