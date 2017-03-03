@@ -1,11 +1,12 @@
 <template>
   <div class="page page-about">
+    <div class="bg"></div>
     <div class="wrapper">
-    
+
       <div class="about-container">
         <h2 class="page-about-title">{{ name }}</h2>
         <span class="page-about-subtitle">{{ jobTitle }}</span>
-        <p 
+        <p
           v-html="description"
           class="text"></p>
         <div class="social-links">
@@ -23,8 +24,18 @@
 </template>
 
 <script>
+
+import { TimelineLite, TweenLite, Power2 } from 'gsap'
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'About',
+  computed: {
+    ...mapGetters([
+      'getProjects',
+      'getCurrentProject'
+    ])
+  },
   data () {
     return {
       pageName: 'About',
@@ -39,6 +50,62 @@ export default {
   },
   beforeMount () {
     this.$store.commit('SET_PAGE', 'about')
+  },
+  mounted () {
+    var bg = this.$el.querySelectorAll('.bg')[0]
+    bg.style.backgroundColor = this.getCurrentProject.color_bg
+
+    var wrapper = this.$el.querySelectorAll('.wrapper')
+    var tl = new TimelineLite()
+
+    tl.set(wrapper, {
+      opacity: 0,
+      y: '-100px'
+    })
+    tl.add('switch')
+    tl.to(bg, 1.5, {
+      backgroundColor: 'black',
+      y: '-100%',
+      opacity: 1,
+      delay: 0.3,
+      ease: Power2.easeOut
+    }, 'switch')
+    tl.to(wrapper, 1, {
+      opacity: 1,
+      y: '0%',
+      delay: 0.5,
+      ease: Power2.easeOut
+    }, 'switch')
+  },
+  beforeRouteLeave (to, from, next) {
+    var bg = this.$el.querySelectorAll('.bg')[0]
+    bg.style.backgroundColor = this.getCurrentProject.color_bg
+
+    var wrapper = this.$el.querySelectorAll('.wrapper')
+    var tl = new TimelineLite()
+
+    tl.set(wrapper, {
+      opacity: 1,
+      y: '0%'
+    })
+    tl.set(bg, {
+      opacity: 1,
+      y: '-100%'
+    })
+    tl.add('switch')
+    tl.to(bg, 1.5, {
+      y: '0%',
+      opacity: 1,
+      delay: 0.3,
+      ease: Power2.easeOut
+    }, 'switch')
+    tl.to(wrapper, 1, {
+      opacity: 1,
+      y: '-100px',
+      delay: 0.5,
+      ease: Power2.easeOut,
+      onComplete: next
+    }, 'switch')
   }
 }
 </script>
@@ -46,7 +113,16 @@ export default {
 <style lang="sass" scoped>
   @import '../stylesheets/common/_color'
   @import '../stylesheets/common/_vars'
-
+  .bg
+    position : absolute
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    z-index: 1
+    background-color: black
+    background-image: url('../../static/img/patterns/pattern.png');
+    transition: background-color 1s linear
   .page-about
     display: flex
     align-items: center
@@ -92,7 +168,7 @@ export default {
           font-size: 11px
           text-decoration: none
           transition: color .3s
-          
+
           &:last-child
             &:after
               display: none
@@ -121,7 +197,7 @@ export default {
           letter-spacing: 1.57px
           text-transform: uppercase
           color: white
-          
+
           &:before
             position: absolute
             content: ''

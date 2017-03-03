@@ -330,7 +330,7 @@
     right: 0
     top: 0
     bottom: 0
-    //background-image: url('../../static/img/patterns/pattern.png');
+    background-image: url('../../static/img/patterns/pattern.png');
     transition: background-color 1s linear
 
 </style>
