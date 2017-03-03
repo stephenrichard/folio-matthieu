@@ -17,7 +17,7 @@
             <div class="project__datas color-colored">
               <h2 class="slider-title color-colored">{{ work.name }}</h2>
               <div class="slider-subtitle skills color-gray"><span v-for="(skill, index) in work.skills" :class="{ last: index === (work.skills.length - 1) }">{{ skill }} <span class="line">- </span></span></div>
-              <span class="store"></span>
+              <span class="store-title"></span>
             </div>
           </div>
 
@@ -55,13 +55,14 @@
       ])
     },
     mounted () {
+      var sliderItem = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"]')
       var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] img')
       var sliderPictureSquare = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] span')
       var sliderPictureData = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .project__datas')
       var sliderNav = this.$el.querySelectorAll('#works-nav')
       var tl = new TimelineLite()
 
-      tl.set(this.$el, {
+      tl.set(sliderItem, {
         opacity: 0
       })
       tl.set(sliderPicture, {
@@ -81,8 +82,9 @@
         y: '100px'
       })
       tl.add('switch')
-      tl.to(this.$el, 0.5, {
+      tl.to(sliderItem, 0.5, {
         opacity: 1,
+        zIndex: 3,
         delay: 0,
         ease: Power2.linear
       }, 'switch')
@@ -100,7 +102,7 @@
       }, 'switch')
       tl.to(sliderPictureData, 1, {
         y: 0,
-        opacity: 0,
+        opacity: 1,
         delay: 0.6,
         ease: Power2.easeOut
       }, 'switch')
@@ -182,35 +184,41 @@
         var matchingProject = this.$el.querySelectorAll('.project[data-index="' + index + '"]')
         var matchingProjectSquare = this.$el.querySelectorAll('.project[data-index="' + index + '"] .rectangle')
         var matchingProjectStore = this.$el.querySelectorAll('.project[data-index="' + index + '"] .store')
+        var matchingProjectStoreTitle = this.$el.querySelectorAll('.project[data-index="' + index + '"] .store-title')
 
         if (this.isAnimated) {
           var tl = new TimelineLite()
-          tl.set(matchingProject, { x: '-100%' })
-          tl.set(matchingProjectSquare, { x: '-150%' })
+          tl.set(matchingProjectSquare, { x: '-150%', opacity: 0 })
           tl.set(matchingProjectStore, { x: '-200%' })
+          tl.set(matchingProjectStoreTitle, { x: '-200%' })
           tl.add('switch')
-          tl.to(oldProjectSquare, 0.6, {
+          tl.to(oldProjectSquare, 0.3, {
             x: '150%',
             ease: Power2.easeOut
           }, 'switch')
-          tl.to(oldProject, 0.6, {
-            x: '100%',
+          tl.to(oldProject, 0.4, {
+            zIndex: 1,
             opacity: 0,
-            delay: 0,
             ease: Power2.easeOut
           }, 'switch')
-          tl.to(matchingProject, 0.8, {
-            x: '0%',
+          tl.to(matchingProject, 0.6, {
+            zIndex: 3,
             opacity: 1,
             delay: 0.3,
             ease: Power2.easeOut
           }, 'switch')
-          tl.to(matchingProjectSquare, 0.8, {
+          tl.to(matchingProjectSquare, 0.6, {
             x: '0%',
-            delay: 0.6,
+            opacity: 1,
+            delay: 0.8,
             ease: Power2.easeOut
           }, 'switch')
           tl.to(matchingProjectStore, 1.9, {
+            x: '100%',
+            delay: 0.4,
+            ease: Power2.easeOut
+          }, 'switch')
+          tl.to(matchingProjectStoreTitle, 1.5, {
             x: '100%',
             delay: 0.6,
             ease: Power2.easeOut
@@ -229,38 +237,43 @@
         var matchingProject = this.$el.querySelectorAll('.project[data-index="' + index + '"]')
         var matchingProjectSquare = this.$el.querySelectorAll('.project[data-index="' + index + '"] .rectangle')
         var matchingProjectStore = this.$el.querySelectorAll('.project[data-index="' + index + '"] .store')
+        var matchingProjectStoreTitle = this.$el.querySelectorAll('.project[data-index="' + index + '"] .store-title')
 
         if (this.isAnimated) {
           var tl = new TimelineLite()
-          tl.set(matchingProject, { x: '100%' })
-          tl.set(matchingProjectSquare, { x: '150%' })
+          tl.set(matchingProjectSquare, { x: '150%', opacity: 0 })
           tl.set(matchingProjectStore, { x: '100%' })
+          tl.set(matchingProjectStoreTitle, { x: '100%' })
           tl.add('switch')
-          tl.to(oldProjectSquare, 0.6, {
+          tl.to(oldProjectSquare, 0.3, {
             x: '-150%',
-            delay: 0.2,
             ease: Power2.easeOut
           }, 'switch')
-          tl.to(oldProject, 0.6, {
-            x: '-100%',
+          tl.to(oldProject, 0.4, {
+            zIndex: 1,
             opacity: 0,
-            delay: 0.2,
             ease: Power2.easeOut
           }, 'switch')
-          tl.to(matchingProject, 0.8, {
-            x: '0%',
+          tl.to(matchingProject, 0.6, {
+            zIndex: 3,
             opacity: 1,
             delay: 0.3,
             ease: Power2.easeOut
           }, 'switch')
-          tl.to(matchingProjectSquare, 0.8, {
+          tl.to(matchingProjectSquare, 0.6, {
             x: '0%',
-            delay: 0.7,
+            opacity: 1,
+            delay: 0.8,
             ease: Power2.easeOut
           }, 'switch')
           tl.to(matchingProjectStore, 1, {
             x: '-200%',
-            delay: 0.7,
+            delay: 0.4,
+            ease: Power2.easeOut
+          }, 'switch')
+          tl.to(matchingProjectStoreTitle, 1, {
+            x: '-200%',
+            delay: 0.6,
             ease: Power2.easeOut
           }, 'switch')
         } else {
@@ -327,7 +340,9 @@
         position: absolute
         width: 100%
         height: 100%;
-        transform: translateX(100%)
+        // transform: translateX(100%)
+        opacity: 0
+        z-index: 1
 
         .project-wrapper
           display: flex
@@ -389,10 +404,11 @@
           h2
             display: inline-block
 
-          .store
+          .store-title
             position: absolute
             content: ''
-            top: 0
+            bottom: 0
+            left: 100%
             height: 100%
             max-height: 600px
             width: 100%
