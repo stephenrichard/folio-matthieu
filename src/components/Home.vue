@@ -54,6 +54,64 @@
       ])
     },
     mounted () {
+      var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] img')
+      var sliderPictureSquare = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] span')
+      var sliderPictureData = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] .project__datas')
+      var sliderNav = this.$el.querySelectorAll('#works-nav')
+      var tl = new TimelineLite()
+
+      tl.set(this.$el, {
+        opacity: 0
+      })
+      // tl.set(sliderPicture, {
+      //   y: '-150%',
+      //   opacity: 0
+      // })
+      // tl.set(sliderPictureSquare, {
+      //   y: '-300%',
+      //   opacity: 0
+      // })
+      // tl.set(sliderPictureData, {
+      //   y: '-600px',
+      //   opacity: 0
+      // })
+      tl.set(sliderNav, {
+        opacity: 0,
+        y: '100px'
+      })
+      tl.add('switch')
+      tl.to(this.$el, 0.5, {
+        opacity: 1,
+        delay: 0,
+        ease: Power2.easeIn
+      }, 'switch')
+      // tl.to(sliderPicture, 1, {
+      //   y: 0,
+      //   opacity: 1,
+      //   delay: 0.6,
+      //   ease: Power2.easeIn
+      // }, 'switch')
+      // tl.to(sliderPictureSquare, 1, {
+      //   y: 0,
+      //   delay: 0.6,
+      //   opacity: 1,
+      //   ease: Power2.easeIn
+      // }, 'switch')
+      // tl.to(sliderPictureData, 1, {
+      //   y: 0,
+      //   opacity: 0,
+      //   delay: 0.6,
+      //   ease: Power2.easeIn
+      // }, 'switch')
+      tl.to(sliderNav, 0.5, {
+        opacity: 1,
+        y: 0,
+        delay: 0.5,
+        ease: Power2.easeOut
+        // onComplete: next
+      }, 'switch')
+
+      // yolo
       var that = this
       this.$store.commit('SET_PAGE', 'home')
       this.goTo(this.getCurrentProject.id)
@@ -78,6 +136,45 @@
           }
         }
       }, false)
+    },
+    beforeRouteLeave (to, from, next) {
+      var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] img')
+      var sliderPictureSquare = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] span')
+      var sliderPictureData = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] .project__datas')
+      var sliderNav = this.$el.querySelectorAll('#works-nav')
+
+      var tl = new TimelineLite()
+
+      tl.to(sliderPicture, 0.85, {
+        y: '-150%',
+        opacity: 0,
+        ease: Power2.easeInOut
+      }, 'switch')
+      tl.to(sliderPictureSquare, 1, {
+        y: '-300%',
+        delay: 0.15,
+        opacity: 0,
+        ease: Power2.easeInOut
+      }, 'switch')
+      tl.to(sliderPictureData, 0.7, {
+        y: '-600px',
+        opacity: 0,
+        delay: 0.23,
+        ease: Power2.easeInOut
+      }, 'switch')
+      tl.to(sliderNav, 0.7, {
+        opacity: 0,
+        y: '100px',
+        delay: 0.23,
+        ease: Power2.easeInOut
+        // onComplete: next
+      }, 'switch')
+      tl.to(this.$el, 0.7, {
+        opacity: 0,
+        delay: 0.5,
+        ease: Power2.easeInOut,
+        onComplete: next
+      }, 'switch')
     },
     methods: {
       goToClick (index) {

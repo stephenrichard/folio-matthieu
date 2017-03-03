@@ -32,7 +32,7 @@
         <div class="project-part__bannerBackground" :style="{ 'background-image': 'url(' + getCurrentProject.banner + ')' }"></div>
       </section>
 
-      <section 
+      <section
         v-if='getCurrentProject.project_preparation_part'
         class="wrapper project-part">
         <img class="project-part__decoration" :src="getCurrentProject.project_preparation_part.decoration" alt="">
@@ -45,7 +45,7 @@
         </div>
       </section>
 
-      <section 
+      <section
         v-if="getCurrentProject.project_screen_part"
         class=" wrapper project-part">
         <div class="project-part__header">
@@ -58,9 +58,9 @@
         </div>
       </section>
 
-      <section 
+      <section
         v-if="getCurrentProject.project_vimeo"
-        class="wrapper project-part" 
+        class="wrapper project-part"
         id="vimeo">
         <div class="project-part__header">
             <h2 class="project-part__title color-gray">{{ getCurrentProject.project_vimeo.title }}</h2>
@@ -68,14 +68,14 @@
         </div>
 
         <div class="project-part__vimeo">
-          <iframe 
+          <iframe
             v-if="getCurrentProject.project_vimeo.url != ''"
-            :src="getCurrentProject.project_vimeo.url" 
-            frameborder="0" 
-            webkitallowfullscreen 
-            mozallowfullscreen 
+            :src="getCurrentProject.project_vimeo.url"
+            frameborder="0"
+            webkitallowfullscreen
+            mozallowfullscreen
             allowfullscreen></iframe>
-          <img  
+          <img
             v-else
             class="poster"
             :src="getCurrentProject.project_vimeo.poster"
@@ -94,6 +94,7 @@
   import { mapGetters } from 'vuex'
   import dataJson from '../../static/datas.json'
   import ProjectSwitcher from './ProjectSwitcher.vue'
+  import { TimelineLite, TweenLite, Power2 } from 'gsap'
 
   import vueSmoothScroll from 'vue-smooth-scroll'
 
@@ -115,6 +116,25 @@
       projectSwitcher: ProjectSwitcher
     },
     mounted () {
+      var tl = new TimelineLite()
+      tl.set(this.$el, {
+        opacity: 0,
+        y: '-50px'
+      })
+      tl.to(this.$el, 1, {
+        opacity: 1,
+        y: 0,
+        delay: 0.2,
+        ease: Power2.easeOut
+      }, 'switch')
+    },
+    beforeRouteLeave (to, from, next) {
+      var tl = new TimelineLite()
+      tl.to(this.$el, 1, {
+        opacity: 0,
+        y: '-50px',
+        onComplete: next
+      })
     },
     beforeMount () {
       var that = this
