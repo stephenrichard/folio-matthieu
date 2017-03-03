@@ -1,5 +1,5 @@
 <template>
-  <div class="page page-home" :style="{ 'background-color': getProjects[currentWork].color_bg }" ref="homePage">
+  <div class="page page-home" :style="{ 'background-color': getCurrentProject.color_bg }" ref="homePage">
 
       <!-- <router-link v-for="(project, index) in getProjects" :to="{ name: 'project', params: { project_name: project.slug } }">{{ project.name }}</router-link> -->
 
@@ -62,7 +62,7 @@
       var tl = new TimelineLite()
 
       tl.set(this.$el, {
-        opacity: 0
+        opacity: 1
       })
       tl.set(sliderPicture, {
         y: '-150%',
@@ -156,7 +156,7 @@
         // onComplete: next
       }, 'switch')
       tl.to(this.$el, 0.7, {
-        opacity: 0,
+        opacity: 1,
         delay: 0.5,
         ease: Power2.easeInOut,
         onComplete: next

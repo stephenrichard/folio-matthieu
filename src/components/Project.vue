@@ -1,7 +1,7 @@
 <template>
-	<div class="page page-project">
-
-    <div :class="getCurrentProject.color">
+	<div class="page page-project"  >
+    <div class="projectBG" :style="{ 'background-color': getCurrentProject.color_bg }"></div>
+    <div class="projectWrapper" :class="getCurrentProject.color">
 
       <section class=" wrapper project-header pink">
         <h1 class="project-title color-gray">{{ getCurrentProject.name }}</h1>
@@ -116,25 +116,13 @@
       projectSwitcher: ProjectSwitcher
     },
     mounted () {
-      var tl = new TimelineLite()
-      tl.set(this.$el, {
-        opacity: 0,
-        y: '100px'
-      })
-      tl.to(this.$el, 1, {
-        opacity: 1,
-        y: '0%',
-        delay: 0.2,
-        ease: Power2.easeOut
-      }, 'switch')
+      this.enter()
+    },
+    beforeRouteUpdate (to, from, next) {
+      this.switchProject(to, next)
     },
     beforeRouteLeave (to, from, next) {
-      var tl = new TimelineLite()
-      tl.to(this.$el, 1, {
-        opacity: 0,
-        y: '-50px',
-        onComplete: next
-      })
+      this.exit(next)
     },
     beforeMount () {
       var that = this
@@ -177,11 +165,132 @@
             this.$store.commit('SET_CURRENT_PROJECT', this.getProjects[i])
             // Update the page switcher
             this.setSwitcherPages(i)
+            this.enter_switch()
           }
         }
       }
     },
     methods: {
+      switchProject (to, next) {
+        var bg = this.$el.querySelectorAll('.projectBG')
+        var wrapper = this.$el.querySelectorAll('.projectWrapper')
+        var tl = new TimelineLite()
+
+        var projectTo = this.arrayObjectIndexOf(this.getProjects, to.params.project_name, 'slug')
+        var projectFrom = this.getCurrentProject.id
+
+        if (projectTo > projectFrom) {
+          tl.set(bg, {
+            opacity: 1,
+            x: '100%',
+            zIndex: 10,
+            ease: Power2.easeOut
+          }, 'switch')
+          tl.to(bg, 1.5, {
+            x: '-100%',
+            delay: 0.5,
+            ease: Power2.easeOut
+          }, 'switch')
+          tl.to(wrapper, 0.5, {
+            opacity: 0,
+            delay: 0.3,
+            ease: Power2.easeOut,
+            onComplete: next
+          }, 'switch')
+        } else {
+          tl.set(bg, {
+            opacity: 1,
+            x: '-100%',
+            zIndex: 10,
+            ease: Power2.easeOut
+          }, 'switch')
+          tl.to(bg, 1.5, {
+            x: '100%',
+            delay: 0.5,
+            ease: Power2.easeOut
+          }, 'switch')
+          tl.to(wrapper, 0.5, {
+            opacity: 0,
+            delay: 0.3,
+            ease: Power2.easeOut,
+            onComplete: next
+          }, 'switch')
+        }
+      },
+      enter_switch () {
+        var bg = this.$el.querySelectorAll('.projectBG')
+        var wrapper = this.$el.querySelectorAll('.projectWrapper')
+        var tl = new TimelineLite()
+
+        tl.set(wrapper, {
+          opacity: 0,
+          y: '100px'
+        })
+        tl.add('switch')
+        tl.to(bg, 1.5, {
+          opacity: 0,
+          y: '0%',
+          delay: 1,
+          ease: Power2.easeOut
+        }, 'switch')
+        tl.to(wrapper, 1, {
+          opacity: 1,
+          y: '0%',
+          delay: 0.5,
+          ease: Power2.easeOut
+        }, 'switch')
+      },
+      enter () {
+        var bg = this.$el.querySelectorAll('.projectBG')
+        var wrapper = this.$el.querySelectorAll('.projectWrapper')
+        var tl = new TimelineLite()
+
+        tl.set(wrapper, {
+          opacity: 0,
+          y: '100px'
+        })
+        tl.add('switch')
+        tl.to(bg, 1.5, {
+          opacity: 0,
+          y: '0%',
+          delay: 1,
+          ease: Power2.easeOut
+        }, 'switch')
+        tl.to(wrapper, 1, {
+          opacity: 1,
+          y: '0%',
+          delay: 1.7,
+          ease: Power2.easeOut
+        }, 'switch')
+      },
+      exit (next) {
+        var bg = this.$el.querySelectorAll('.projectBG')
+        var wrapper = this.$el.querySelectorAll('.projectWrapper')
+        var tl = new TimelineLite()
+        tl.set(bg, {
+          opacity: 0,
+          x: '0%'
+        }, 'switch')
+        tl.to(bg, 1.5, {
+          opacity: 1,
+          y: '0%',
+          delay: 0.5,
+          ease: Power2.easeOut
+        }, 'switch')
+        tl.to(wrapper, 1, {
+          opacity: 0,
+          y: '50px',
+          delay: 0.6,
+          ease: Power2.easeOut,
+          onComplete: next
+        }, 'switch')
+      },
+      arrayObjectIndexOf (myArray, searchTerm, property) {
+        for (var i = 0, len = myArray.length; i < len; i++) {
+          if (myArray[i][property] === searchTerm) return i
+        }
+        return -1
+      },
       setSwitcherPages (currentIndex) {
         var nextProject = null
         var prevProject = null
@@ -207,3 +316,21 @@
     }
   }
 </script>
+
+
+<style scoped lang="sass">
+  @import '../stylesheets/common/_color'
+
+  .page-project
+    position: relative
+
+  .projectBG
+    position : absolute
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    background-image: url('../../static/img/patterns/pattern.png');
+    transition: background-color 0.5s linear
+
+</style>
