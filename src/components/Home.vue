@@ -98,11 +98,13 @@
         var oldProjectSquare = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] .rectangle')
         var matchingProject = this.$el.querySelectorAll('.project[data-index="' + index + '"]')
         var matchingProjectSquare = this.$el.querySelectorAll('.project[data-index="' + index + '"] .rectangle')
+        var matchingProjectStore = this.$el.querySelectorAll('.project[data-index="' + index + '"] .store')
 
         if (this.isAnimated) {
           var tl = new TimelineLite()
           tl.set(matchingProject, { x: '-100%' })
           tl.set(matchingProjectSquare, { x: '-150%' })
+          tl.set(matchingProjectStore, { x: '-200%' })
           tl.add('switch')
           tl.to(oldProjectSquare, 0.6, {
             x: '150%',
@@ -125,6 +127,11 @@
             delay: 0.4,
             ease: Power2.easeOut
           }, 'switch')
+          tl.to(matchingProjectStore, 1.9, {
+            x: '100%',
+            delay: 0.6,
+            ease: Power2.easeOut
+          }, 'switch')
         } else {
           var project = parseInt(this.getCurrentProject.id)
           this.$el.querySelectorAll('.project:nth-child(' + project + ')')[0].style.transform = 'translateX(0)'
@@ -138,11 +145,13 @@
         var oldProjectSquare = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] .rectangle')
         var matchingProject = this.$el.querySelectorAll('.project[data-index="' + index + '"]')
         var matchingProjectSquare = this.$el.querySelectorAll('.project[data-index="' + index + '"] .rectangle')
+        var matchingProjectStore = this.$el.querySelectorAll('.project[data-index="' + index + '"] .store')
 
         if (this.isAnimated) {
           var tl = new TimelineLite()
           tl.set(matchingProject, { x: '100%' })
           tl.set(matchingProjectSquare, { x: '150%' })
+          tl.set(matchingProjectStore, { x: '100%' })
           tl.add('switch')
           tl.to(oldProjectSquare, 0.6, {
             x: '-150%',
@@ -164,6 +173,11 @@
           tl.to(matchingProjectSquare, 0.8, {
             x: '0%',
             delay: 0.4,
+            ease: Power2.easeOut
+          }, 'switch')
+          tl.to(matchingProjectStore, 0.9, {
+            x: '-200%',
+            delay: 0.6,
             ease: Power2.easeOut
           }, 'switch')
         } else {
@@ -259,7 +273,7 @@
             top: 0
             height: 100%
             max-height: 600px
-            width: 98%
+            width: 100%
             background-color: currentColor
             z-index: 3
 
