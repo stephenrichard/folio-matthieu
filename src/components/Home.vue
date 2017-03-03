@@ -54,27 +54,27 @@
       ])
     },
     mounted () {
-      var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] img')
-      var sliderPictureSquare = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] span')
-      var sliderPictureData = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] .project__datas')
+      var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] img')
+      var sliderPictureSquare = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] span')
+      var sliderPictureData = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .project__datas')
       var sliderNav = this.$el.querySelectorAll('#works-nav')
       var tl = new TimelineLite()
 
       tl.set(this.$el, {
         opacity: 0
       })
-      // tl.set(sliderPicture, {
-      //   y: '-150%',
-      //   opacity: 0
-      // })
-      // tl.set(sliderPictureSquare, {
-      //   y: '-300%',
-      //   opacity: 0
-      // })
-      // tl.set(sliderPictureData, {
-      //   y: '-600px',
-      //   opacity: 0
-      // })
+      tl.set(sliderPicture, {
+        y: '-150%',
+        opacity: 0
+      })
+      tl.set(sliderPictureSquare, {
+        y: '-300%',
+        opacity: 0
+      })
+      tl.set(sliderPictureData, {
+        y: '-600px',
+        opacity: 0
+      })
       tl.set(sliderNav, {
         opacity: 0,
         y: '100px'
@@ -83,26 +83,26 @@
       tl.to(this.$el, 0.5, {
         opacity: 1,
         delay: 0,
-        ease: Power2.easeIn
+        ease: Power2.linear
       }, 'switch')
-      // tl.to(sliderPicture, 1, {
-      //   y: 0,
-      //   opacity: 1,
-      //   delay: 0.6,
-      //   ease: Power2.easeIn
-      // }, 'switch')
-      // tl.to(sliderPictureSquare, 1, {
-      //   y: 0,
-      //   delay: 0.6,
-      //   opacity: 1,
-      //   ease: Power2.easeIn
-      // }, 'switch')
-      // tl.to(sliderPictureData, 1, {
-      //   y: 0,
-      //   opacity: 0,
-      //   delay: 0.6,
-      //   ease: Power2.easeIn
-      // }, 'switch')
+      tl.to(sliderPicture, 1, {
+        y: '0%',
+        opacity: 1,
+        delay: 0.6,
+        ease: Power2.easeOut
+      }, 'switch')
+      tl.to(sliderPictureSquare, 1, {
+        y: '0%',
+        delay: 0.6,
+        opacity: 1,
+        ease: Power2.easeOut
+      }, 'switch')
+      tl.to(sliderPictureData, 1, {
+        y: 0,
+        opacity: 0,
+        delay: 0.6,
+        ease: Power2.easeOut
+      }, 'switch')
       tl.to(sliderNav, 0.5, {
         opacity: 1,
         y: 0,
