@@ -9,10 +9,12 @@
         <router-link
           v-if="getPage === 'home'"
           to="/about"
+          v-on:click.native="hide"
           class="small-text">More about me</router-link>
         <router-link
           v-show="getPage != 'home'"
           to="/"
+          v-on:click.native="hide"
           v-bind:class="{ about: this.getPage === 'about' }"
           class="back-link small-text before-colored project-bar">Back to menu</router-link>
       </div>
@@ -22,6 +24,7 @@
 
 <script>
   import { mapGetters } from 'vuex'
+  import { TimelineLite, TweenLite, Power2 } from 'gsap'
 
   export default {
     name: 'headerComponent',
@@ -30,6 +33,36 @@
         'getPage',
         'getCurrentProject'
       ])
+    },
+    watch: {
+      '$route' (to, from) {
+        var link = this.$el.querySelectorAll('.more-back-links')
+        var tl = new TimelineLite()
+
+        tl.set(link, {
+          opacity: 0
+        })
+        tl.to(link, 1, {
+          opacity: 1,
+          delay: 0.5,
+          ease: Power2.easeOut
+        })
+      }
+    },
+    methods: {
+      hide () {
+        var link = this.$el.querySelectorAll('.more-back-links')
+        var tl = new TimelineLite()
+
+        tl.set(link, {
+          opacity: 1
+        })
+        tl.to(link, 1, {
+          opacity: 0,
+          delay: 0,
+          ease: Power2.easeOut
+        })
+      }
     }
   }
 </script>
