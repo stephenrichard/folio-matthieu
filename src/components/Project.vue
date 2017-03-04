@@ -182,14 +182,16 @@
         if (projectTo > projectFrom) {
           tl.set(bg, {
             opacity: 1,
-            x: '100%',
+            x: '125%',
             zIndex: 10,
-            ease: Power2.easeOut
+            backgroundColor: this.getProjects[projectTo].color
           }, 'switch')
           tl.to(bg, 1.5, {
-            x: '-100%',
+            opacity: 1,
+            x: '-125%',
             delay: 0.5,
-            ease: Power2.easeOut
+            ease: Power2.linear,
+            backgroundColor: this.getProjects[projectTo].color
           }, 'switch')
           tl.to(wrapper, 0.5, {
             opacity: 0,
@@ -200,14 +202,17 @@
         } else {
           tl.set(bg, {
             opacity: 1,
-            x: '-100%',
+            x: '-125%',
             zIndex: 10,
-            ease: Power2.easeOut
+            ease: Power2.easeOut,
+            backgroundColor: this.getProjects[projectTo].color
           }, 'switch')
           tl.to(bg, 1.5, {
-            x: '100%',
+            opacity: 1,
+            x: '125%',
             delay: 0.5,
-            ease: Power2.easeOut
+            ease: Power2.easeOut,
+            backgroundColor: this.getProjects[projectTo].color
           }, 'switch')
           tl.to(wrapper, 0.5, {
             opacity: 0,
@@ -269,7 +274,8 @@
         var tl = new TimelineLite()
         tl.set(bg, {
           opacity: 0,
-          x: '0%'
+          x: '0%',
+          backgroundColor: this.getCurrentProject.color_bg
         }, 'switch')
         tl.to(bg, 1.5, {
           opacity: 1,

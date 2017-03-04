@@ -93,16 +93,16 @@ export default {
       y: '-100%'
     })
     tl.add('switch')
-    tl.to(bg, 1.5, {
+    tl.to(bg, 1, {
       y: '0%',
       opacity: 1,
       delay: 0.3,
       ease: Power2.easeOut
     }, 'switch')
-    tl.to(wrapper, 1, {
+    tl.to(wrapper, 0.5, {
       opacity: 1,
       y: '-100px',
-      delay: 0.5,
+      delay: 0.8,
       ease: Power2.easeOut,
       onComplete: next
     }, 'switch')

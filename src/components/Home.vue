@@ -55,7 +55,7 @@
       ])
     },
     mounted () {
-      var sliderItem = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"]')
+      var sliderItem = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"]')
       var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] img')
       var sliderPictureSquare = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] span')
       var sliderPictureData = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .project__datas')
