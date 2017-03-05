@@ -119,7 +119,9 @@
       this.enter()
     },
     beforeRouteUpdate (to, from, next) {
-      this.switchProject(to, next)
+      if (to.path.split('#')[0] !== from.path) {
+        this.switchProject(to, next)
+      }
     },
     beforeRouteLeave (to, from, next) {
       this.exit(next)
