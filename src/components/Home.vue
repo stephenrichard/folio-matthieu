@@ -60,6 +60,16 @@
       var sliderPictureSquare = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] span')
       var sliderPictureData = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .project__datas')
       var sliderNav = this.$el.querySelectorAll('#works-nav')
+
+      this.$el.addEventListener('mousemove', function (event) {
+        var tlSquare = new TimelineLite()
+        tlSquare.to(sliderPictureSquare, 0.4, {
+          x: event.clientX / 200,
+          y: event.clientY / 200,
+          ease: Power2.linear
+        })
+      })
+
       var tl = new TimelineLite()
 
       tl.set(sliderItem, {
