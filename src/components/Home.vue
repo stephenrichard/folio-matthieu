@@ -56,18 +56,38 @@
     },
     mounted () {
       var sliderItem = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"]')
-      var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] img')
+      var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .image-container')
       var sliderPictureSquare = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] span')
       var sliderPictureData = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .project__datas')
       var sliderNav = this.$el.querySelectorAll('#works-nav')
 
+      var lastPositionX
+      var lastPositionY
+      var checkPostion = true
+
       this.$el.addEventListener('mousemove', function (event) {
+        if (checkPostion === true) {
+          lastPositionX = event.clientX
+          lastPositionY = event.clientY
+          checkPostion = false
+        }
+
+        var differenceX = lastPositionX - event.clientX
+        var differenceY = lastPositionX - event.clientY
+
+        console.log(differenceX)
+
         var tlSquare = new TimelineLite()
-        tlSquare.to(sliderPictureSquare, 0.4, {
-          x: event.clientX / 200,
-          y: event.clientY / 200,
+        tlSquare.to(sliderPictureSquare, 0.6, {
+          x: differenceX / 50,
+          y: differenceY / 50,
           ease: Power2.linear
-        })
+        }, 0)
+        tlSquare.to(sliderPicture, 0.6, {
+          x: differenceX / 140,
+          y: differenceY / 140,
+          ease: Power2.linear
+        }, 0)
       })
 
       var tl = new TimelineLite()
@@ -133,7 +153,7 @@
       document.addEventListener('keyup', this.handleKeyNav, false)
     },
     beforeRouteLeave (to, from, next) {
-      var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] img')
+      var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] .image-container')
       var sliderPictureSquare = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] span')
       var sliderPictureData = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] .project__datas')
       var sliderNav = this.$el.querySelectorAll('#works-nav')
@@ -374,6 +394,7 @@
           .image-container
             position: relative
             height: 100%
+            z-index: 2;
             width: 100%
             max-height: 600px
             overflow: hidden
