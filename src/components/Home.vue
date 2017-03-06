@@ -155,6 +155,17 @@
 
       // Handle arrow navigation
       document.addEventListener('keyup', this.handleKeyNav, false)
+      that = this
+      var canScroll = true
+      window.addEventListener('mousewheel', function (e) {
+        if (canScroll) {
+          if (e.wheelDelta < 0) {
+            console.log('gogo')
+            that.$router.push('/' + that.getCurrentProject.slug)
+            canScroll = false
+          }
+        }
+      })
     },
     beforeRouteLeave (to, from, next) {
       var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] .image-container')
