@@ -2,6 +2,10 @@ html {
 	font-family: $font;
 }
 
+* {
+	outline: none;
+}
+
 .wrapper {
 	max-width: 1080px;
 	margin : 0 auto;

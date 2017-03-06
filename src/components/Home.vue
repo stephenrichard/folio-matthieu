@@ -55,39 +55,43 @@
       ])
     },
     mounted () {
+      var AllsliderPictureSquare = this.$el.querySelectorAll('.project .rectangle')
+      var AllsliderPicture = this.$el.querySelectorAll('.project .image-container')
       var sliderItem = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"]')
       var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .image-container')
-      var sliderPictureSquare = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] span')
+      var sliderPictureSquare = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .rectangle')
       var sliderPictureData = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .project__datas')
       var sliderNav = this.$el.querySelectorAll('#works-nav')
 
-      var lastPositionX
-      var lastPositionY
+      var initPositionX
+      var initPositionY
       var checkPostion = true
 
       this.$el.addEventListener('mousemove', function (event) {
         if (checkPostion === true) {
-          lastPositionX = event.clientX
-          lastPositionY = event.clientY
+          initPositionX = event.clientX
+          initPositionY = event.clientY
           checkPostion = false
+        } else {
+          var differenceX = event.clientX - initPositionX
+          var differenceY = event.clientY - initPositionY
+          var tlSquare = new TimelineLite()
+          var rotateX = 0
+          var rotateY = 0
+
+          tlSquare.to(AllsliderPictureSquare, 0.1, {
+            right: -17 + differenceX / 50,
+            bottom: -10 + differenceY / 50,
+            ease: Power2.linear
+
+          }, 0)
+          tlSquare.to(AllsliderPicture, 0.1, {
+            right: differenceX / 140,
+            bottom: differenceY / 140,
+            ease: Power2.linear
+
+          }, 0)
         }
-
-        var differenceX = lastPositionX - event.clientX
-        var differenceY = lastPositionX - event.clientY
-
-        console.log(differenceX)
-
-        var tlSquare = new TimelineLite()
-        tlSquare.to(sliderPictureSquare, 0.6, {
-          x: differenceX / 50,
-          y: differenceY / 50,
-          ease: Power2.linear
-        }, 0)
-        tlSquare.to(sliderPicture, 0.6, {
-          x: differenceX / 140,
-          y: differenceY / 140,
-          ease: Power2.linear
-        }, 0)
       })
 
       var tl = new TimelineLite()
@@ -154,7 +158,7 @@
     },
     beforeRouteLeave (to, from, next) {
       var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] .image-container')
-      var sliderPictureSquare = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] span')
+      var sliderPictureSquare = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] .rectangle')
       var sliderPictureData = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] .project__datas')
       var sliderNav = this.$el.querySelectorAll('#works-nav')
 
@@ -399,11 +403,13 @@
             max-height: 600px
             overflow: hidden
 
+
           .project-image
             position: relative
             width: 100%;
             height: 100%
             z-index: 2
+            // box-shadow: 0px 0px 7px 0px rgba(0,0,0,1);
 
           .rectangle
             position: absolute
