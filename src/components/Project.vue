@@ -275,13 +275,13 @@
         tl.to(bg, 1.5, {
           opacity: 0,
           y: '0%',
-          delay: 1,
+          delay: 0,
           ease: Power2.easeOut
         }, 'switch')
         tl.to(wrapper, 1, {
           opacity: 1,
           y: '0%',
-          delay: 1.7,
+          delay: 0.7,
           ease: Power2.easeOut
         }, 'switch')
       },

@@ -203,7 +203,7 @@
       }, 'switch')
       tl.to(this.$el, 0.7, {
         opacity: 1,
-        delay: 0.5,
+        delay: 0.2,
         ease: Power2.easeInOut,
         onComplete: next
       }, 'switch')
