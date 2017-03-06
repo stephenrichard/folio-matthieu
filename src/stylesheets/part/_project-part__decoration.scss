@@ -3,6 +3,10 @@
 	&.decoration {
 		padding-top: 30px;
 
+		@media (max-width: $tablet) {
+			display: none;
+		}
+
 		&[data-disposition="fullsize"] {
 			.decoration-container {
 				//max-width: 1080px;
@@ -43,4 +47,8 @@
 	position: absolute;
 	right: 0;
 	z-index: -1;
+
+	@media (max-width: $mobile) {
+		display: none;
+	}
 }

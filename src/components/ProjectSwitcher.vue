@@ -50,12 +50,20 @@
 </script>
 
 <style lang="sass">
+  @import '../stylesheets/common/_vars'
   @import '../stylesheets/common/_color'
 
   .project-switcher
     padding-top: 120px
     padding-bottom: 75px
     overflow: hidden
+
+    @media (max-width: $tablet)
+      padding-top: 80px
+
+    @media (max-width: $mobile)
+      padding-top: 40px
+      padding-bottom: 40px
 
     .switcher
       width: 100%
@@ -78,7 +86,7 @@
       background-color: #EAEAEA
 
       .project-part__title,
-      .project-link__skills
+      &__skills
         transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1)
 
 
@@ -136,7 +144,6 @@
           width: 100%;
 
 
-
       &.next-project-link
         float: right
 
@@ -178,6 +185,9 @@
         line-height: 45px
         z-index: 2
 
+        @media (max-width: $mobile)
+          font-size: 20px
+          line-height: 32px
 
 
       &__skills
@@ -185,6 +195,9 @@
         font-size: 12px
         font-weight: 800
         z-index: 2
+
+        @media (max-width: $mobile)
+          display: none
 
 
 

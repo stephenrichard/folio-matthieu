@@ -9,10 +9,13 @@
 .project-part__bannerBG {
 	width: 100%;
 
-
 	.project-part__bannerBackground {
 		height: 380px;
 		background-size: cover;
 		background-position: 50% 50%;
+
+		@media (max-width: $mobile) {
+			height: 280px;
+		}
 	}
 }

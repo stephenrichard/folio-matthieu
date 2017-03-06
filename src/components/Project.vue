@@ -9,7 +9,11 @@
         <div class="project-header__content">
           <p class="text">{{ getCurrentProject.header_content }}</p>
           </div>
-        <a class="text-ancors color-colored before-colored" href="#vimeo" v-smooth-scroll>Watch video</p>
+        <a 
+          v-if="getCurrentProject.project_vimeo"
+          class="text-ancors color-colored before-colored" 
+          href="#vimeo" 
+          v-smooth-scroll>Watch video</p>
       </section>
 
       <section class="project-part decoration" :data-disposition="getCurrentProject.decoration.disposition">
@@ -349,7 +353,7 @@
     right: 0
     top: 0
     bottom: 0
-    background-image: url('../../static/img/patterns/pattern.png');
+    background-image: url('../../static/img/patterns/pattern.png')
     transition: background-color 1s linear
 
 </style>

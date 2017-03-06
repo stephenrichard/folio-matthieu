@@ -113,6 +113,7 @@ export default {
 <style lang="sass" scoped>
   @import '../stylesheets/common/_color'
   @import '../stylesheets/common/_vars'
+  
   .bg
     position : absolute
     left: 0
@@ -130,6 +131,7 @@ export default {
     -webkit-background-size: cover
     background-size: cover
     background-repeat: no-repeat
+    background-color: $dark
 
     @media (max-width: 1280px)
       background-image: url(../../static/img/bg-about-1x.png)
@@ -140,6 +142,9 @@ export default {
 
       @media (max-width: $tablet)
         padding-left: 40px
+
+      @media (max-width: $mobile)
+        padding: 60px 20px 0 20px
 
       .about-container
         max-width: 600px
@@ -189,6 +194,9 @@ export default {
         position: absolute
         right: 100px
         bottom: 20px
+
+        @media (max-width: $mobile)
+          display: none
 
         span
           position: relative

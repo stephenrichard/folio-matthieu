@@ -54,6 +54,10 @@
 	text-transform : uppercase;
 	letter-spacing: 3.2px;
 	margin-bottom : 5px;
+
+	@media (max-width: $mobile) {
+		font-size: 26px
+	}
 }
 
 
@@ -68,6 +72,16 @@
 	span.last {
 		.line {
 			display: none;
+		}
+	}
+
+	@media (max-width: $mobile) {
+		white-space: normal;
+
+		span {
+			display: inline-block;
+			margin-right: 2px;
+			margin-bottom: 2px;
 		}
 	}
 }

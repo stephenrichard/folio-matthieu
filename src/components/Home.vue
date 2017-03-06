@@ -83,13 +83,11 @@
             right: -17 + differenceX / 50,
             bottom: -10 + differenceY / 50,
             ease: Power2.linear
-
           }, 0)
           tlSquare.to(AllsliderPicture, 0.1, {
             right: differenceX / 140,
             bottom: differenceY / 140,
             ease: Power2.linear
-
           }, 0)
         }
       })
@@ -143,6 +141,7 @@
       tl.to(sliderNav, 0.5, {
         opacity: 1,
         y: 0,
+        x: '-50%',
         delay: 0.5,
         ease: Power2.easeOut
         // onComplete: next
@@ -322,7 +321,7 @@
           tl.to(matchingProjectSquare, 0.6, {
             x: '0%',
             opacity: 1,
-            delay: 0.8,
+            delay: 0.7,
             ease: Power2.easeOut
           }, 'switch')
           tl.to(matchingProjectStore, 1.7, {
@@ -381,6 +380,7 @@
 </script>
 
 <style scoped lang="sass">
+  @import '../stylesheets/common/_vars'
   @import '../stylesheets/common/_color'
 
   .page-home
@@ -420,6 +420,11 @@
           max-height: calc(100vh - 250px)
           margin: 0 auto
 
+          @media (max-width: $mobile)
+            max-width: 90%
+            max-height: 80vh
+            width: 86%
+
           .image-container
             position: relative
             height: 100%
@@ -439,12 +444,16 @@
           .rectangle
             position: absolute
             content: ''
-            right: -17px
-            bottom: -10px
+            right: -20px
+            bottom: -15px
             width: 120px
             height: 160px
             background-color: currentColor
             z-index: 1
+
+            @media (max-width: $mobile)
+              width: 60px
+              height: 80px
 
           .store
             position: absolute
@@ -481,13 +490,24 @@
       position: absolute
       bottom: 50px
       left: 50%
-      transform: translateX(-50%)
+      // transform: translateX(-50%)
       white-space: nowrap
       z-index: 3
+
+      @media (max-width: $mobile)
+        bottom: 0
+        width: 100%
+        white-space: normal
 
       .nav-item
         text-align: center
         margin-right: 10px
+
+        @media (max-width: $mobile)
+          float: left
+          width: calc(100% / 5 - 1px)
+          margin: 0
+          border-right: 1px solid $grey-light
 
         &:hover,
         &.active
@@ -510,6 +530,14 @@
           height: 6px
           background-color: white
 
+          @media (max-width: $tablet)
+            width: 120px
+            height: 8px
+
+          @media (max-width: $mobile)
+            width: 100%
+            height: 50px
+
           &:before
             position: absolute
             content: ''
@@ -526,6 +554,9 @@
           line-height: 14px
           opacity: 0
           transition: opacity .3s
+
+          @media (max-width: $mobile)
+            display: none
 
 
 </style>

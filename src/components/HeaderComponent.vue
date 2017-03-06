@@ -68,6 +68,7 @@
 </script>
 
 <style lang="sass">
+  @import '../stylesheets/common/_vars'
   @import '../stylesheets/common/_color'
 
   .header
@@ -76,6 +77,11 @@
     left: 40px
     right: 40px
     z-index: 2
+
+    @media (max-width: $small-mobile)
+      top: 30px
+      left: 20px
+      right: 20px
 
     header
       &.pink
@@ -125,9 +131,13 @@
           line-height: 16px
           text-transform: uppercase
 
+          @media (max-width: $small-mobile)
+            display: none
+
       .more-back-links
         float: right
         font-weight: 600
+        padding-top: 5px
 
         .back-link
           position: relative

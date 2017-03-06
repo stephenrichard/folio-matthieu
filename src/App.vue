@@ -41,8 +41,8 @@
           'static/datas.json',
           'static/img/patterns/pattern.png',
           // Main images
-          'static/img/voices/main-image.png',
-          'static/img/domingo/main-image.png',
+          'static/img/voices/main-image@2x.png',
+          'static/img/domingo/main-image@2x.png',
           'static/img/4ltrophy/main-image.png',
           'static/img/geek-art/main-image.png',
           'static/img/lost-edge/main-image.png',
@@ -57,42 +57,23 @@
           'static/img/menu-animation/purple.png',
           'static/img/menu-animation/red.png',
           // Voices
-          'static/img/voices/banner.png',
-          'static/img/voices/decoration.png',
-          'static/img/voices/designboard.png',
           'static/img/voices/first-part-img-1.png',
-          'static/img/voices/moodboard.png',
-          'static/img/voices/preparation.png',
+          'static/img/voices/moodboard@2x.png',
           // Domingo
-          'static/img/domingo/banner.png',
-          'static/img/domingo/decoration.png',
-          'static/img/domingo/designboard.png',
           'static/img/domingo/first-part-img-1.png',
           'static/img/domingo/first-part-img-2.png',
-          'static/img/domingo/moodboard.png',
-          'static/img/domingo/preparation.png',
+          'static/img/domingo/moodboard@2x.png',
           // 4l trophy
-          'static/img/4ltrophy/banner.png',
-          'static/img/4ltrophy/decoration.png',
-          'static/img/4ltrophy/designboard.png',
           'static/img/4ltrophy/first-part-img-1.png',
-          'static/img/4ltrophy/moodboard.png',
-          'static/img/4ltrophy/preparation.png',
+          'static/img/4ltrophy/moodboard@2x.png',
           // Geek art
-          'static/img/geek-art/banner.png',
-          'static/img/geek-art/preparation.png',
-          'static/img/geek-art/designboard.png',
           'static/img/geek-art/first-part-img-1.png',
           'static/img/geek-art/first-part-img-2.png',
-          'static/img/geek-art/moodboard.png',
-          'static/img/geek-art/preparation.png',
-          'static/img/geek-art/vimeo.png',
+          'static/img/geek-art/moodboard@2x.png',
           // Lost edge
-          'static/img/lost-edge/banner.png',
-          'static/img/lost-edge/designboard.png',
+          'static/img/lost-edge/moodboard@2x.png',
           'static/img/lost-edge/first-part-img-1.png',
-          'static/img/lost-edge/first-part-img-2.png',
-          'static/img/lost-edge/moodboard.png'
+          'static/img/lost-edge/first-part-img-2.png'
         ]
       })
       .on('error', function (error) {
@@ -103,6 +84,46 @@
       })
       .on('complete', function (assets) {
         that.$store.commit('SET_LOADING', true)
+        console.log('Loading first assets')
+      })
+      .start()
+    },
+    mounted () {
+      var loader = assetsLoader({
+        assets: [
+          // Voices
+          'static/img/voices/banner@2x.png',
+          'static/img/voices/decoration.png',
+          'static/img/voices/designboard@2x.png',
+          'static/img/voices/preparation@2x.png',
+          // Domingo
+          'static/img/domingo/banner@2x.png',
+          'static/img/domingo/decoration.png',
+          'static/img/domingo/designboard@2x.png',
+          'static/img/domingo/preparation@2x.png',
+          // 4l trophy
+          'static/img/4ltrophy/banner@2x.png',
+          'static/img/4ltrophy/decoration.png',
+          'static/img/4ltrophy/designboard@2x.png',
+          'static/img/4ltrophy/preparation@2x.png',
+          // Geek art
+          'static/img/geek-art/banner@2x.png',
+          'static/img/geek-art/preparation@2x.png',
+          'static/img/geek-art/designboard@2x.png',
+          'static/img/geek-art/vimeo.png',
+          // Lost edge
+          'static/img/lost-edge/banner@2x.png',
+          'static/img/lost-edge/designboard.png'
+        ]
+      })
+      .on('error', function (error) {
+        console.log(error)
+      })
+      .on('progress', function (progress) {
+        // console.log((progress * 100).toFixed() + '%')
+      })
+      .on('complete', function (assets) {
+        console.log('loading complete')
       })
       .start()
     }
