@@ -7,7 +7,7 @@
         <h1 class="project-title color-gray">{{ getCurrentProject.name }}</h1>
         <p class="project-subtitle color-colored"><span v-for="(skill, index) in getCurrentProject.skills" :class="{ last: index === (getCurrentProject.skills.length - 1) }">{{ skill }} <span class="line">- </span></span></p>
         <div class="project-header__content">
-          <p class="text">{{ getCurrentProject.header_content }}</p>
+          <p v-html="getCurrentProject.header_content" class="text"></p>
           </div>
         <a 
           v-if="getCurrentProject.project_vimeo"
@@ -25,7 +25,7 @@
       <section class="wrapper project-part moodboard ">
         <div class="project-part__header">
           <h2 class="project-part__title color-gray">{{ getCurrentProject.project_first_part.title }}</h2>
-            <p class="text project-part__intro">{{ getCurrentProject.project_first_part.intro }}</p>
+            <p v-html="getCurrentProject.project_first_part.intro" class="text project-part__intro"></p>
         </div>
         <div class="project-part__picture">
           <img :src="getCurrentProject.project_first_part.picture" alt="">
@@ -68,7 +68,7 @@
         id="vimeo">
         <div class="project-part__header">
             <h2 class="project-part__title color-gray">{{ getCurrentProject.project_vimeo.title }}</h2>
-            <p class="text project-part__intro">{{ getCurrentProject.project_vimeo.intro }}</p>
+            <p v-html="getCurrentProject.project_vimeo.intro" class="text project-part__intro"></p>
         </div>
 
         <div class="project-part__vimeo">

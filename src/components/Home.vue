@@ -127,7 +127,7 @@
         ease: Power2.easeOut
       }, 'switch')
       tl.to(sliderPictureSquare, 1, {
-        y: '0%',
+        y: '-1%',
         delay: 0.6,
         opacity: 1,
         ease: Power2.easeOut
