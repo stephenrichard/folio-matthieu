@@ -197,14 +197,14 @@
             opacity: 1,
             x: '125%',
             zIndex: 10,
-            backgroundColor: this.getProjects[projectTo].color
+            backgroundColor: this.getProjects[projectTo].color_bg
           }, 'switch')
           tl.to(bg, 1.5, {
             opacity: 1,
             x: '-125%',
             delay: 0.5,
             ease: Power2.linear,
-            backgroundColor: this.getProjects[projectTo].color
+            backgroundColor: this.getProjects[projectTo].color_bg
           }, 'switch')
           tl.to(wrapper, 0.5, {
             opacity: 0,
@@ -218,14 +218,14 @@
             x: '-125%',
             zIndex: 10,
             ease: Power2.easeOut,
-            backgroundColor: this.getProjects[projectTo].color
+            backgroundColor: this.getProjects[projectTo].color_bg
           }, 'switch')
           tl.to(bg, 1.5, {
             opacity: 1,
             x: '125%',
             delay: 0.5,
             ease: Power2.easeOut,
-            backgroundColor: this.getProjects[projectTo].color
+            backgroundColor: this.getProjects[projectTo].color_bg
           }, 'switch')
           tl.to(wrapper, 0.5, {
             opacity: 0,

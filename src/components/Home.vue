@@ -58,7 +58,7 @@
       var AllsliderPictureSquare = this.$el.querySelectorAll('.project .rectangle')
       var AllsliderPicture = this.$el.querySelectorAll('.project .image-container')
       var sliderItem = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"]')
-      var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .image-container')
+      var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .image-container .project-image')
       var sliderPictureSquare = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .rectangle')
       var sliderPictureData = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .project__datas')
       var sliderNav = this.$el.querySelectorAll('#works-nav')
@@ -224,6 +224,7 @@
         }
       },
       goPrev (index) {
+        var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + index + '"] .image-container .project-image')
         var oldProject = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"]')
         var oldProjectSquare = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] .rectangle')
         var matchingProject = this.$el.querySelectorAll('.project[data-index="' + index + '"]')
@@ -234,6 +235,7 @@
         if (this.isAnimated) {
           var tl = new TimelineLite()
           tl.set(matchingProjectSquare, { x: '-150%', opacity: 0 })
+          tl.set(sliderPicture, { opacity: 0 })
           tl.set(matchingProjectStore, { x: '-200%' })
           tl.set(matchingProjectStoreTitle, { x: '-200%' })
           tl.add('switch')
@@ -252,20 +254,25 @@
             delay: 0.3,
             ease: Power2.easeOut
           }, 'switch')
-          tl.to(matchingProjectSquare, 0.6, {
-            x: '0%',
+          tl.to(sliderPicture, 0.3, {
             opacity: 1,
-            delay: 0.8,
+            delay: 0.5,
             ease: Power2.easeOut
           }, 'switch')
-          tl.to(matchingProjectStore, 1.9, {
-            x: '100%',
-            delay: 0.4,
+          tl.to(matchingProjectSquare, 0.6, {
+            x: '-1%',
+            opacity: 1,
+            delay: 0.7,
+            ease: Power2.easeOut
+          }, 'switch')
+          tl.to(matchingProjectStore, 2.5, {
+            x: '101%',
+            delay: 0.3,
             ease: Power2.easeOut
           }, 'switch')
           tl.to(matchingProjectStoreTitle, 1.5, {
-            x: '100%',
-            delay: 0.6,
+            x: '101%',
+            delay: 0.5,
             ease: Power2.easeOut
           }, 'switch')
         } else {
@@ -277,6 +284,7 @@
         this.projectHasChanged(index)
       },
       goNext (index) {
+        var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + index + '"] .image-container .project-image')
         var oldProject = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"]')
         var oldProjectSquare = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] .rectangle')
         var matchingProject = this.$el.querySelectorAll('.project[data-index="' + index + '"]')
@@ -287,6 +295,7 @@
         if (this.isAnimated) {
           var tl = new TimelineLite()
           tl.set(matchingProjectSquare, { x: '150%', opacity: 0 })
+          tl.set(sliderPicture, { opacity: 0 })
           tl.set(matchingProjectStore, { x: '100%' })
           tl.set(matchingProjectStoreTitle, { x: '100%' })
           tl.add('switch')
@@ -305,20 +314,25 @@
             delay: 0.3,
             ease: Power2.easeOut
           }, 'switch')
+          tl.to(sliderPicture, 0.3, {
+            opacity: 1,
+            delay: 0.5,
+            ease: Power2.easeOut
+          }, 'switch')
           tl.to(matchingProjectSquare, 0.6, {
             x: '0%',
             opacity: 1,
             delay: 0.8,
             ease: Power2.easeOut
           }, 'switch')
-          tl.to(matchingProjectStore, 1, {
-            x: '-200%',
-            delay: 0.4,
+          tl.to(matchingProjectStore, 1.7, {
+            x: '-201%',
+            delay: 0.1,
             ease: Power2.easeOut
           }, 'switch')
           tl.to(matchingProjectStoreTitle, 1, {
-            x: '-200%',
-            delay: 0.6,
+            x: '-201%',
+            delay: 0.5,
             ease: Power2.easeOut
           }, 'switch')
         } else {
@@ -384,14 +398,14 @@
       .project
         position: absolute
         width: 100%
-        height: 100%;
+        height: 100%
         // transform: translateX(100%)
         opacity: 0
         z-index: 1
 
         .project-wrapper
           display: flex
-          justify-content: center;
+          justify-content: center
           flex-direction: column
           height: 100%
 
@@ -401,26 +415,26 @@
           // width: 750px
           // height: 430px
 
-          width: 55%;
-          max-width: calc(70vw - 200px);
-          max-height: calc(100vh - 250px);
+          width: 55%
+          max-width: calc(70vw - 200px)
+          max-height: calc(100vh - 250px)
           margin: 0 auto
 
           .image-container
             position: relative
             height: 100%
-            z-index: 2;
             width: 100%
             max-height: 600px
             overflow: hidden
-
+            z-index: 2
 
           .project-image
             position: relative
-            width: 100%;
+            width: 100%
             height: 100%
+            opacity: 0
             z-index: 2
-            // box-shadow: 0px 0px 7px 0px rgba(0,0,0,1);
+            // box-shadow: 0px 0px 7px 0px rgba(0,0,0,1)
 
           .rectangle
             position: absolute
