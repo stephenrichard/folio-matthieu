@@ -58,7 +58,8 @@
       var AllsliderPictureSquare = this.$el.querySelectorAll('.project .rectangle')
       var AllsliderPicture = this.$el.querySelectorAll('.project .image-container')
       var sliderItem = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"]')
-      var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .image-container .project-image')
+      var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .image-container')
+      var sliderPictureImg = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .image-container .project-image')
       var sliderPictureSquare = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .rectangle')
       var sliderPictureData = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .project__datas')
       var sliderNav = this.$el.querySelectorAll('#works-nav')
@@ -96,6 +97,9 @@
 
       tl.set(sliderItem, {
         opacity: 0
+      })
+      tl.set(sliderPictureImg, {
+        opacity: 1
       })
       tl.set(sliderPicture, {
         y: '-150%',
