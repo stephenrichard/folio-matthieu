@@ -45,7 +45,11 @@
       return {
         msg: 'Welcome Home',
         currentWork: 0,
-        isAnimated: false
+        isAnimated: false,
+        differenceX: 0,
+        differenceY: 0,
+        square: null,
+        picture: null
       }
     },
     computed: {
@@ -68,30 +72,21 @@
       var initPositionY
       var checkPostion = true
 
+      this.picture = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .image-container')[0]
+      this.square = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .rectangle')[0]
+
       this.$el.addEventListener('mousemove', function (event) {
         if (checkPostion === true) {
           initPositionX = event.clientX
           initPositionY = event.clientY
           checkPostion = false
         } else {
-          var differenceX = event.clientX - initPositionX
-          var differenceY = event.clientY - initPositionY
-          var tlSquare = new TimelineLite()
-          var rotateX = 0
-          var rotateY = 0
-
-          tlSquare.to(AllsliderPictureSquare, 0.1, {
-            right: -17 + differenceX / 50,
-            bottom: -10 + differenceY / 50,
-            ease: Power2.linear
-          }, 0)
-          tlSquare.to(AllsliderPicture, 0.1, {
-            right: differenceX / 140,
-            bottom: differenceY / 140,
-            ease: Power2.linear
-          }, 0)
+          that.differenceX = event.clientX - initPositionX
+          that.differenceY = event.clientY - initPositionY
         }
       })
+
+      requestAnimationFrame(this.setParalaxPosition)
 
       var tl = new TimelineLite()
 
@@ -164,7 +159,6 @@
       window.addEventListener('mousewheel', function (e) {
         if (canScroll) {
           if (e.wheelDelta < 0) {
-            console.log('gogo')
             that.$router.push('/' + that.getCurrentProject.slug)
             canScroll = false
           }
@@ -347,11 +341,20 @@
 
         this.projectHasChanged(index)
       },
+      setParalaxPosition () {
+        this.square.style.bottom = -10 + this.differenceY / 50 + 'px'
+        this.square.style.right = -17 + this.differenceX / 50 + 'px'
+        this.picture.style.bottom = this.differenceY / 30 + 'px'
+        this.picture.style.right = this.differenceX / 30 + 'px'
+        requestAnimationFrame(this.setParalaxPosition)
+      },
       projectHasChanged (index) {
         // Update the current work index
         index = parseInt(index)
         this.currentWork = index
         this.$store.commit('SET_CURRENT_PROJECT', this.getProjects[index])
+        this.picture = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .image-container')[0]
+        this.square = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .rectangle')[0]
 
         var navItems = this.$el.querySelectorAll('.nav-item')
         // Reset nav items class active

@@ -64,7 +64,6 @@ export default {
     })
     tl.add('switch')
     tl.to(bg, 1.5, {
-      backgroundColor: 'black',
       y: '-100%',
       opacity: 1,
       delay: 0.3,
@@ -113,7 +112,7 @@ export default {
 <style lang="sass" scoped>
   @import '../stylesheets/common/_color'
   @import '../stylesheets/common/_vars'
-  
+
   .bg
     position : absolute
     left: 0
