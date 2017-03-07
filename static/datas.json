@@ -154,7 +154,7 @@
 			},
 			"project_vimeo": {
 				"title": "Prototype",
-				"intro": "You can watch a prototype developped by <a href='' target='_blank'>Martin Ziserman</a>, <a href='http://www.stephenrichard.fr/' target=_blank'>Stephen Richard</a> and <a href='http://borislaporte.com/' target='_blank'>Boris Laporte</a> following this adress <a href='http://geek-art.borislaporte.com' target='_blank'>just here.</a>",
+				"intro": "You can watch a prototype developped by <a href='http://martinziserman.com/' target='_blank'>Martin Ziserman</a>, <a href='http://www.stephenrichard.fr/' target=_blank'>Stephen Richard</a> and <a href='http://borislaporte.com/' target='_blank'>Boris Laporte</a> following this adress <a href='http://geek-art.borislaporte.com' target='_blank'>just here.</a>",
 				"url": "",
 				"poster": "./static/img/geek-art/vimeo.png"
 			}

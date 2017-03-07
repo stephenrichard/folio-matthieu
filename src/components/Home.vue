@@ -239,39 +239,39 @@
           tl.add('switch')
           tl.to(oldProjectSquare, 0.3, {
             x: '150%',
-            ease: Power2.easeOut
+            ease: Power2.ease
           }, 'switch')
           tl.to(oldProject, 0.4, {
             zIndex: 1,
             opacity: 0,
-            ease: Power2.easeOut
+            ease: Power2.ease
           }, 'switch')
           tl.to(matchingProject, 0.6, {
             zIndex: 3,
             opacity: 1,
             delay: 0.3,
-            ease: Power2.easeOut
+            ease: Power2.ease
           }, 'switch')
           tl.to(sliderPicture, 0.3, {
             opacity: 1,
             delay: 0.5,
-            ease: Power2.easeOut
+            ease: Power2.ease
           }, 'switch')
           tl.to(matchingProjectSquare, 0.6, {
             x: '-1%',
             opacity: 1,
             delay: 0.7,
-            ease: Power2.easeOut
+            ease: Power2.ease
           }, 'switch')
           tl.to(matchingProjectStore, 2.5, {
             x: '101%',
             delay: 0.3,
-            ease: Power2.easeOut
+            ease: Power2.ease
           }, 'switch')
-          tl.to(matchingProjectStoreTitle, 1.5, {
+          tl.to(matchingProjectStoreTitle, 2.4, {
             x: '101%',
             delay: 0.5,
-            ease: Power2.easeOut
+            ease: Power2.ease
           }, 'switch')
         } else {
           var project = parseInt(this.getCurrentProject.id)
@@ -299,39 +299,39 @@
           tl.add('switch')
           tl.to(oldProjectSquare, 0.3, {
             x: '-150%',
-            ease: Power2.easeOut
+            ease: Power2.ease
           }, 'switch')
           tl.to(oldProject, 0.4, {
             zIndex: 1,
             opacity: 0,
-            ease: Power2.easeOut
+            ease: Power2.ease
           }, 'switch')
           tl.to(matchingProject, 0.6, {
             zIndex: 3,
             opacity: 1,
             delay: 0.3,
-            ease: Power2.easeOut
+            ease: Power2.ease
           }, 'switch')
           tl.to(sliderPicture, 0.3, {
             opacity: 1,
             delay: 0.5,
-            ease: Power2.easeOut
+            ease: Power2.ease
           }, 'switch')
           tl.to(matchingProjectSquare, 0.6, {
             x: '0%',
             opacity: 1,
             delay: 0.7,
-            ease: Power2.easeOut
+            ease: Power2.ease
           }, 'switch')
           tl.to(matchingProjectStore, 1.7, {
             x: '-201%',
             delay: 0.1,
-            ease: Power2.easeOut
+            ease: Power2.ease
           }, 'switch')
-          tl.to(matchingProjectStoreTitle, 1, {
+          tl.to(matchingProjectStoreTitle, 1.5, {
             x: '-201%',
             delay: 0.5,
-            ease: Power2.easeOut
+            ease: Power2.ease
           }, 'switch')
         } else {
           var project = parseInt(this.getCurrentProject.id) + 1
@@ -467,7 +467,7 @@
             position: absolute
             content: ''
             top: 0
-            height: 100%
+            height: 99%
             max-height: 600px
             width: 100%
             background-color: currentColor
