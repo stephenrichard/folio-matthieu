@@ -115,7 +115,8 @@
       })
       tl.set(sliderNav, {
         opacity: 0,
-        y: '100px'
+        y: '100px',
+        x: '-50%'
       })
       tl.add('switch')
       tl.to(sliderItem, 0.5, {
