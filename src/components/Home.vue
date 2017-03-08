@@ -3,7 +3,10 @@
 
       <!-- <router-link v-for="(project, index) in getProjects" :to="{ name: 'project', params: { project_name: project.slug } }">{{ project.name }}</router-link> -->
 
-      <div id="works">
+      <v-touch 
+        v-on:swipe="handleEventsNav"
+        ref="swiper"
+        id="works">
 
         <div class="project" v-for="(work, index) in getProjects" :data-color="work.color" :data-index="index">
           <div class="project-wrapper">
@@ -23,7 +26,7 @@
 
         </div>
 
-      </div>
+      </v-touch>
 
       <ul id="works-nav">
         <li class="nav-item" v-for="(work, index) in getProjects" v-on:click="goToClick(index)" :data-color="work.color" :data-index="index">
@@ -59,6 +62,7 @@
       ])
     },
     mounted () {
+      var that = this
       var AllsliderPictureSquare = this.$el.querySelectorAll('.project .rectangle')
       var AllsliderPicture = this.$el.querySelectorAll('.project .image-container')
       var sliderItem = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"]')
@@ -71,6 +75,7 @@
       var initPositionX
       var initPositionY
       var checkPostion = true
+      var canScroll = true
 
       this.picture = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .image-container')[0]
       this.square = this.$el.querySelectorAll('.project[data-index="' + this.getCurrentProject.id + '"] .rectangle')[0]
@@ -89,7 +94,6 @@
       requestAnimationFrame(this.setParalaxPosition)
 
       var tl = new TimelineLite()
-
       tl.set(sliderItem, {
         opacity: 0
       })
@@ -148,14 +152,12 @@
       }, 'switch')
 
       // yolo
-      var that = this
       this.$store.commit('SET_PAGE', 'home')
       this.goTo(this.getCurrentProject.id)
 
       // Handle arrow navigation
-      document.addEventListener('keyup', this.handleKeyNav, false)
-      that = this
-      var canScroll = true
+      document.addEventListener('keyup', this.handleEventsNav, false)
+      // Handle mousewheel
       window.addEventListener('mousewheel', function (e) {
         if (canScroll) {
           if (e.wheelDelta < 0) {
@@ -164,6 +166,8 @@
           }
         }
       })
+      // Activate swipe
+      this.enableSwipe()
     },
     beforeRouteLeave (to, from, next) {
       var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] .image-container')
@@ -172,10 +176,11 @@
       var sliderNav = this.$el.querySelectorAll('#works-nav')
 
       // Remove arrow navigation listener
-      document.removeEventListener('keyup', this.handleKeyNav, false)
+      document.removeEventListener('keyup', this.handleEventsNav, false)
+      // Remove swipe listener
+      this.disableSwipe()
 
       var tl = new TimelineLite()
-
       tl.to(sliderPicture, 0.85, {
         y: '-150%',
         opacity: 0,
@@ -364,8 +369,9 @@
         // Set the new nav item as active
         this.$el.querySelectorAll('.nav-item[data-index="' + index + '"]')[0].className += ' active'
       },
-      handleKeyNav (e) {
-        if (e.keyCode === 37) {
+      handleEventsNav (e) {
+        console.log(e.direction)
+        if (e.keyCode === 37 || e.direction === 4) {
           this.isAnimated = true
           // You can't go back if you're on the first project
           if (this.currentWork > 0) {
@@ -374,7 +380,7 @@
           }
         }
 
-        if (e.keyCode === 39) {
+        if (e.keyCode === 39 || e.direction === 2) {
           this.isAnimated = true
           // You can't continue if you've reached the last project
           if (this.currentWork < this.getProjects.length - 1) {
@@ -382,6 +388,12 @@
             this.goNext(parseInt(this.currentWork + 1))
           }
         }
+      },
+      disableSwipe () {
+        this.$refs.swiper.disable('swipe')
+      },
+      enableSwipe () {
+        this.$refs.swiper.enable('swipe')
       }
     }
   }
@@ -439,6 +451,7 @@
             width: 100%
             max-height: 600px
             overflow: hidden
+            pointer-events: none
             z-index: 2
 
           .project-image

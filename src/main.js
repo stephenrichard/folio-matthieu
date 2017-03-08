@@ -6,7 +6,9 @@ import router from './router'
 import store from './store'
 
 import vueSmoothScroll from 'vue-smooth-scroll'
+import VueTouch from 'vue-touch'
 Vue.use(vueSmoothScroll)
+Vue.use(VueTouch, {name: 'v-touch'})
 
 /* eslint-disable no-new */
 new Vue({
