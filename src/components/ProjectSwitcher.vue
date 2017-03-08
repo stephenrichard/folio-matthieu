@@ -127,17 +127,28 @@
         &:hover
           .project-link__rect
             transform: translateX(0%) !important
-            width: 200% !important;
+            width: 200% !important
             z-index: 30;
 
+            @media (max-width: $mobile)
+              width: 100% !important
+              z-index: 0
 
           .project-part__title,
           .project-link__skills
             z-index: 100000;
 
+          .project-link__skills
+            @media (max-width: $mobile)
+              z-index: 0
+
           .project-link__info
             opacity: 1;
             transition: all 0.2s linear 0.3s
+
+            @media (max-width: $mobile)
+              opacity: 0
+
 
         .project-link__rect
           left: 0
@@ -165,14 +176,24 @@
             width: 200% !important;
             z-index: 3;
 
+            @media (max-width: $mobile)
+              width: 100% !important
+              z-index: 0
+
             .project-link__info
               opacity: 1;
               transition: all 0.2s linear 0.3s
+
+              @media (max-width: $mobile)
+                opacity: 0
 
           .project-part__title,
           .project-link__skills
             z-index: 20;
 
+          .project-link__skills
+            @media (max-width: $mobile)
+              z-index: 0
 
         .project-link__rect
           right: 0

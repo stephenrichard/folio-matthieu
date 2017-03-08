@@ -32,4 +32,8 @@ html {
 	padding-top: 100px;
 	padding-bottom: 0px;
 
+	@media (max-width: $mobile) {
+		padding-top: 80px
+	}
+
 }
