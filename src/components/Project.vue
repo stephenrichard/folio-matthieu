@@ -101,6 +101,7 @@
   import { TimelineLite, TweenLite, Power2 } from 'gsap'
 
   import vueSmoothScroll from 'vue-smooth-scroll'
+  import ScrollReveal from 'scrollreveal'
 
   export default {
     name: 'project',
@@ -132,6 +133,9 @@
           }
         }
       })
+
+      // Smoothscroll
+      window.sr = ScrollReveal().reveal('.decoration, .project-part, .project-part__bannerBG', { reset: true })
     },
     beforeRouteUpdate (to, from, next) {
       if (to.path.split('#')[0] !== from.path) {
