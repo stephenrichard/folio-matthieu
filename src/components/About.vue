@@ -69,6 +69,9 @@ export default {
       delay: 0.3,
       ease: Power2.easeOut
     }, 'switch')
+    tl.to(bg, 0.4, {
+      backgroundColor: '#CE3131'
+    }, 'switch')
     tl.to(wrapper, 1, {
       opacity: 1,
       y: '0%',
@@ -121,7 +124,7 @@ export default {
     bottom: 0
     z-index: 1
     background-color: black
-    background-image: url('../../static/img/patterns/pattern.png');
+    // background-image: url('../../static/img/patterns/pattern.png')
     transition: background-color 1s linear
   .page-about
     display: flex

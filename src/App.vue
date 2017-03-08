@@ -43,9 +43,9 @@
           // Main images
           'static/img/voices/main-image@2x.png',
           'static/img/domingo/main-image@2x.png',
-          'static/img/4ltrophy/main-image.png',
-          'static/img/geek-art/main-image.png',
-          'static/img/lost-edge/main-image.png',
+          'static/img/4ltrophy/main-image@2x.png',
+          'static/img/geek-art/main-image@2x.png',
+          'static/img/lost-edge/main-image@2x.png',
           // About page background
           'static/img/bg-about-1x.png',
           'static/img/bg-about-2x.png',

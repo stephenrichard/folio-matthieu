@@ -1,6 +1,6 @@
 <template>
 	<div class="page page-project"  >
-    <div class="projectBG" :style="{ 'background-color': getCurrentProject.color_bg }"></div>
+    <div class="projectBG" :style="{ 'background-color': getCurrentProject.color }"></div>
     <div class="projectWrapper" :class="getCurrentProject.color">
 
       <section class=" wrapper project-header pink">
@@ -353,7 +353,7 @@
     right: 0
     top: 0
     bottom: 0
-    background-image: url('../../static/img/patterns/pattern.png')
+    // background-image: url('../../static/img/patterns/pattern.png')
     transition: background-color 1s linear
 
 </style>
