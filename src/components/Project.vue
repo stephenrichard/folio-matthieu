@@ -201,14 +201,14 @@
             opacity: 1,
             x: '125%',
             zIndex: 10,
-            backgroundColor: this.getProjects[projectTo].color_bg
+            backgroundColor: this.getProjects[projectTo].color_code
           }, 'switch')
           tl.to(bg, 1.5, {
             opacity: 1,
             x: '-125%',
             delay: 0.5,
             ease: Power2.linear,
-            backgroundColor: this.getProjects[projectTo].color_bg
+            backgroundColor: this.getProjects[projectTo].color_code
           }, 'switch')
           tl.to(wrapper, 0.5, {
             opacity: 0,
@@ -222,14 +222,14 @@
             x: '-125%',
             zIndex: 10,
             ease: Power2.easeOut,
-            backgroundColor: this.getProjects[projectTo].color_bg
+            backgroundColor: this.getProjects[projectTo].color_code
           }, 'switch')
           tl.to(bg, 1.5, {
             opacity: 1,
             x: '125%',
             delay: 0.5,
             ease: Power2.easeOut,
-            backgroundColor: this.getProjects[projectTo].color_bg
+            backgroundColor: this.getProjects[projectTo].color_code
           }, 'switch')
           tl.to(wrapper, 0.5, {
             opacity: 0,
@@ -244,6 +244,10 @@
         var wrapper = this.$el.querySelectorAll('.projectWrapper')
         var tl = new TimelineLite()
 
+        tl.set(bg, {
+          backgroundColor: this.getCurrentProject.color_code,
+          opacity: 1
+        })
         tl.set(wrapper, {
           opacity: 0,
           y: '100px'
