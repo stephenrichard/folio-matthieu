@@ -370,7 +370,6 @@
         this.$el.querySelectorAll('.nav-item[data-index="' + index + '"]')[0].className += ' active'
       },
       handleEventsNav (e) {
-        console.log(e.direction)
         if (e.keyCode === 37 || e.direction === 4) {
           this.isAnimated = true
           // You can't go back if you're on the first project
