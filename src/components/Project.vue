@@ -1,6 +1,6 @@
 <template>
 	<div class="page page-project"  >
-    <div class="projectBG" :style="{ 'background-color': getCurrentProject.color }"></div>
+    <div class="projectBG"></div>
     <div class="projectWrapper" :class="getCurrentProject.color">
 
       <section class=" wrapper project-header pink">
@@ -9,10 +9,10 @@
         <div class="project-header__content">
           <p v-html="getCurrentProject.header_content" class="text"></p>
           </div>
-        <a 
+        <a
           v-if="getCurrentProject.project_vimeo"
-          class="text-ancors color-colored before-colored" 
-          href="#vimeo" 
+          class="text-ancors color-colored before-colored"
+          href="#vimeo"
           v-smooth-scroll>Watch video</p>
       </section>
 
@@ -271,17 +271,21 @@
           opacity: 0,
           y: '100px'
         })
+        tl.set(bg, {
+          backgroundColor: this.getCurrentProject.color_bg,
+          opacity: 1
+        })
         tl.add('switch')
-        tl.to(bg, 1.5, {
+        tl.to(bg, 1, {
           opacity: 0,
           y: '0%',
-          delay: 0,
-          ease: Power2.easeOut
+          delay: 0.1,
+          ease: Power2.linear
         }, 'switch')
         tl.to(wrapper, 1, {
           opacity: 1,
           y: '0%',
-          delay: 0.7,
+          delay: 0.8,
           ease: Power2.easeOut
         }, 'switch')
       },
@@ -354,6 +358,6 @@
     top: 0
     bottom: 0
     // background-image: url('../../static/img/patterns/pattern.png')
-    transition: background-color 1s linear
+    //ransition: background-color 1s linear
 
 </style>
