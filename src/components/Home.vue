@@ -52,7 +52,8 @@
         differenceX: 0,
         differenceY: 0,
         square: null,
-        picture: null
+        picture: null,
+        allowChangeSlide: true
       }
     },
     computed: {
@@ -256,7 +257,7 @@
           tl.set(matchingProjectStoreTitle, { x: '-200%' })
           tl.set(matchingProjectTitle, { opacity: '0' })
           tl.add('switch')
-          tl.to(oldProjectSquare, 0.3, {
+          tl.to(oldProjectSquare, 0.45, {
             x: '150%',
             ease: Power2.ease
           }, 'switch')
@@ -323,8 +324,7 @@
           tl.set(matchingProjectStoreTitle, { x: '100%' })
           tl.set(matchingProjectTitle, { opacity: '0' })
 
-          tl.add('switch')
-          tl.to(oldProjectSquare, 0.3, {
+          tl.to(oldProjectSquare, 0.45, {
             x: '-150%',
             ease: Power2.ease
           }, 'switch')
@@ -350,11 +350,6 @@
             delay: 0.7,
             ease: Power2.ease
           }, 'switch')
-          tl.to(matchingProjectStore, 1.7, {
-            x: '-201%',
-            delay: 0.1,
-            ease: Power2.ease
-          }, 'switch')
           tl.to(matchingProjectStoreTitle, 1.5, {
             x: '-201%',
             delay: 0.5,
@@ -364,6 +359,14 @@
             opacity: 1,
             delay: 1.2,
             ease: Power2.ease
+          }, 'switch')
+          tl.to(matchingProjectStore, 1.7, {
+            x: '-201%',
+            delay: 0.1,
+            ease: Power2.ease,
+            onComplete: function () {
+              this.allowChangeSlide = true
+            }
           }, 'switch')
         } else {
           var project = parseInt(this.getCurrentProject.id) + 1
@@ -397,21 +400,28 @@
         this.$el.querySelectorAll('.nav-item[data-index="' + index + '"]')[0].className += ' active'
       },
       handleEventsNav (e) {
+        var that = this
         if (e.keyCode === 37 || e.direction === 4) {
           this.isAnimated = true
           // You can't go back if you're on the first project
-          if (this.currentWork > 0) {
+          if (this.currentWork > 0 && this.allowChangeSlide) {
             this.isAnimated = true
             this.goPrev(this.currentWork - 1)
+            this.allowChangeSlide = false
+
+            setTimeout(function () { that.allowChangeSlide = true }, 300)
           }
         }
 
         if (e.keyCode === 39 || e.direction === 2) {
           this.isAnimated = true
           // You can't continue if you've reached the last project
-          if (this.currentWork < this.getProjects.length - 1) {
+          if (this.currentWork < this.getProjects.length - 1 && this.allowChangeSlide) {
             this.isAnimated = true
             this.goNext(parseInt(this.currentWork + 1))
+            this.allowChangeSlide = false
+
+            setTimeout(function () { that.allowChangeSlide = true }, 300)
           }
         }
       },

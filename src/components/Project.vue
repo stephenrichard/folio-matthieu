@@ -16,7 +16,7 @@
           v-smooth-scroll>Watch video</p>
       </section>
 
-      <section class=" animEnter project-part decoration" :data-disposition="getCurrentProject.decoration.disposition">
+      <section class="animEnter project-part decoration" :data-disposition="getCurrentProject.decoration.disposition">
         <div class="decoration-container">
           <img v-for="image in getCurrentProject.decoration.images" :src="image" alt="">
         </div>
