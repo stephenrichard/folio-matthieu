@@ -18,8 +18,8 @@
               <span class="rectangle color-colored"></span>
             </router-link>
             <div class="project__datas color-colored">
-              <h2 class="slider-title color-colored">{{ work.name }}</h2>
-              <div class="slider-subtitle skills color-gray"><span v-for="(skill, index) in work.skills" :class="{ last: index === (work.skills.length - 1) }">{{ skill }} <span class="line">- </span></span></div>
+              <h2 class="slider-title slider-data color-colored">{{ work.name }}</h2>
+              <div class="slider-subtitle slider-data skills color-gray"><span v-for="(skill, index) in work.skills" :class="{ last: index === (work.skills.length - 1) }">{{ skill }} <span class="line">- </span></span></div>
               <span class="store-title"></span>
             </div>
           </div>
@@ -233,6 +233,7 @@
         var matchingProject = this.$el.querySelectorAll('.project[data-index="' + index + '"]')
         var matchingProjectSquare = this.$el.querySelectorAll('.project[data-index="' + index + '"] .rectangle')
         var matchingProjectStore = this.$el.querySelectorAll('.project[data-index="' + index + '"] .store')
+        var matchingProjectTitle = this.$el.querySelectorAll('.project[data-index="' + index + '"] .slider-data')
         var matchingProjectStoreTitle = this.$el.querySelectorAll('.project[data-index="' + index + '"] .store-title')
 
         if (this.isAnimated) {
@@ -241,6 +242,7 @@
           tl.set(sliderPicture, { opacity: 0 })
           tl.set(matchingProjectStore, { x: '-200%' })
           tl.set(matchingProjectStoreTitle, { x: '-200%' })
+          tl.set(matchingProjectTitle, { opacity: '0' })
           tl.add('switch')
           tl.to(oldProjectSquare, 0.3, {
             x: '150%',
@@ -278,6 +280,11 @@
             delay: 0.5,
             ease: Power2.ease
           }, 'switch')
+          tl.to(matchingProjectTitle, 0, {
+            opacity: 1,
+            delay: 1,
+            ease: Power2.ease
+          }, 'switch')
         } else {
           var project = parseInt(this.getCurrentProject.id)
           this.$el.querySelectorAll('.project:nth-child(' + project + ')')[0].style.transform = 'translateX(0)'
@@ -294,6 +301,7 @@
         var matchingProjectSquare = this.$el.querySelectorAll('.project[data-index="' + index + '"] .rectangle')
         var matchingProjectStore = this.$el.querySelectorAll('.project[data-index="' + index + '"] .store')
         var matchingProjectStoreTitle = this.$el.querySelectorAll('.project[data-index="' + index + '"] .store-title')
+        var matchingProjectTitle = this.$el.querySelectorAll('.project[data-index="' + index + '"] .slider-data')
 
         if (this.isAnimated) {
           var tl = new TimelineLite()
@@ -301,6 +309,8 @@
           tl.set(sliderPicture, { opacity: 0 })
           tl.set(matchingProjectStore, { x: '100%' })
           tl.set(matchingProjectStoreTitle, { x: '100%' })
+          tl.set(matchingProjectTitle, { opacity: '0' })
+
           tl.add('switch')
           tl.to(oldProjectSquare, 0.3, {
             x: '-150%',
@@ -336,6 +346,11 @@
           tl.to(matchingProjectStoreTitle, 1.5, {
             x: '-201%',
             delay: 0.5,
+            ease: Power2.ease
+          }, 'switch')
+          tl.to(matchingProjectTitle, 0, {
+            opacity: 1,
+            delay: 1.2,
             ease: Power2.ease
           }, 'switch')
         } else {
