@@ -16,13 +16,13 @@
           v-smooth-scroll>Watch video</p>
       </section>
 
-      <section class=" animEnter project-part decoration" :data-disposition="getCurrentProject.decoration.disposition">
+      <section class="animEnter project-part decoration" :data-disposition="getCurrentProject.decoration.disposition">
         <div class="decoration-container">
           <img v-for="image in getCurrentProject.decoration.images" :src="image" alt="">
         </div>
       </section>
 
-      <section class="wrapper project-part moodboard ">
+      <section class="animEnter wrapper project-part moodboard ">
         <div class="project-part__header">
           <h2 class="project-part__title color-gray">{{ getCurrentProject.project_first_part.title }}</h2>
             <p v-html="getCurrentProject.project_first_part.intro" class="text project-part__intro"></p>
@@ -38,11 +38,11 @@
 
       <section
         v-if='getCurrentProject.project_preparation_part'
-        class="wrapper project-part">
+        class="animEnter wrapper project-part">
         <img class="project-part__decoration" :src="getCurrentProject.project_preparation_part.decoration" alt="">
         <div class="project-part__header">
-          <h2 class="project-part__title color-gray">{{ getCurrentProject.project_preparation_part.title }}</h2>
-          <p class="text project-part__intro">{{ getCurrentProject.project_preparation_part.intro }}</p>
+          <h2 class=" project-part__title color-gray">{{ getCurrentProject.project_preparation_part.title }}</h2>
+          <p class=" text project-part__intro">{{ getCurrentProject.project_preparation_part.intro }}</p>
         </div>
         <div class="project-part__preparation">
           <img class="project-preparation" :src="getCurrentProject.project_preparation_part.picture" alt="">
@@ -51,10 +51,10 @@
 
       <section
         v-if="getCurrentProject.project_screen_part"
-        class=" wrapper project-part">
+        class="wrapper project-part">
         <div class="project-part__header">
             <h2 class="project-part__title color-gray">{{ getCurrentProject.project_screen_part.title }}</h2>
-            <p class="text project-part__intro">{{ getCurrentProject.project_screen_part.intro }}</p>
+            <p class=" text project-part__intro">{{ getCurrentProject.project_screen_part.intro }}</p>
         </div>
 
         <div class="project-part__bannerIMG">
@@ -181,7 +181,9 @@
     watch: {
       '$route' (to, from) {
         if (to.path.split('#')[0] !== from.path) { // l'ancre vers le bas etait watch comme un changement d'url x)
-          window.scrollTo(0, 0)
+          setTimeout(function () {
+            window.scrollTo(0, 0)
+          }, 300)
         }
         for (var i = 0; i < this.getProjects.length; i++) {
           if (this.getProjects[i].slug === to.path.replace('/', '')) {
@@ -393,7 +395,7 @@
     position: relative
 
   .projectBG
-    position : absolute
+    position : fixed
     left: 0
     right: 0
     top: 0
