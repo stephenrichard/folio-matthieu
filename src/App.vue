@@ -39,7 +39,7 @@
       var loader = assetsLoader({
         assets: [
           'static/datas.json',
-          'static/img/patterns/pattern.png',
+          // 'static/img/patterns/pattern.png',
           // Main images
           'static/img/voices/main-image@2x.png',
           'static/img/domingo/main-image@2x.png',

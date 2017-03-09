@@ -4,19 +4,19 @@
     <div class="projectWrapper" :class="getCurrentProject.color">
 
       <section class=" wrapper project-header pink">
-        <h1 class="project-title color-gray">{{ getCurrentProject.name }}</h1>
-        <p class="project-subtitle color-colored"><span v-for="(skill, index) in getCurrentProject.skills" :class="{ last: index === (getCurrentProject.skills.length - 1) }">{{ skill }} <span class="line">- </span></span></p>
-        <div class="project-header__content">
+        <h1 class="animEnter project-title color-gray">{{ getCurrentProject.name }}</h1>
+        <p class="animEnter project-subtitle color-colored"><span v-for="(skill, index) in getCurrentProject.skills" :class="{ last: index === (getCurrentProject.skills.length - 1) }">{{ skill }} <span class="line">- </span></span></p>
+        <div class="animEnter project-header__content">
           <p v-html="getCurrentProject.header_content" class="text"></p>
           </div>
         <a
           v-if="getCurrentProject.project_vimeo"
-          class="text-ancors color-colored before-colored"
+          class="animEnter text-ancors color-colored before-colored"
           href="#vimeo"
           v-smooth-scroll>Watch video</p>
       </section>
 
-      <section class="project-part decoration" :data-disposition="getCurrentProject.decoration.disposition">
+      <section class=" animEnter project-part decoration" :data-disposition="getCurrentProject.decoration.disposition">
         <div class="decoration-container">
           <img v-for="image in getCurrentProject.decoration.images" :src="image" alt="">
         </div>
@@ -136,7 +136,7 @@
         delay: 0,
         opacity: 0,
         mobile: false,
-        viewFactor: 0.5,
+        viewFactor: 1,
         easing: 'ease-out'
       })
     },
@@ -200,7 +200,7 @@
               delay: 0,
               opacity: 0,
               mobile: false,
-              viewFactor: 0.5,
+              viewFactor: 1,
               easing: 'ease-out'
             })
           }
@@ -211,6 +211,7 @@
       switchProject (to, next) {
         var bg = this.$el.querySelectorAll('.projectBG')
         var wrapper = this.$el.querySelectorAll('.projectWrapper')
+        var animEnter = this.$el.querySelectorAll('.projectWrapper .animEnter')
         var tl = new TimelineLite()
 
         var projectTo = this.arrayObjectIndexOf(this.getProjects, to.params.project_name, 'slug')
@@ -223,6 +224,12 @@
             zIndex: 10,
             backgroundColor: this.getProjects[projectTo].color_code
           }, 'switch')
+          tl.add('stagger')
+          tl.staggerFrom(animEnter, 1, {
+            opacity: 0,
+            y: '10px',
+            delay: 1.4
+          }, 0.2, 'stagger')
           tl.to(bg, 1.5, {
             opacity: 1,
             x: '-125%',
@@ -244,6 +251,12 @@
             ease: Power2.easeOut,
             backgroundColor: this.getProjects[projectTo].color_code
           }, 'switch')
+          tl.add('stagger')
+          tl.staggerFrom(animEnter, 1, {
+            opacity: 0,
+            y: '10px',
+            delay: 1.4
+          }, 0.2, 'stagger')
           tl.to(bg, 1.5, {
             opacity: 1,
             x: '125%',
@@ -289,17 +302,16 @@
       enter () {
         var bg = this.$el.querySelectorAll('.projectBG')
         var wrapper = this.$el.querySelectorAll('.projectWrapper')
+        var animEnter = this.$el.querySelectorAll('.projectWrapper .animEnter')
         var tl = new TimelineLite()
 
         tl.set(wrapper, {
-          opacity: 0,
-          y: '100px'
+          opacity: 0
         })
         tl.set(bg, {
           backgroundColor: this.getCurrentProject.color_bg,
           opacity: 1
         })
-        tl.add('switch')
         tl.to(bg, 1, {
           opacity: 0,
           y: '0%',
@@ -309,9 +321,14 @@
         tl.to(wrapper, 1, {
           opacity: 1,
           y: '0%',
-          delay: 0.8,
+          delay: 0.1,
           ease: Power2.easeOut
         }, 'switch')
+        tl.add('stagger')
+        tl.staggerFrom(animEnter, 1, {
+          opacity: 0,
+          y: '10px'
+        }, 0.2, 'stagger')
       },
       exit (next) {
         var bg = this.$el.querySelectorAll('.projectBG')
@@ -331,7 +348,7 @@
         tl.to(wrapper, 1, {
           opacity: 0,
           y: '50px',
-          delay: 0.6,
+          delay: 0,
           ease: Power2.easeOut,
           onComplete: next
         }, 'switch')

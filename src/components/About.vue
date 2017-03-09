@@ -60,14 +60,14 @@ export default {
     var tl = new TimelineLite()
 
     tl.set(wrapper, {
-      opacity: 0,
-      y: '-100px'
+      opacity: 1
+      // y: '-100px'
     })
     tl.add('switch')
     tl.to(bg, 1.5, {
-      y: '-100%',
-      opacity: 1,
-      delay: 0.3,
+      // y: '-100%',
+      opacity: 0,
+      delay: 0.1,
       ease: Power2.easeOut
     }, 'switch')
     // tl.to(bg, 0.4, {
@@ -92,8 +92,8 @@ export default {
       y: '0%'
     })
     tl.set(bg, {
-      opacity: 1,
-      y: '-100%'
+      opacity: 0,
+      y: '0%'
     })
     tl.add('switch')
     tl.to(bg, 1, {
@@ -103,8 +103,8 @@ export default {
       ease: Power2.easeOut
     }, 'switch')
     tl.to(wrapper, 0.5, {
-      opacity: 1,
-      y: '-100px',
+      opacity: 0,
+      // y: '-100px',
       delay: 0.8,
       ease: Power2.easeOut,
       onComplete: next
