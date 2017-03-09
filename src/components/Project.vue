@@ -135,7 +135,7 @@
       })
 
       // Smoothscroll
-      window.sr = ScrollReveal().reveal('.decoration, .project-part, .project-part__bannerBG', { reset: true })
+      window.sr = ScrollReveal().reveal('.decoration, .project-part, .project-part__bannerBG')
     },
     beforeRouteUpdate (to, from, next) {
       if (to.path.split('#')[0] !== from.path) {
@@ -187,6 +187,8 @@
             // Update the page switcher
             this.setSwitcherPages(i)
             this.enter_switch()
+
+            window.sr = ScrollReveal().reveal('.decoration, .project-part, .project-part__bannerBG')
           }
         }
       }
