@@ -4,7 +4,8 @@
     v-on:leave="leave">
     <div id="loader" v-show="!isLoaded">
       <div class="wrapper" ref="wrapper">
-         <img class="robot" src="/static/img/robot.png" alt="">
+          <img src="../assets/logo@2x.png" alt="Matthieu Tourdes motion designer">
+          <!-- <img class="robot" src="/static/img/robot.png" alt=""> -->
        </div>
     </div>
   </transition>
@@ -37,8 +38,9 @@
           delay: 1
         }, 'goOut')
         tl.to(robot, 0.7, {
-          y: '-300%',
-          scale: 2,
+          // y: '-300%',
+          // scale: 2,
+          opacity: 0,
           ease: Power3.easeIn,
           delay: 1
         }, 'goOut')
@@ -66,7 +68,6 @@
     width: 100%
     height: 100%
     background-color: #121639
-    background-image: url('../../static/img/patterns/pattern.png');
     text-align: center
     z-index: 6
     overflow: hidden
