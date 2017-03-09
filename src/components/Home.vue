@@ -3,7 +3,7 @@
 
       <!-- <router-link v-for="(project, index) in getProjects" :to="{ name: 'project', params: { project_name: project.slug } }">{{ project.name }}</router-link> -->
 
-      <v-touch 
+      <v-touch
         v-on:swipe="handleEventsNav"
         ref="swiper"
         id="works">
@@ -259,7 +259,7 @@
           }, 'switch')
           tl.to(sliderPicture, 0.3, {
             opacity: 1,
-            delay: 0.5,
+            delay: 0.8,
             ease: Power2.ease
           }, 'switch')
           tl.to(matchingProjectSquare, 0.6, {
@@ -319,7 +319,7 @@
           }, 'switch')
           tl.to(sliderPicture, 0.3, {
             opacity: 1,
-            delay: 0.5,
+            delay: 0.8,
             ease: Power2.ease
           }, 'switch')
           tl.to(matchingProjectSquare, 0.6, {
