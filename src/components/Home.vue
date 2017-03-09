@@ -576,6 +576,7 @@
           width: 150px
           height: 6px
           background-color: white
+          pointer-events: none
 
           @media (max-width: $tablet)
             width: 120px
