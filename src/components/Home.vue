@@ -158,18 +158,30 @@
       // Handle arrow navigation
       document.addEventListener('keyup', this.handleEventsNav, false)
       // Handle mousewheel
-      window.addEventListener('mousewheel', function (e) {
-        if (canScroll) {
-          if (e.wheelDelta < 0) {
-            that.$router.push('/' + that.getCurrentProject.slug)
-            canScroll = false
-          }
-        }
-      })
+
+      // window.addEventListener('mousewheel', function (e) {
+      //   if (canScroll) {
+      //     if (e.wheelDelta < 0) {
+      //       that.$router.push('/' + that.getCurrentProject.slug)
+      //       canScroll = false
+      //     }
+      //   }
+      // })
       // Activate swipe
       this.enableSwipe()
     },
     beforeRouteLeave (to, from, next) {
+      var canScroll = true
+
+      window.removeEventListener('mousewheel', function (e) {
+        if (canScroll) {
+          if (e.wheelDelta < 0) {
+            this.$router.push('/' + this.getCurrentProject.slug)
+            canScroll = false
+          }
+        }
+      })
+
       var sliderPicture = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] .image-container')
       var sliderPictureSquare = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] .rectangle')
       var sliderPictureData = this.$el.querySelectorAll('.project[data-index="' + this.currentWork + '"] .project__datas')

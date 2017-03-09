@@ -122,17 +122,7 @@
     },
     mounted () {
       this.enter()
-
-      var canScroll = true
       var that = this
-      window.addEventListener('mousewheel', function (e) {
-        if (canScroll) {
-          if (e.wheelDelta > 0 && window.scrollY === 0) {
-            that.$router.push('/')
-            canScroll = false
-          }
-        }
-      })
 
       // Smoothscroll
       window.sr = ScrollReveal().reveal('.decoration, .project-part, .project-part__bannerBG', { reset: true })
