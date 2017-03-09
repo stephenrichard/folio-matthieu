@@ -4,19 +4,19 @@
     <div class="wrapper">
 
       <div class="about-container">
-        <h2 class="page-about-title">{{ name }}</h2>
-        <span class="page-about-subtitle">{{ jobTitle }}</span>
+        <h2 class="animEnter page-about-title">{{ name }}</h2>
+        <span class=" animEnter page-about-subtitle">{{ jobTitle }}</span>
         <p
           v-html="description"
-          class="text"></p>
-        <div class="social-links">
+          class="animEnter text"></p>
+        <div class="animEnter  social-links">
           <a :href="'mailto:' + contact" class="social-link">Contact</a>
           <a :href="twitter" class="social-link first" target="_blank">Twitter</a>
           <a :href="pinterest" class="social-link" target="_blank">Pinterest</a>
           <a :href="linkedin" class="social-link" target="_blank">Linkedin</a>
         </div>
 
-        <div class="page-about-rec"><span>rec</span></div>
+        <div class="animEnter page-about-rec"><span>rec</span></div>
       </div>
 
     </div>
@@ -54,6 +54,8 @@ export default {
   mounted () {
     var bg = this.$el.querySelectorAll('.bg')[0]
     bg.style.backgroundColor = this.getCurrentProject.color_bg
+    var animEnter = this.$el.querySelectorAll('.about-container .animEnter')
+
     // bg.style.backgroundColor = '#CE3131'
 
     var wrapper = this.$el.querySelectorAll('.wrapper')
@@ -63,22 +65,23 @@ export default {
       opacity: 1
       // y: '-100px'
     })
-    tl.add('switch')
-    tl.to(bg, 1.5, {
-      // y: '-100%',
+    tl.to(bg, 0.5, {
       opacity: 0,
       delay: 0.1,
-      ease: Power2.easeOut
+      ease: Power2.linear
     }, 'switch')
-    // tl.to(bg, 0.4, {
-    //   backgroundColor: '#CE3131'
-    // }, 'switch')
-    tl.to(wrapper, 1, {
+    tl.to(bg, 0, {
+      y: '-100%',
+      delay: 0.5
+    }, 'switch')
+    tl.to(wrapper, 0, {
       opacity: 1,
-      y: '0%',
-      delay: 0.5,
-      ease: Power2.easeOut
+      y: '0%'
     }, 'switch')
+    tl.staggerFrom(animEnter, 1, {
+      opacity: 0,
+      y: '10px'
+    }, 0.2, 'stagger')
   },
   beforeRouteLeave (to, from, next) {
     var bg = this.$el.querySelectorAll('.bg')[0]
@@ -96,17 +99,16 @@ export default {
       y: '0%'
     })
     tl.add('switch')
-    tl.to(bg, 1, {
-      y: '0%',
-      opacity: 1,
-      delay: 0.3,
-      ease: Power2.easeOut
-    }, 'switch')
     tl.to(wrapper, 0.5, {
       opacity: 0,
-      // y: '-100px',
-      delay: 0.8,
-      ease: Power2.easeOut,
+      y: '10px',
+      delay: 0.2,
+      ease: Power2.easeOut
+    }, 'switch')
+    tl.to(bg, 1, {
+      opacity: 1,
+      delay: 0.2,
+      ease: Power2.linear,
       onComplete: next
     }, 'switch')
   }

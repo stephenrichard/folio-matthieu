@@ -343,14 +343,14 @@
           opacity: 1,
           y: '0%',
           delay: 0.5,
-          ease: Power2.easeOut
+          ease: Power2.easeOut,
+          onComplete: next
         }, 'switch')
         tl.to(wrapper, 1, {
           opacity: 0,
           y: '50px',
           delay: 0,
-          ease: Power2.easeOut,
-          onComplete: next
+          ease: Power2.easeOut
         }, 'switch')
       },
       arrayObjectIndexOf (myArray, searchTerm, property) {
