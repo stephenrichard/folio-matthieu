@@ -506,7 +506,7 @@
             position: absolute
             content: ''
             top: 0
-            height: 99%
+            height: calc(100% - 3px)
             max-height: 600px
             width: 100%
             background-color: currentColor
