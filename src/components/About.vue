@@ -54,6 +54,7 @@ export default {
   mounted () {
     var bg = this.$el.querySelectorAll('.bg')[0]
     bg.style.backgroundColor = this.getCurrentProject.color_bg
+    // bg.style.backgroundColor = '#CE3131'
 
     var wrapper = this.$el.querySelectorAll('.wrapper')
     var tl = new TimelineLite()
@@ -69,9 +70,9 @@ export default {
       delay: 0.3,
       ease: Power2.easeOut
     }, 'switch')
-    tl.to(bg, 0.4, {
-      backgroundColor: '#CE3131'
-    }, 'switch')
+    // tl.to(bg, 0.4, {
+    //   backgroundColor: '#CE3131'
+    // }, 'switch')
     tl.to(wrapper, 1, {
       opacity: 1,
       y: '0%',
