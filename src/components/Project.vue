@@ -57,7 +57,7 @@
             <p class="text project-part__intro">{{ getCurrentProject.project_screen_part.intro }}</p>
         </div>
 
-        <div class="project-part__bannerIMG ">
+        <div class="project-part__bannerIMG">
           <img :src="getCurrentProject.project_screen_part.picture" alt="">
         </div>
       </section>
@@ -125,7 +125,18 @@
       var that = this
 
       // Smoothscroll
-      window.sr = ScrollReveal().reveal('.decoration, .project-part, .project-part__bannerBG')
+      window.sr = ScrollReveal().reveal('.project-part .decoration, .project-part .project-part__title, .project-part .text, .project-part .project-part__picture, .project-part .project-part__vimeo, .project-part .project-part__bannerIMG, .project-part .project-part__preparation', {
+        reset: false,
+        origin: 'bottom',
+        distance: '40px',
+        duration: 1000,
+        scale: 1,
+        delay: 0,
+        opacity: 0,
+        mobile: false,
+        viewFactor: 0.5,
+        easing: 'ease-out'
+      })
     },
     beforeRouteUpdate (to, from, next) {
       if (to.path.split('#')[0] !== from.path) {
@@ -178,7 +189,18 @@
             this.setSwitcherPages(i)
             this.enter_switch()
 
-            window.sr = ScrollReveal().reveal('.decoration, .project-part, .project-part__bannerBG')
+            window.sr = ScrollReveal().reveal('.project-part .decoration, .project-part .project-part__title, .project-part .text, .project-part .project-part__picture, .project-part .project-part__vimeo, .project-part .project-part__bannerIMG, .project-part .project-part__preparation', {
+              reset: false,
+              origin: 'bottom',
+              distance: '40px',
+              duration: 1000,
+              scale: 1,
+              delay: 0,
+              opacity: 0,
+              mobile: false,
+              viewFactor: 0.5,
+              easing: 'ease-out'
+            })
           }
         }
       }
