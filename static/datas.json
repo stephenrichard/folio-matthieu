@@ -64,7 +64,7 @@
 			"banner": "./static/img/domingo/banner@2x.png",
 			"project_preparation_part": {
 				"title": "Base animations",
-				"intro": "After few sketches of my ideas, I have started my base animations: [1] the square and the [2] title appearance. I wanted my square to feel heavy to bring impact when it hits the floor and something very simple to make the logo shows up. So I did a cell filling [Now that I’m looking back at it, an animation a bit longer wouldn’t have hurt]. As usual, it took me some times to tweak my curves until the animation feels right.After few sketches of my ideas, I have started my base animations: [1] the square and the [2] title appearance. I wanted my square to feel heavy to bring impact when it hits the floor and something very simple to make the logo shows up. So I did a cell filling [Now that I’m looking back at it, an animation a bit longer wouldn’t have hurt]. As usual, it took me some times to tweak my curves until the animation feels right.",
+				"intro": "After few sketches of my ideas, I have started my base animations: [1] the square and the [2] title appearance. I wanted my square to feel heavy to bring impact when it hits the floor and something very simple to make the logo shows up. So I did a cell filling [Now that I’m looking back at it, an animation a bit longer wouldn’t have hurt]. As usual, it took me some times to tweak my curves until the animation feels right.",
 				"picture": "./static/img/domingo/preparation@2x.png",
 				"decoration": "./static/img/domingo/decoration.png"
 			},
