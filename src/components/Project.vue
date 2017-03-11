@@ -38,13 +38,13 @@
 
       <section
         v-if='getCurrentProject.project_preparation_part'
-        class="animEnter wrapper project-part">
+        class="animEnter project-part">
         <img class="project-part__decoration" :src="getCurrentProject.project_preparation_part.decoration" alt="">
-        <div class="project-part__header">
+        <div class="project-part__header wrapper">
           <h2 class=" project-part__title color-gray">{{ getCurrentProject.project_preparation_part.title }}</h2>
           <p class=" text project-part__intro">{{ getCurrentProject.project_preparation_part.intro }}</p>
         </div>
-        <div class="project-part__preparation">
+        <div class="project-part__preparation wrapper">
           <img class="project-preparation" :src="getCurrentProject.project_preparation_part.picture" alt="">
         </div>
       </section>
