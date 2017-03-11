@@ -57,7 +57,7 @@
             <p class=" text project-part__intro">{{ getCurrentProject.project_screen_part.intro }}</p>
         </div>
 
-        <div class="project-part__bannerIMG">
+        <div class="project-part__bannerIMG ">
           <img :src="getCurrentProject.project_screen_part.picture" alt="">
         </div>
       </section>
@@ -193,7 +193,7 @@
             this.setSwitcherPages(i)
             this.enter_switch()
 
-            window.sr.reveal('.project-part .decoration, .project-part .project-part__title, .project-part .text, .project-part .project-part__picture, .project-part .project-part__vimeo, .project-part .project-part__bannerIMG, .project-part .project-part__preparation', {
+            window.sr.reveal('.project-part .decoration, .project-part .project-part__title, .project-part .text, .project-part .project-part__picture, .project-part .project-part__bannerIMG, .project-part .project-part__vimeo, .project-part .project-part__preparation', {
               reset: false,
               origin: 'bottom',
               distance: '40px',
