@@ -16,6 +16,9 @@
           <a :href="linkedin" class="social-link" target="_blank">Linkedin</a>
         </div>
 
+        <div class="credits text animEnter">Developped with <svg class="heart" viewBox="0 0 32 29.6"><path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/></svg>
+          by <a href="http://benjaminbeguin.com/" target="_blank">Benjamin</a> and <a href="http://www.stephenrichard.fr/" target="_blank">Stephen</a></div>
+
         <div class="animEnter page-about-rec"><span>rec</span></div>
       </div>
 
@@ -195,10 +198,28 @@ export default {
           &:hover
             color: $red
 
+      .credits
+        margin-top: 30px
+        color: white
+        font-size: 13px
+
+        a
+          color: white
+          text-decoration: none
+
+        .heart
+          height: 10px
+          fill: $red
+          transform: scale(1)
+
+          &:hover
+            animation: heartbeat .3s ease infinite alternate
+
+
       .page-about-rec
         position: absolute
         right: 100px
-        bottom: 20px
+        bottom: 96px
 
         @media (max-width: $mobile)
           display: none
@@ -226,5 +247,9 @@ export default {
   @keyframes record
     100%
       opacity: 1
+
+  @keyframes heartbeat
+    100%
+      transform: scale(1.3)
 
 </style>
