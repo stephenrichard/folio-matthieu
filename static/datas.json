@@ -2,14 +2,14 @@
 	"projects": [
 		{
 			"id": "0",
-			"name": "Voices of legends",
+			"name": "Voices of legend",
 			"slug": "voices-of-legends",
 			"color": "pink",
 			"color_code": "#FC389A",
 			"color_bg": "#121639",
 			"main_image": "./static/img/voices/main-image@2x.png",
-			"skills": ["Art direction", "Storyboards", "motion design", "sound design"],
-			"header_content": "Voices of legends is a mini-game based on the famous video-game League of Legends and developped by a french streamer Domingo. The goal is to find 20 champions’s voices in the shortest amount of time. The players are rewarded thanks to xp and chest with bonus on the domingo.tv website. My job was to create the teaser.",
+			"skills": ["Art direction", "motion design", "sound design"],
+			"header_content": "Voices of legends is a mini-game based on the famous video-game League of Legends and developed by a french streamer Domingo. The goal is to find 20 champions’s voices in the shortest amount of time. The players are rewarded thanks to xp and chest with bonus on the domingo.tv website. My job was to create the teaser.",
 			"decoration": {
 				"disposition": "fullsize",
 				"images": [
@@ -24,7 +24,7 @@
 			"banner": "./static/img/voices/banner@2x.png",
 			"project_preparation_part": {
 				"title": "Storyboard and modeling",
-				"intro": "The next step was to create the scenario and a draft storyboard. After I jumped into Cinema 4D to build the models needed and challenge the storyboard. It also allows me to try severals looks and point of view locking cameras for later when something looked nice.",
+				"intro": "The next step was to create the scenario and a draft storyboard. After I jumped into Cinema 4D to build the models needed and to challenge the storyboard. It also allows me to try severals looks and point of view locking cameras for later when something looked nice.",
 				"picture": "./static/img/voices/preparation@2x.png",
 				"decoration": "./static/img/voices/decoration.png"
 			},
@@ -64,13 +64,13 @@
 			"banner": "./static/img/domingo/banner@2x.png",
 			"project_preparation_part": {
 				"title": "Base animations",
-				"intro": "After few sketches of my ideas, I have started my base animations: [1] the square and the [2] title appearance. I wanted my square to feel heavy to bring impact when it hits the floor and something very simple to make the logo shows up. So I did a cell filling [Now that I’m looking back at it, an animation a bit longer wouldn’t have hurt]. As usual, it took me some times to tweak my curves until the animation feels right.",
+				"intro": "After few sketches of my ideas, I started my base animations: [1] the square and the [2] title appearance. I wanted my square to feel heavy to bring impact when it hits the floor and something very simple to make the logo shows up. So I did a cell filling [Now that I’m looking back at it, an animation a bit longer wouldn’t have hurt]. As usual, it took me some times to tweak my curves until the animation felt right.",
 				"picture": "./static/img/domingo/preparation@2x.png",
 				"decoration": "./static/img/domingo/decoration.png"
 			},
 			"project_screen_part": {
 				"title": "Elaborating animations & comping",
-				"intro": "The next step was to create the secondary animations to fill the blanks to give more life and personnality to the overall look. So I added strokes to accentuate the title appearance, particles to add depth and lights to help the eyes to focus. ",
+				"intro": "The next step was to create the secondary animations to fill the blanks to give more life and personnality to the overall look. So I added strokes to accentuate the title appearance, particles to add depth and lights to help our eyes to focus. ",
 				"picture": "static/img/domingo/designboard@2x.png"
 			},
 			"project_vimeo": {
@@ -97,7 +97,7 @@
 			},
 			"project_first_part": {
 				"title": "The moodboard",
-				"intro": "At this time I was learning 3D fundamentals on Cinema 4D and  I was quite interested in the work of <strong>Timothy J.Reynolds</strong> a Twitch’s illustrator. I loved his project «  Twitch 2014 Retrospective » and thought his low poly style was just right for my ideas and easy enough for a low level skill person in modelisation to work with.",
+				"intro": "At this time I was learning 3D fundamentals on Cinema 4D and  I was quite interested by the work of <strong>Timothy J.Reynolds</strong> a Twitch’s illustrator. I loved his project «  Twitch 2014 Retrospective » and thought his low poly style was just right for my ideas and easy enough for a low level skill person in modelisation to work with.",
 				"picture": "./static/img/4ltrophy/moodboard@2x.png"
 			},
 			"banner": "./static/img/4ltrophy/banner@2x.png",
@@ -149,12 +149,12 @@
 			},
 			"project_screen_part": {
 				"title": "Navigation",
-				"intro": "With data visualization set, I needed an effortless navigation because navigate between artists to watch their work is the main goal of the website. However users couldn’t afford to go back and forth between the alphabet and the artists’s page to switch. So by allowing users to navigate betweens letters [left-right//keyboard’s letters] and artists [up-down] thanks to keyboard remove this obligation. ",
+				"intro": "With data visualization set, I needed an effortless navigation because navigate between artists to watch their work is the main website's goal. However users couldn’t afford to go back and forth between the alphabet and the artists’s page to switch. So by allowing users to navigate betweens letters [left-right//keyboard’s letters] and artists [up-down] thanks to keyboard removed this obligation. ",
 				"picture": "./static/img/geek-art/designboard@2x.png"
 			},
 			"project_vimeo": {
 				"title": "Prototype",
-				"intro": "You can watch a prototype developped by <a href='http://martinziserman.com/' target='_blank'>Martin Ziserman</a>, <a href='http://www.stephenrichard.fr/' target=_blank'>Stephen Richard</a> and <a href='http://borislaporte.com/' target='_blank'>Boris Laporte</a> following this adress <a href='http://geek-art.borislaporte.com' target='_blank'>just here.</a>",
+				"intro": "You can watch a prototype developed by <a href='http://martinziserman.com/' target='_blank'>Martin Ziserman</a>, <a href='http://www.stephenrichard.fr/' target=_blank'>Stephen Richard</a> and <a href='http://borislaporte.com/' target='_blank'>Boris Laporte</a> following this link <a href='http://geek-art.borislaporte.com' target='_blank'>just here.</a>",
 				"url": "",
 				"poster": "./static/img/geek-art/vimeo.png"
 			}
@@ -178,7 +178,7 @@
 			},
 			"project_first_part": {
 				"title": "The moodboard",
-				"intro": "For this project I gleaned references from various sources from video games to 2D & 3D artists, motions designers etc. First I really love the emotions driven by <strong>Gojo Fujita's</strong> robots. From the videogame <strong>Overwatch</strong>, textures & colors caught my eyes and I think this look match pretty well my ideas. I also really love the ambiances created by <strong>Beeple</strong> in his everyday shots: each frame tell a short story I'm trying to imagine raising questions: What is this world ? Where is it ? Why this man is watching a machine ? etc. And loving the works of <strong>Ashthorp</strong>, I could'nt prevent my self to add it in. Each of his works are a journey trough different universe with unknown adversities and with awesome visuals.",
+				"intro": "For this project I gleaned references from various sources from video games to 2D & 3D artists, motions designers etc. First I really love the emotions driven by <strong>Gojo Fujita's</strong> robots. From the videogame <strong>Overwatch</strong>, textures & colors caught my eyes and I think this look match pretty well my ideas. I also really love the ambiances created by <strong>Beeple</strong> in his everyday shots: each frame tell a short story I'm trying to imagine raising questions: What is this world ? Why this man is watching a machine ? etc. And loving the works of <strong>Ashthorp</strong>, I could'nt prevent my self to add it in. Each of his works are a journey trough different universe with unknown adversities and awesome visuals.",
 				"picture": "./static/img/lost-edge/moodboard@2x.png"
 			},
 			"banner": "./static/img/lost-edge/banner@2x.png",
