@@ -16,6 +16,15 @@
 	text-transform: uppercase;
 }
 
+.about-container {
+	.text {
+		a {
+	    color: white;
+	    text-decoration: none;
+	  }
+	}
+}
+
 .text {
 	font-size: 14px;
 	color: $dark;
