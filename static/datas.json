@@ -9,7 +9,7 @@
 			"color_bg": "#121639",
 			"main_image": "./static/img/voices/main-image@2x.png",
 			"skills": ["Art direction", "motion design", "sound design"],
-			"header_content": "Voices of legends is a mini-game based on the famous video-game League of Legends and developed by a french streamer Domingo. The goal is to find 20 champions’s voices in the shortest amount of time. The players are rewarded thanks to xp and chest with bonus on the domingo.tv website. My job was to create the teaser.",
+			"header_content": "Voices of legends is a mini-game based on the famous video-game League of Legends and developed by a french streamer Domingo. The goal is to find 20 champions’s voices in the shortest amount of time. The players are rewarded with xp and chest with bonus on the domingo.tv website. My job was to create the teaser.",
 			"decoration": {
 				"disposition": "fullsize",
 				"images": [
@@ -24,7 +24,7 @@
 			"banner": "./static/img/voices/banner@2x.png",
 			"project_preparation_part": {
 				"title": "Storyboard and modeling",
-				"intro": "The next step was to create the scenario and a draft storyboard. After I jumped into Cinema 4D to build the models needed and to challenge the storyboard. It also allows me to try severals looks and point of view locking cameras for later when something looked nice.",
+				"intro": "The next step was to create the scenario and a draft storyboard. Then I jumped into Cinema 4D to build the models needed and to challenge the storyboard. It also allowed me to try severals looks and points of view by locking cameras for later when something looked nice.",
 				"picture": "./static/img/voices/preparation@2x.png",
 				"decoration": "./static/img/voices/decoration.png"
 			},
@@ -97,24 +97,24 @@
 			},
 			"project_first_part": {
 				"title": "The moodboard",
-				"intro": "At this time I was learning 3D fundamentals on Cinema 4D and  I was quite interested by the work of <strong>Timothy J.Reynolds</strong> a Twitch’s illustrator. I loved his project «  Twitch 2014 Retrospective » and thought his low poly style was just right for my ideas and easy enough for a low level skill person in modelisation to work with.",
+				"intro": "At this time I was learning 3D fundamentals on Cinema 4D and  I was quite interested in the work of <strong>Timothy J.Reynolds</strong> a Twitch’s illustrator. I loved his project «  Twitch 2014 Retrospective » and thought his low poly style was just right for my ideas and easy enough for a low level skill person in modelisation to work with.",
 				"picture": "./static/img/4ltrophy/moodboard@2x.png"
 			},
 			"banner": "./static/img/4ltrophy/banner@2x.png",
 			"project_preparation_part": {
 				"title": "Modeling and animation",
-				"intro": "With only five days left, I made a draft storyboard and began shortly after to model. It was an hard work and at the end I was running out of time to add details to each island’s ecosystem. To animate the scene I used one camera and played with deformers, scale, position and rotation properties. I also had a lot of fun with dynamics tags.",
+				"intro": "With only five days left, I made a draft storyboard and began shortly after to model. It was hard work and at the end I was running out of time to add details to each island’s ecosystem. To animate the scene I used one camera and played with deformers, scale, position and rotation properties. I also had a lot of fun with dynamics tags.",
 				"picture": "./static/img/4ltrophy/preparation@2x.png",
 				"decoration": "./static/img/4ltrophy/decoration.png"
 			},
 			"project_screen_part": {
 				"title": "Tracking and colors",
-				"intro": "Once the render finished, I realized that I forgot to export 3D datas to track easely the screens on After Effects to add the tutorial video. So I used Mocha with a result I had to be satisfied with. I worked as well on the colorimetry adding more saturation.",
+				"intro": "Once the render was finished, I realized that I had forgotten to export 3D datas to track easily the screens on After Effects to add the tutorial video. So I used Mocha with a result I had to be satisfied with. I worked as well on the colorimetry adding more saturation.",
 				"picture": "./static/img/4ltrophy/designboard@2x.png"
 			},
 			"project_vimeo": {
 				"title": "Voice over",
-				"intro": "For the first time, I used a voice over on a video. I used my own voice and it was more tricky than I thought to have the right intonation, articulate and not ran out of breath. ",
+				"intro": "For the first time, I used a voice over on a video. I used my own voice and it was more tricky than I thought to have the right intonation, articulate and not run out of breath.",
 				"url": "https://player.vimeo.com/video/154697221"
 			}
 		},
@@ -127,7 +127,7 @@
 			"color_code": "#639CFF",
 			"color_bg": "#132137",
 			"main_image": "./static/img/geek-art/main-image@2x.png",
-			"header_content": "This idea first came up by the discovery of a fantastic book : <strong>« Geek-Art. Une Anthologie. Art, design, illustrations & sabres lasers »</strong> de <strong>Thomas Olivri</strong>. Valuable object to cherish, this book deserve his price. But everyone can’t get this book which is in limited edition : then the discovery of this universe become hard to reach. The website « L’Alphabet du Geek-Art » was designed with the wish to introduce the Geek-Art universe with all his artists to everyone, everywhere.",
+			"header_content": "This idea first came up by the discovery of a fantastic book : <strong>« Geek-Art. Une Anthologie. Art, design, illustrations & sabres lasers »</strong> de <strong>Thomas Olivri</strong>. Valuable object to cherish, this book deserves its price. But everyone can’t get this book which is in limited edition : then the discovery of this universe becomes hard to reach. The website « L’Alphabet du Geek-Art » was designed with the wish to introduce the Geek-Art universe with all its artists to everyone, everywhere.",
 			"decoration": {
 				"disposition": "fullsize",
 				"images": [
@@ -137,7 +137,7 @@
 			},
 			"project_first_part": {
 				"title": "The moodboard",
-				"intro": "As a project based on books, I kept the original style guide used on the book to bring consistency between books and website. Then each artwork which is related more or less to the geek-art universe was an inexhaustible source of inspiration. And this moodboard is only a tiny piece of the whole puzzle.",
+				"intro": "As a project based on books, I kept the original style guide used on the book to bring consistency between the book and website. Then each artwork which is related more or less to the geek-art universe was an inexhaustible source of inspiration. And this moodboard is only a tiny piece of the whole puzzle.",
 				"picture": "./static/img/geek-art/moodboard@2x.png"
 			},
 			"banner": "./static/img/geek-art/banner@2x.png",
@@ -149,7 +149,7 @@
 			},
 			"project_screen_part": {
 				"title": "Navigation",
-				"intro": "With data visualization set, I needed an effortless navigation because navigate between artists to watch their work is the main website's goal. However users couldn’t afford to go back and forth between the alphabet and the artists’s page to switch. So by allowing users to navigate betweens letters [left-right//keyboard’s letters] and artists [up-down] thanks to keyboard removed this obligation. ",
+				"intro": "With data visualization set, I needed an effortless navigation because navigating between artists to watch their work is the main website's goal. However users couldn’t afford to go back and forth between the alphabet and the artists’s page to switch. So allowing users to navigate betweens letters [left-right//keyboard’s letters] and artists [up-down] thanks to keyboard removed this obligation. ",
 				"picture": "./static/img/geek-art/designboard@2x.png"
 			},
 			"project_vimeo": {
@@ -168,7 +168,7 @@
 			"color_code": "#BF63FF",
 			"color_bg": "#2C1437",
 			"main_image": "./static/img/lost-edge/main-image@2x.png",
-			"header_content": "The Lost Edge is an ambitious personnal project. I gave myself the goal to realize a short science fiction film with as main project’s aspect the story. I want to tell a short but driven story using 3D and a lot of tools I am not familiar with. So I wrote severals stories and today I have some ideas to work with. I also did an early robot model following my researchs. This page shows a project in progress at his current state. I’m updating it as often as possible.",
+			"header_content": "The Lost Edge is an ambitious personnal project. I gave myself the goal to realize a short science fiction film with as main project’s aspect the story. I want to tell a short but driven story using 3D and a lot of tools I am not familiar with. So I wrote severals stories and today I have some ideas to work with. I also did an early robot model following my researches. This page shows a project in progress at his current state. I’m updating it as often as possible.",
 			"decoration": {
 				"disposition": "fullsize",
 				"images": [
@@ -178,7 +178,7 @@
 			},
 			"project_first_part": {
 				"title": "The moodboard",
-				"intro": "For this project I gleaned references from various sources from video games to 2D & 3D artists, motions designers etc. First I really love the emotions driven by <strong>Gojo Fujita's</strong> robots. From the videogame <strong>Overwatch</strong>, textures & colors caught my eyes and I think this look match pretty well my ideas. I also really love the ambiances created by <strong>Beeple</strong> in his everyday shots: each frame tell a short story I'm trying to imagine raising questions: What is this world ? Why this man is watching a machine ? etc. And loving the works of <strong>Ashthorp</strong>, I could'nt prevent my self to add it in. Each of his works are a journey trough different universe with unknown adversities and awesome visuals.",
+				"intro": "For this project I gleaned references from various sources from video games to 2D & 3D artists, motions designers etc. First I really love the emotions driven by <strong>Gojo Fujita's</strong> robots. From the videogame <strong>Overwatch</strong>, textures & colors caught my eyes and I think this look matches pretty well my ideas. I also really love the ambiances created by <strong>Beeple</strong> in his everyday shots: each frame tells a short story that raises many questions: What is this world ? Why this man is watching a machine ? etc. And loving the works of <strong>Ashthorp</strong>, I could'nt prevent my self to add it in. Each of his works are a journey through different universes with unknown adversities and awesome visuals.",
 				"picture": "./static/img/lost-edge/moodboard@2x.png"
 			},
 			"banner": "./static/img/lost-edge/banner@2x.png",
