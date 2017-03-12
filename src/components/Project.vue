@@ -8,12 +8,12 @@
         <p class="animEnter project-subtitle color-colored"><span v-for="(skill, index) in getCurrentProject.skills" :class="{ last: index === (getCurrentProject.skills.length - 1) }">{{ skill }} <span class="line">- </span></span></p>
         <div class="animEnter project-header__content">
           <p v-html="getCurrentProject.header_content" class="text"></p>
-          </div>
+        </div>
         <a
-          v-if="getCurrentProject.project_vimeo"
           class="animEnter text-ancors color-colored before-colored"
           href="#vimeo"
-          v-smooth-scroll>Watch video</p>
+          v-smooth-scroll>
+            <span v-if="getCurrentProject.project_vimeo">Watch video</span></a>
       </section>
 
       <section class="animEnter project-part decoration" :data-disposition="getCurrentProject.decoration.disposition">
@@ -37,53 +37,52 @@
       </section>
 
       <section
-        v-if='getCurrentProject.project_preparation_part'
         class="project-part">
-        <img class="project-part__decoration" :src="getCurrentProject.project_preparation_part.decoration" alt="">
-        <div class="project-part__header wrapper">
+        <img v-if='getCurrentProject.project_preparation_part' class="project-part__decoration" :src="getCurrentProject.project_preparation_part.decoration" alt="">
+        <div v-if='getCurrentProject.project_preparation_part' class="project-part__header wrapper">
           <h2 class=" project-part__title color-gray">{{ getCurrentProject.project_preparation_part.title }}</h2>
           <p class=" text project-part__intro">{{ getCurrentProject.project_preparation_part.intro }}</p>
         </div>
         <div class="project-part__preparation wrapper">
-          <img class="project-preparation" :src="getCurrentProject.project_preparation_part.picture" alt="">
+          <img v-if='getCurrentProject.project_preparation_part' class="project-preparation" :src="getCurrentProject.project_preparation_part.picture" alt="">
         </div>
       </section>
 
       <section
-        v-if="getCurrentProject.project_screen_part"
         class="wrapper project-part">
-        <div class="project-part__header">
+        <div v-if="getCurrentProject.project_screen_part" class="project-part__header">
             <h2 class="project-part__title color-gray">{{ getCurrentProject.project_screen_part.title }}</h2>
             <p class=" text project-part__intro">{{ getCurrentProject.project_screen_part.intro }}</p>
         </div>
 
         <div class="project-part__bannerIMG ">
-          <img :src="getCurrentProject.project_screen_part.picture" alt="">
+          <img v-if="getCurrentProject.project_screen_part" :src="getCurrentProject.project_screen_part.picture" alt="">
         </div>
       </section>
 
       <section
-        v-if="getCurrentProject.project_vimeo"
         class="wrapper project-part"
         id="vimeo">
-        <div class="project-part__header">
+        <div v-if="getCurrentProject.project_vimeo" class="project-part__header">
             <h2 class="project-part__title color-gray">{{ getCurrentProject.project_vimeo.title }}</h2>
             <p v-html="getCurrentProject.project_vimeo.intro" class="text project-part__intro"></p>
         </div>
 
         <div class="project-part__vimeo">
-          <iframe
-            v-if="getCurrentProject.project_vimeo.url != ''"
-            :src="getCurrentProject.project_vimeo.url"
-            frameborder="0"
-            webkitallowfullscreen
-            mozallowfullscreen
-            allowfullscreen></iframe>
-          <img
-            v-else
-            class="poster"
-            :src="getCurrentProject.project_vimeo.poster"
-            :alt="getCurrentProject.name">
+          <div v-if="getCurrentProject.project_vimeo">
+            <iframe
+              v-if="getCurrentProject.project_vimeo.url != ''"
+              :src="getCurrentProject.project_vimeo.url"
+              frameborder="0"
+              webkitallowfullscreen
+              mozallowfullscreen
+              allowfullscreen></iframe>
+            <img
+              v-else
+              class="poster"
+              :src="getCurrentProject.project_vimeo.poster"
+              :alt="getCurrentProject.name">
+          </div>
         </div>
       </section>
 
@@ -134,14 +133,16 @@
         origin: 'bottom',
         distance: '10px',
         duration: 1000,
-        viewOffset: { top: -1300, right: 0, bottom: 0, left: 100 },
+        viewOffset: { top: -200, right: 0, bottom: 200, left: 0 },
         scale: 1,
-        delay: '0',
+        delay: '0.2',
         opacity: 0,
         mobile: false,
-        viewFactor: 0.3,
+        viewFactor: 0.1,
         easing: 'ease-out'
       })
+
+      this.sr.sync()
     },
     beforeRouteUpdate (to, from, next) {
       if (to.path.split('#')[0] !== from.path) {
