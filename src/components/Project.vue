@@ -195,8 +195,6 @@
             // Update the page switcher
             this.setSwitcherPages(i)
             this.enter_switch()
-
-            console.log(this.sr)
           }
         }
       }
