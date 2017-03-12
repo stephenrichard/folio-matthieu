@@ -244,7 +244,7 @@ export default {
       .page-about-rec
         position: absolute
         right: 100px
-        bottom: 130px
+        bottom: 146px
 
         @media (max-width: $mobile)
           display: none
