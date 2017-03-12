@@ -130,15 +130,16 @@
       this.sr = ScrollReveal()
 
       this.sr.reveal('.project-part .decoration, .project-part .project-part__title, .project-part .text, .project-part .project-part__picture, .project-part .project-part__vimeo, .project-part .project-part__bannerIMG, .project-part .project-part__preparation', {
-        reset: false,
+        reset: true,
         origin: 'bottom',
         distance: '10px',
         duration: 1000,
+        viewOffset: { top: -1300, right: 0, bottom: 0, left: 100 },
         scale: 1,
         delay: '0',
         opacity: 0,
         mobile: false,
-        viewFactor: 1,
+        viewFactor: 0.3,
         easing: 'ease-out'
       })
     },
