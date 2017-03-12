@@ -85,35 +85,39 @@
       text-align: center
       background-color: #EAEAEA
 
+      @media (max-width: $mobile)
+        height: 100px
+
       .project-part__title,
       &__skills
         transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1)
 
 
       .project-link__rect
+        position: absolute
         display: flex
         flex-direction: column
         justify-content: center
-        height: 100%;
-        position: absolute
+        top: 0
+        height: 100%
         width: 100%
         transition: all .6s cubic-bezier(0.77, 0, 0.175, 1)
         z-index: 1
 
         .project-link__info
-          font-size: 12px;
-          font-weight: 600;
-          letter-spacing: 0.86px;
-          color: white;
-          position: relative;
-          opacity: 0;
+          font-size: 12px
+          font-weight: 600
+          letter-spacing: 0.86px
+          color: white
+          position: relative
+          opacity: 0
           width: auto
 
       &.previous-project-link
         float: left
 
         .project-link__info
-          padding-right: 40px;
+          padding-right: 40px
           float: right
 
           &:before
@@ -207,8 +211,9 @@
         z-index: 2
 
         @media (max-width: $mobile)
-          font-size: 20px
-          line-height: 32px
+          font-size: 17px
+          line-height: 26px
+          letter-spacing: 2px
 
 
       &__skills

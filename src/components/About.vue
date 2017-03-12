@@ -16,12 +16,12 @@
           <a :href="linkedin" class="social-link" target="_blank">Linkedin</a>
         </div>
 
+        <div class="credits text animEnter">Developed with <svg class="heart" viewBox="0 0 32 29.6"><path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/></svg>
+        by <a href="http://benjaminbeguin.com/" target="_blank">Benjamin</a> and <a href="http://www.stephenrichard.fr/" target="_blank">Stephen</a></div>
+
         <div class="animEnter page-about-rec"><span>rec</span></div>
       </div>
     </div>
-
-    <div class="credits text animEnter">Developed with <svg class="heart" viewBox="0 0 32 29.6"><path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/></svg>
-        by <a href="http://benjaminbeguin.com/" target="_blank">Benjamin</a> and <a href="http://www.stephenrichard.fr/" target="_blank">Stephen</a></div>
   </div>
 </template>
 
@@ -159,13 +159,24 @@ export default {
       .page-about-title
         color: $red
 
+        @media (max-width: $mobile)
+          font-size: 21px
+          margin-bottom: 0
+          letter-spacing: 2.2px
+
       .page-about-subtitle
         display: inline-block
         margin-bottom: 25px
 
+        @media (max-width: $mobile)
+          font-size: 10px
+
       .text
         color: white
         margin-bottom: 25px
+
+        @media (max-width: $mobile)
+          font-size: 12px
 
       .social-links
         display: inline-block
@@ -181,6 +192,10 @@ export default {
           text-decoration: none
           transition: color .3s
 
+          @media (max-width: $mobile)
+            font-size: 10px
+            padding: 6px 6px 0 0
+
           &:last-child
             &:after
               display: none
@@ -194,13 +209,37 @@ export default {
             width: 8px
             background-color: $red
 
+            @media (max-width: $mobile)
+              width: 6px
+              top: 9px
+
           &:hover
             color: $red
+
+      .credits
+        margin-top: 80px
+        color: white
+        font-size: 13px
+
+        @media (max-width: $mobile)
+          left: 20px
+
+        a
+          color: white
+          text-decoration: none
+
+        .heart
+          height: 10px
+          fill: $red
+          transform: scale(1)
+
+          &:hover
+            animation: heartbeat .3s ease infinite alternate
 
       .page-about-rec
         position: absolute
         right: 100px
-        bottom: 70px
+        bottom: 130px
 
         @media (max-width: $mobile)
           display: none
@@ -224,29 +263,6 @@ export default {
             border-radius: 4px
             opacity: 0.2
             animation: record 1s ease infinite alternate
-
-    .credits
-      position: absolute
-      bottom: 20px
-      left: 40px
-      margin-top: 50px
-      color: white
-      font-size: 13px
-
-      @media (max-width: $mobile)
-        left: 20px
-
-      a
-        color: white
-        text-decoration: none
-
-      .heart
-        height: 10px
-        fill: $red
-        transform: scale(1)
-
-        &:hover
-          animation: heartbeat .3s ease infinite alternate
 
   @keyframes record
     100%
