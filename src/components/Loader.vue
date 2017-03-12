@@ -1,6 +1,5 @@
 <template>
 	<transition
-    v-on:enter="enter"
     v-on:leave="leave">
     <div id="loader" v-show="!isLoaded">
       <div class="wrapper" ref="wrapper">
@@ -23,10 +22,6 @@
       ])
     },
     methods: {
-      enter: function (el, done) {
-        console.log('will entered loading')
-        done()
-      },
       leave: function (el, done) {
         var robot = el.querySelectorAll('img')
 
