@@ -4,7 +4,7 @@
     v-on:leave="leave">
     <div id="loader" v-show="!isLoaded">
       <div class="wrapper" ref="wrapper">
-          <img src="../assets/logo@2x.png" alt="Matthieu Tourdes motion designer">
+          <img class="robot" src="/static/img/robot.gif" alt="Matthieu Tourdes motion designer">
           <!-- <img class="robot" src="/static/img/robot.png" alt=""> -->
        </div>
     </div>
@@ -79,6 +79,7 @@
       height: 100%
 
     .robot
-      height: 200px
+      height: calc(472px / 2)
+      width: calc(619px / 2)
 
 </style>
