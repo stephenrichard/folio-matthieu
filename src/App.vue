@@ -22,7 +22,8 @@
     data () {
       return {
         projectsDatas: dataJson.projects,
-        progress: null
+        progress: null,
+        minTimer: false
       }
     },
     computed: {
@@ -36,6 +37,13 @@
       this.$store.commit('SET_CURRENT_PROJECT', this.projectsDatas[0])
       // this.$store.commit('SET_NEXT_PROJECT', this.projectsDatas[1])
       // this.$store.commit('SET_PREV_PROJECT', this.projectsDatas[this.projectsDatas.length - 1])
+      setTimeout(function () {
+        that.minTimer = true
+        if (that.progress >= 0.95) {
+          that.$store.commit('SET_LOADING', true)
+        }
+      }, 5000)
+
       var loader = assetsLoader({
         assets: [
           'static/datas.json',
@@ -80,10 +88,13 @@
         console.log(error)
       })
       .on('progress', function (progress) {
+        that.progress = progress
         // console.log((progress * 100).toFixed() + '%')
       })
       .on('complete', function (assets) {
-        that.$store.commit('SET_LOADING', true)
+        if (that.minTimer) {
+          that.$store.commit('SET_LOADING', true)
+        }
       })
       .start()
     },
