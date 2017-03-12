@@ -79,7 +79,7 @@
       height: 100%
 
     .robot
-      height: calc(472px / 2)
-      width: calc(619px / 2)
+      height: calc(472px / 3)
+      width: calc(619px / 3)
 
 </style>
