@@ -1,7 +1,7 @@
 <template>
-	<div class="page page-project"  >
+	<div class="page page-project" >
     <div class="projectBG"></div>
-    <div class="projectWrapper" :class="getCurrentProject.color">
+    <div class="projectWrapper" :class="getCurrentProject.color" v-if="resetScroll">
 
       <section class=" wrapper project-header pink">
         <h1 class="animEnter project-title color-gray">{{ getCurrentProject.name }}</h1>
@@ -22,7 +22,7 @@
         </div>
       </section>
 
-      <section class="animEnter wrapper project-part moodboard ">
+      <section class="wrapper project-part moodboard ">
         <div class="project-part__header">
           <h2 class="project-part__title color-gray">{{ getCurrentProject.project_first_part.title }}</h2>
             <p v-html="getCurrentProject.project_first_part.intro" class="text project-part__intro"></p>
@@ -38,7 +38,7 @@
 
       <section
         v-if='getCurrentProject.project_preparation_part'
-        class="animEnter project-part">
+        class="project-part">
         <img class="project-part__decoration" :src="getCurrentProject.project_preparation_part.decoration" alt="">
         <div class="project-part__header wrapper">
           <h2 class=" project-part__title color-gray">{{ getCurrentProject.project_preparation_part.title }}</h2>
@@ -114,7 +114,9 @@
     data () {
       return {
         nextProject: null,
-        prevProject: null
+        prevProject: null,
+        resetScroll: true,
+        sr: null
       }
     },
     components: {
@@ -125,15 +127,15 @@
       var that = this
 
       // Smoothscroll
-      window.sr = ScrollReveal()
+      this.sr = ScrollReveal()
 
-      window.sr.reveal('.project-part .decoration, .project-part .project-part__title, .project-part .text, .project-part .project-part__picture, .project-part .project-part__vimeo, .project-part .project-part__bannerIMG, .project-part .project-part__preparation', {
+      this.sr.reveal('.project-part .decoration, .project-part .project-part__title, .project-part .text, .project-part .project-part__picture, .project-part .project-part__vimeo, .project-part .project-part__bannerIMG, .project-part .project-part__preparation', {
         reset: false,
         origin: 'bottom',
-        distance: '40px',
+        distance: '10px',
         duration: 1000,
         scale: 1,
-        delay: 0,
+        delay: '0',
         opacity: 0,
         mobile: false,
         viewFactor: 1,
@@ -193,24 +195,22 @@
             this.setSwitcherPages(i)
             this.enter_switch()
 
-            window.sr.reveal('.project-part .decoration, .project-part .project-part__title, .project-part .text, .project-part .project-part__picture, .project-part .project-part__bannerIMG, .project-part .project-part__vimeo, .project-part .project-part__preparation', {
-              reset: false,
-              origin: 'bottom',
-              distance: '40px',
-              duration: 1000,
-              scale: 1,
-              delay: 0,
-              opacity: 0,
-              mobile: false,
-              viewFactor: 1,
-              easing: 'ease-out'
-            })
+            console.log(this.sr)
           }
         }
       }
     },
     methods: {
       switchProject (to, next) {
+        var that = this
+
+        // this.sr.init()
+        // this.sr.sync()
+        // setTimeout(function () { that.resetScroll = false }, 200)
+        // setTimeout(function () {
+        //   that.resetScroll = true
+        //   that.sr.sync()
+        // }, 3000)
         var bg = this.$el.querySelectorAll('.projectBG')
         var wrapper = this.$el.querySelectorAll('.projectWrapper')
         var animEnter = this.$el.querySelectorAll('.projectWrapper .animEnter')
