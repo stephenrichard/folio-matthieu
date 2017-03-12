@@ -223,6 +223,7 @@ export default {
 
         @media (max-width: $mobile)
           left: 20px
+          margin-top: 50px
 
         a
           color: white

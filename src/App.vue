@@ -84,7 +84,6 @@
       })
       .on('complete', function (assets) {
         that.$store.commit('SET_LOADING', true)
-        console.log('Loading first assets')
       })
       .start()
     },
@@ -123,7 +122,6 @@
         // console.log((progress * 100).toFixed() + '%')
       })
       .on('complete', function (assets) {
-        console.log('loading complete')
       })
       .start()
     }
