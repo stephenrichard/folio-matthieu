@@ -43,7 +43,7 @@ export default {
       pageName: 'About',
       name: 'Matthieu Tourdes',
       jobTitle: 'Junior art director & motion designer',
-      description: 'Hello I’m Matthieu Tourdes, a 21 year-old motion designer & junior art director. When I was young I tried to find out what magic trick was used to make cartoon and movies, which led me to develop a strong passion for the motion graphics industry. Currently in 4th year at <a class="link" href="http://hetic.net" target="_blank">HETIC</a>.<br/><br/>I’m now looking for a 6 months internship abroad.',
+      description: 'Hello I’m Matthieu Tourdes, a 22 year-old motion designer & junior art director. When I was young I tried to find out what magic trick was used to make cartoon and movies, which led me to develop a strong passion for the motion graphics industry. Currently in 5th year at <a class="link" href="http://hetic.net" target="_blank">HETIC</a>.<br/><br/>I’m now looking for a work training program starting january 2018.',
       contact: 'matthieu.tourdes@gmail.com',
       twitter: 'https://twitter.com/Tourdes',
       pinterest: 'https://fr.pinterest.com/matthieutourdes/',

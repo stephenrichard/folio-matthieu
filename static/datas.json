@@ -41,67 +41,68 @@
 		},
 		{
 			"id": "1",
-			"name": "Intro Domingo",
-			"slug": "intro-domingo",
-			"skills": ["Art direction", "Motion design", "Trapcode particular"],
+			"name": "The lost edge",
+			"slug": "lost-edge",
+			"skills": ["Art direction", "Short film", "Octane render"],
 			"color": "green",
-			"color_code": "#21D878",
-			"color_bg": "#143732",
-			"main_image": "./static/img/domingo/main-image@2x.png",
-			"header_content": "This past summer a friend working for Domingo, a famous french streamer, reached me to create the new introduction animation that goes in front of every video from the channels Youtube and Twitch. It was for me a great opportunity to go back on what got me into motion design: youtube introduction videos ! I also worked on severals video layouts.",
+			"color_code": "#25BCA7",
+			"color_bg": "#102327",
+			"main_image": "./static/img/lost-edge/main-image@2x.png",
+			"header_content": "The Lost Edge is an ambitious personnal project. I gave myself the goal to realize a short science fiction film with as main project’s aspect the story. I want to tell a short but driven story learning new 3D skills. Today I modelled every elements from the storyboard and I am now working on styleframes and animation. ",
 			"decoration": {
 				"disposition": "fullsize",
 				"images": [
-					"./static/img/domingo/first-part-img-1.png",
-					"./static/img/domingo/first-part-img-2.png"
+					"./static/img/lost-edge/first-part-img-1.png",
+					"./static/img/lost-edge/first-part-img-2.png"
 				]
 			},
 			"project_first_part": {
 				"title": "The moodboard",
-				"intro": "I always loved introduction animations. When I watch one I like, I save it to see it again later. This time, I took the ones which thrilled me when I was a bit younger done by <strong>AzareStudio</strong>. I studied them and added animation with identicals characterics : short and simple animation with strokes, cel animation and particles. I loved the <strong>Madsbroni’s</strong> living square which is creating tension and both <strong>CreativeGrenade’s</strong> strokes and particles.",
-				"picture": "./static/img/domingo/moodboard@2x.png"
+				"intro": "For this project I gleaned references from various sources from video games to 2D & 3D artists, motions designers etc. First I really love the emotions driven by <strong>Gojo Fujita's</strong> robots. From the videogame <strong>Overwatch</strong>, textures & colors caught my eyes and I think this look matches pretty well my ideas. I also really love the ambiances created by <strong>Beeple</strong> in his everyday shots: each frame tells a short story that raises many questions: What is this world ? Why this man is watching a machine ? etc. And loving the works of <strong>Ashthorp</strong>, I could'nt prevent my self to add it in. Each of his works are a journey through different universes with unknown adversities and awesome visuals.",
+				"picture": "./static/img/lost-edge/moodboard@2x.png"
 			},
-			"banner": "./static/img/domingo/banner@2x.png",
+			"banner": "./static/img/lost-edge/banner@2x.png",
 			"project_preparation_part": {
-				"title": "Base animations",
-				"intro": "After few sketches of my ideas, I started my base animations: [1] the square and the [2] title appearance. I wanted my square to feel heavy to bring impact when it hits the floor and something very simple to make the logo shows up. So I did a cell filling [Now that I’m looking back at it, an animation a bit longer wouldn’t have hurt]. As usual, it took me some times to tweak my curves until the animation felt right.",
-				"picture": "./static/img/domingo/preparation@2x.png",
-				"decoration": "./static/img/domingo/decoration.png"
+				"title": "Storyboard",
+				"intro": "With my models done, I updated my storyboard with real shots from my project. I tried various camera angles and locked the ones I was satisfied with.",
+				"picture": "./static/img/lost-edge/preparation@2x.png"
 			},
 			"project_screen_part": {
-				"title": "Elaborating animations & comping",
-				"intro": "The next step was to create the secondary animations to fill the blanks to give more life and personnality to the overall look. So I added strokes to accentuate the title appearance, particles to add depth and lights to help our eyes to focus. ",
-				"picture": "static/img/domingo/designboard@2x.png"
-			},
-			"project_vimeo": {
-				"title": "Final video",
-				"intro": "Domingo already knew the music he wanted, so I added it and did some adjusments to finally export the final version.",
-				"url": "https://player.vimeo.com/video/199635053"
+				"title": "Styleframes",
+				"intro": "Here is a look of my two first styleframe attempts. For the time being it is rendered with the physical render and the compositing was done inside Photoshop.",
+				"picture": "./static/img/lost-edge/designboard@2x.png"
 			}
 		},
 		{
 			"id": "2",
-			"name": "4l trophy",
-			"slug": "4l-trophy",
-			"skills": ["Art direction", "Motion design", "Low poly"],
-			"color": "yellow",
-			"color_code": "#FFCF59",
-			"color_bg": "#311e0d",
-			"main_image": "./static/img/4ltrophy/main-image@2x.png",
-			"header_content": "The 4L TROPHY is a charity race car organized to bring school supplies to kids in the Maroc’s desert and my school was sponsoring a crew with one HETIC’s student. The school asked us to imagine a concept to help the crew during his travel and to increase donations for the charitable organization. My team created a website where people could create a sticker for the car and I did a motion to explain our plan and the project.",
+			"name": "Plateforme(s)",
+			"slug": "plateformes",
+			"skills": ["Storyboard","Motion Design"],
+			"color": "purple",
+			"color_code": "#C284FF",
+			"color_bg": "#351B49",
+			"main_image": "./static/img/geek-art/main-image@2x.png",
+			"header_content": "I had the privilege to work with the amazing team at <strong>Pusher Studio</strong> on an animated teaser for <strong>Infopresse's Plateforme(s)</strong> - Le Sommet Québécois des Médias. We also worked in collaboration with Havas on the storyboard. This project allowed me to learn new 2D animation skills. ",
 			"decoration": {
-				"disposition": "contain",
+				"disposition": "fullsize",
 				"images": [
-					"./static/img/4ltrophy/first-part-img-1.png"
+					"./static/img/geek-art/first-part-img-1.png",
+					"./static/img/geek-art/first-part-img-2.png"
 				]
 			},
 			"project_first_part": {
 				"title": "The moodboard",
+<<<<<<< Updated upstream
 				"intro": "At this time I was learning 3D fundamentals on Cinema 4D and  I was quite interested in the work of <strong>Timothy J.Reynolds</strong> a Twitch’s illustrator. I loved his project «  Twitch 2014 Retrospective » and thought his low poly style was just right for my ideas and easy enough for a low level skill person in modelisation to work with.",
 				"picture": "./static/img/4ltrophy/moodboard@2x.png"
+=======
+				"intro": "With a storyboard already provided, the moodboard for this project was essentially focused on animated references. Our main one was <strong>Vucko</strong> with his flickering animations, simple shapes and camera angles. We also like the <strong>Somei’s TEDxNingbo opening</strong> video with those 60 fps smooth animations.",
+				"picture": "./static/img/geek-art/moodboard@2x.png"
+>>>>>>> Stashed changes
 			},
-			"banner": "./static/img/4ltrophy/banner@2x.png",
+			"banner": "./static/img/geek-art/banner@2x.png",
 			"project_preparation_part": {
+<<<<<<< Updated upstream
 				"title": "Modeling and animation",
 				"intro": "With only five days left, I made a draft storyboard and began shortly after to model. It was hard work and at the end I was running out of time to add details to each island’s ecosystem. To animate the scene I used one camera and played with deformers, scale, position and rotation properties. I also had a lot of fun with dynamics tags.",
 				"picture": "./static/img/4ltrophy/preparation@2x.png",
@@ -116,32 +117,55 @@
 				"title": "Voice over",
 				"intro": "For the first time, I used a voice over on a video. I used my own voice and it was more tricky than I thought to have the right intonation, articulate and not run out of breath.",
 				"url": "https://player.vimeo.com/video/154697221"
+=======
+				"title": "Shapes Animations",
+				"intro": "My primary goal was to design and storyboard multiple animations of shapes from the storyboard to use as an asset library later on the project.",
+				"picture": "./static/img/geek-art/preparation@2x.png"
+			},
+			"project_vimeo": {
+				"title": "Animation",
+				"intro": "Once the library done we animated the entire piece with Pusher Studio. It was extremely rewarding to see how everything turned out well in the final piece. ",
+				"url": "https://player.vimeo.com/video/235666027"
+>>>>>>> Stashed changes
 			}
 		},
 		{
 			"id": "3",
-			"name": "Geek art",
-			"slug": "geek-art",
-			"skills": ["Art direction", "UX/UI design", "Concept"],
+			"name": "Tim:Tom",
+			"slug": "tim-tom",
+			"skills": ["Logo", "Motion design"],
 			"color": "blue",
+<<<<<<< Updated upstream
 			"color_code": "#639CFF",
 			"color_bg": "#132137",
 			"main_image": "./static/img/geek-art/main-image@2x.png",
 			"header_content": "This idea first came up by the discovery of a fantastic book : <strong>« Geek-Art. Une Anthologie. Art, design, illustrations & sabres lasers »</strong> de <strong>Thomas Olivri</strong>. Valuable object to cherish, this book deserves its price. But everyone can’t get this book which is in limited edition : then the discovery of this universe becomes hard to reach. The website « L’Alphabet du Geek-Art » was designed with the wish to introduce the Geek-Art universe with all its artists to everyone, everywhere.",
+=======
+			"color_code": "#4A6FF2",
+			"color_bg": "#2A3768",
+			"main_image": "./static/img/domingo/main-image@2x.png",
+			"header_content": "On my first weeks at Pusher Studio I have been fortunate enough to work on a <strong>logo animation</strong> for a local Montreal startup named <strong>Tim:Tom</strong>. Through this motion I had to represent the 3 personalities that forms their playful agency.",
+>>>>>>> Stashed changes
 			"decoration": {
 				"disposition": "fullsize",
 				"images": [
-					"./static/img/geek-art/first-part-img-1.png",
-					"./static/img/geek-art/first-part-img-2.png"
+					"./static/img/domingo/first-part-img-1.png",
+					"./static/img/domingo/first-part-img-2.png"
 				]
 			},
 			"project_first_part": {
 				"title": "The moodboard",
+<<<<<<< Updated upstream
 				"intro": "As a project based on books, I kept the original style guide used on the book to bring consistency between the book and website. Then each artwork which is related more or less to the geek-art universe was an inexhaustible source of inspiration. And this moodboard is only a tiny piece of the whole puzzle.",
 				"picture": "./static/img/geek-art/moodboard@2x.png"
+=======
+				"intro": "The client sent us severals logo animation references to work with. The main one was the smooth and colorful <strong>Google</strong> logo animation with circles drawing different shapes. The others references were appreciated for secondary particule animations. Especially the one from <strong>J.R Canest</strong> where bouncy stroke shapes are used to reveal the letter’s body.",
+				"picture": "./static/img/domingo/moodboard@2x.png"
+>>>>>>> Stashed changes
 			},
-			"banner": "./static/img/geek-art/banner@2x.png",
+			"banner": "./static/img/domingo/banner@2x.png",
 			"project_preparation_part": {
+<<<<<<< Updated upstream
 				"title": "Data visualization",
 				"intro": "To represent the whole geek-art universe I had to think of a visual representation form. Besides there are a lot of captivating artists out there to list and with a growing number. So I wanted to design an interface that would help to: [1] understand quickly with a first level where we situate in the universe and [2] a second descriptive level to add meaning to data.",
 				"picture": "./static/img/geek-art/preparation@2x.png",
@@ -151,16 +175,21 @@
 				"title": "Navigation",
 				"intro": "With data visualization set, I needed an effortless navigation because navigating between artists to watch their work is the main website's goal. However users couldn’t afford to go back and forth between the alphabet and the artists’s page to switch. So allowing users to navigate betweens letters [left-right//keyboard’s letters] and artists [up-down] thanks to keyboard removed this obligation. ",
 				"picture": "./static/img/geek-art/designboard@2x.png"
+=======
+				"title": "Storyboards",
+				"intro": "I designed two ways to animate the logo. The first one is the simplest but classy solution where points hit each others and then follow the letters’s paths with circular movements to reveal the logo. On the other hand, the points pull down a curtain and allow you to have a glimpse inside Tim:Tom playful universe before closing and reveal the logo.",
+				"picture": "./static/img/domingo/timtom-logos-gifs@2x.gif"
+>>>>>>> Stashed changes
 			},
 			"project_vimeo": {
-				"title": "Prototype",
-				"intro": "You can watch a prototype developed by <a href='http://martinziserman.com/' target='_blank'>Martin Ziserman</a>, <a href='http://www.stephenrichard.fr/' target=_blank'>Stephen Richard</a> and <a href='http://borislaporte.com/' target='_blank'>Boris Laporte</a> following this link <a href='http://geek-art.borislaporte.com' target='_blank'>just here.</a>",
-				"url": "",
-				"poster": "./static/img/geek-art/vimeo.png"
+				"title": "Final animation",
+				"intro": "With the first storyboard choosen, it was time to animate it inside After Effects. I added colorful strokes and shapes to accentuate the letters’s apparitions.",
+				"url": "https://player.vimeo.com/video/236654211"
 			}
 		},
 		{
 			"id": "4",
+<<<<<<< Updated upstream
 			"name": "The lost edge",
 			"slug": "lost-edge",
 			"skills": ["Art direction", "Short film", "Octane render"],
@@ -169,24 +198,50 @@
 			"color_bg": "#2C1437",
 			"main_image": "./static/img/lost-edge/main-image@2x.png",
 			"header_content": "The Lost Edge is an ambitious personnal project. I gave myself the goal to realize a short science fiction film with as main project’s aspect the story. I want to tell a short but driven story using 3D and a lot of tools I am not familiar with. So I wrote severals stories and today I have some ideas to work with. I also did an early robot model following my researches. This page shows a project in progress at his current state. I’m updating it as often as possible.",
+=======
+			"name": "4l trophy",
+			"slug": "4l-trophy",
+			"skills": ["Art direction", "Motion design", "Low poly"],
+			"color": "yellow",
+			"color_code": "#FFCF59",
+			"color_bg": "#311e0d",
+			"main_image": "./static/img/4ltrophy/main-image@2x.png",
+			"header_content": "The 4L TROPHY is a charity race car organized to bring school supplies to kids in the Maroc’s desert and my school was sponsoring a crew with one HETIC’s student. The school asked us to imagine a concept to help the crew during his travel and to increase donations for the charitable organization. My team created a website where people could create a sticker for the car and I did a motion to explain our plan and the project.",
+>>>>>>> Stashed changes
 			"decoration": {
-				"disposition": "fullsize",
+				"disposition": "contain",
 				"images": [
-					"./static/img/lost-edge/first-part-img-1.png",
-					"./static/img/lost-edge/first-part-img-2.png"
+					"./static/img/4ltrophy/first-part-img-1.png"
 				]
 			},
 			"project_first_part": {
 				"title": "The moodboard",
+<<<<<<< Updated upstream
 				"intro": "For this project I gleaned references from various sources from video games to 2D & 3D artists, motions designers etc. First I really love the emotions driven by <strong>Gojo Fujita's</strong> robots. From the videogame <strong>Overwatch</strong>, textures & colors caught my eyes and I think this look matches pretty well my ideas. I also really love the ambiances created by <strong>Beeple</strong> in his everyday shots: each frame tells a short story that raises many questions: What is this world ? Why this man is watching a machine ? etc. And loving the works of <strong>Ashthorp</strong>, I could'nt prevent my self to add it in. Each of his works are a journey through different universes with unknown adversities and awesome visuals.",
 				"picture": "./static/img/lost-edge/moodboard@2x.png"
+=======
+				"intro": "At this time I was learning 3D fundamentals on Cinema 4D and  I was quite interested in the work of <strong>Timothy J.Reynolds</strong> a Twitch’s illustrator. I loved his project «  Twitch 2014 Retrospective » and thought his low poly style was just right for my ideas and easy enough for a low level skill person in modelisation to work with.",
+				"picture": "./static/img/4ltrophy/moodboard@2x.png"
 			},
-			"banner": "./static/img/lost-edge/banner@2x.png",
+			"banner": "./static/img/4ltrophy/banner@2x.png",
+			"project_preparation_part": {
+				"title": "Modeling and animation",
+				"intro": "With only five days left, I made a draft storyboard and began shortly after to model. It was hard work and at the end I was running out of time to add details to each island’s ecosystem. To animate the scene I used one camera and played with deformers, scale, position and rotation properties. I also had a lot of fun with dynamics tags.",
+				"picture": "./static/img/4ltrophy/preparation@2x.png",
+				"decoration": "./static/img/4ltrophy/decoration.png"
+>>>>>>> Stashed changes
+			},
 			"project_screen_part": {
-				"title": "First storyboard draft",
-				"intro": "",
-				"picture": "./static/img/lost-edge/designboard.png"
+				"title": "Tracking and colors",
+				"intro": "Once the render was finished, I realized that I had forgotten to export 3D datas to track easily the screens on After Effects to add the tutorial video. So I used Mocha with a result I had to be satisfied with. I worked as well on the colorimetry adding more saturation.",
+				"picture": "./static/img/4ltrophy/designboard@2x.png"
+			},
+			"project_vimeo": {
+				"title": "Voice over",
+				"intro": "For the first time, I used a voice over on a video. I used my own voice and it was more tricky than I thought to have the right intonation, articulate and not run out of breath.",
+				"url": "https://player.vimeo.com/video/154697221"
 			}
 		}
+		
 	]
 }
