@@ -15,7 +15,6 @@
       </div>
 		</router-link>
 
-
 		<router-link :to="nextProject.slug" class="project-link next-project-link">
       <div class="switcher">
         <span class="project-part__title">{{ nextProject.name }}</span>
