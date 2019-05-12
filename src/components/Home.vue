@@ -525,6 +525,7 @@
         &__datas
           position: relative
           display: inline-block
+          max-width: 400px
           margin: 30px auto 0
           text-transform: uppercase
           overflow: hidden
