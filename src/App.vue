@@ -84,19 +84,19 @@
           'static/img/lost-edge/first-part-img-2.png'
         ]
       })
-      .on('error', function (error) {
-        console.log(error)
-      })
-      .on('progress', function (progress) {
-        that.progress = progress
-        // console.log((progress * 100).toFixed() + '%')
-      })
-      .on('complete', function (assets) {
-        if (that.minTimer) {
-          that.$store.commit('SET_LOADING', true)
-        }
-      })
-      .start()
+        .on('error', function (error) {
+          console.log(error)
+        })
+        .on('progress', function (progress) {
+          that.progress = progress
+          // console.log((progress * 100).toFixed() + '%')
+        })
+        .on('complete', function (assets) {
+          if (that.minTimer) {
+            that.$store.commit('SET_LOADING', true)
+          }
+        })
+        .start()
     },
     mounted () {
       var loader = assetsLoader({
@@ -126,15 +126,15 @@
           'static/img/lost-edge/designboard.png'
         ]
       })
-      .on('error', function (error) {
-        console.log(error)
-      })
-      .on('progress', function (progress) {
-        // console.log((progress * 100).toFixed() + '%')
-      })
-      .on('complete', function (assets) {
-      })
-      .start()
+        .on('error', function (error) {
+          console.log(error)
+        })
+        .on('progress', function (progress) {
+          // console.log((progress * 100).toFixed() + '%')
+        })
+        .on('complete', function (assets) {
+        })
+        .start()
     }
   }
 </script>

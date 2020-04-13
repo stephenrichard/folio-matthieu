@@ -26,7 +26,7 @@
         var robot = el.querySelectorAll('img')
 
         var tl = new TimelineLite()
-        .add('goOut')
+          .add('goOut')
         tl.to(this.$refs.wrapper, 0.7, {
           y: '0%',
           ease: Power3.easeIn,
