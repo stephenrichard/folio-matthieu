@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <loader></loader>
+    <!-- <loader></loader> -->
     <headerComponent></headerComponent>
     <router-view></router-view>
   </div>
